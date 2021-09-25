@@ -1,0 +1,13 @@
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Obligatorio/bin/Debug/netcoreapp3.1/Obligatorio.deps.json
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Obligatorio/bin/Debug/netcoreapp3.1/Obligatorio.runtimeconfig.json
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Obligatorio/bin/Debug/netcoreapp3.1/Obligatorio.runtimeconfig.dev.json
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Obligatorio/bin/Debug/netcoreapp3.1/Obligatorio.dll
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Obligatorio/bin/Debug/netcoreapp3.1/Obligatorio.pdb
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Obligatorio/obj/Debug/netcoreapp3.1/Obligatorio.csproj.AssemblyReference.cache
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Obligatorio/obj/Debug/netcoreapp3.1/Obligatorio.GeneratedMSBuildEditorConfig.editorconfig
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Obligatorio/obj/Debug/netcoreapp3.1/Obligatorio.AssemblyInfoInputs.cache
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Obligatorio/obj/Debug/netcoreapp3.1/Obligatorio.AssemblyInfo.cs
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Obligatorio/obj/Debug/netcoreapp3.1/Obligatorio.csproj.CoreCompileInputs.cache
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Obligatorio/obj/Debug/netcoreapp3.1/Obligatorio.dll
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Obligatorio/obj/Debug/netcoreapp3.1/Obligatorio.pdb
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Obligatorio/obj/Debug/netcoreapp3.1/Obligatorio.genruntimeconfig.cache
