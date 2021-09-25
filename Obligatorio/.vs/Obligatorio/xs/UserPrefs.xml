@@ -1,13 +1,19 @@
 ﻿<Properties StartupConfiguration="{A67E6F82-F523-40C3-BEDC-57F688E2A024}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Obligatorio/Program.cs">
+  <MonoDevelop.Ide.ItemProperties.Server FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Client FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Program.cs">
     <Files>
-      <File FileName="Obligatorio/Program.cs" Line="6" Column="6" />
+      <File FileName="Obligatorio/Program.cs" Line="13" Column="1" />
+      <File FileName="Client/Program.cs" Line="1" Column="1" />
+      <File FileName="Server/Program.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
-            <Node name="Obligatorio" expanded="True">
+            <Node name="Client" expanded="True" />
+            <Node name="Obligatorio" expanded="True" />
+            <Node name="Server" expanded="True">
               <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
@@ -17,7 +23,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Obligatorio FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Obligatorio PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
