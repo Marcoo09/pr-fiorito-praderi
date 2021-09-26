@@ -2,18 +2,7 @@
   <MonoDevelop.Ide.ItemProperties.Common.Protocol FirstBuild="True" />
   <MonoDevelop.Ide.ItemProperties.Server.Server.DataAccess FirstBuild="True" />
   <MonoDevelop.Ide.ItemProperties.Client.Client FirstBuild="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Protocol/Exceptions/ProtocolException.cs">
-    <Files>
-      <File FileName="Protocol/Status.cs" Line="7" Column="6" />
-      <File FileName="Protocol/Command.cs" Line="13" Column="20" />
-      <File FileName="Protocol/Frame.cs" Line="1" Column="14" />
-      <File FileName="Protocol/Header.cs" Line="9" Column="1" />
-      <File FileName="Protocol/ProtocolConstants.cs" Line="5" Column="47" />
-      <File FileName="Protocol/ProtocolHandler.cs" Line="11" Column="1" />
-      <File FileName="Protocol/Exceptions/InvalidResourceException.cs" Line="11" Column="2" />
-      <File FileName="Protocol/Exceptions/ProtocolException.cs" Line="6" Column="6" />
-      <File FileName="Protocol/Exceptions/ResourceNotFoundException.cs" Line="11" Column="2" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
