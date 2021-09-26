@@ -11,9 +11,29 @@
   <ItemGroup>
     <None Remove="SerializationInterfaces\" />
     <None Remove="Serialization\" />
+    <None Remove="Exceptions\obj\Exceptions.csproj.nuget.g.props" />
+    <None Remove="Exceptions\obj\project.nuget.cache" />
+    <None Remove="Exceptions\obj\project.assets.json" />
+    <None Remove="Exceptions\obj\Exceptions.csproj.nuget.g.targets" />
+    <None Remove="Exceptions\obj\Exceptions.csproj.nuget.dgspec.json" />
+    <None Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.csproj.FileListAbsolute.txt" />
+    <None Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.csproj.AssemblyReference.cache" />
+    <None Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.csproj.CoreCompileInputs.cache" />
+    <None Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.AssemblyInfoInputs.cache" />
+    <None Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.assets.cache" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SerializationInterfaces\" />
     <Folder Include="Serialization\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="DTOs\Request\CreateGameDTO.cs" />
+    <Compile Remove="DTOs\Response\ErrorDTO.cs" />
+    <Compile Remove="Exceptions\InvalidResourceException.cs" />
+    <Compile Remove="Exceptions\ResourceNotFoundException.cs" />
+    <Compile Remove="Exceptions\ProtocolException.cs" />
+    <Compile Remove="Exceptions\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
+    <Compile Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.AssemblyInfo.cs" />
   </ItemGroup>
 </Project>
