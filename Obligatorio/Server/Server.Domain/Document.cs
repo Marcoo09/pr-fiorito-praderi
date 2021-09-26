@@ -1,7 +1,6 @@
 ﻿using System;
-using Server.Domain;
 
-namespace Domain
+namespace Server.Domain
 {
     public class Document
     {

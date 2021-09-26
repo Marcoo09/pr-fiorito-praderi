@@ -28,6 +28,7 @@
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/bin/Debug/netcoreapp3.1/DTOs.pdb
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/bin/Debug/netcoreapp3.1/Exceptions.pdb
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/bin/Debug/netcoreapp3.1/Server.Domain.pdb
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.csproj.AssemblyReference.cache
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.GeneratedMSBuildEditorConfig.editorconfig
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.AssemblyInfoInputs.cache
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.AssemblyInfo.cs
@@ -36,4 +37,3 @@
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.dll
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.pdb
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.genruntimeconfig.cache
-/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.csproj.AssemblyReference.cache

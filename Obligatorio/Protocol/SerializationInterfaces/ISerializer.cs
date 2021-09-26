@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Protocol.Serialization
+namespace Protocol.SerializationInterfaces
 {
     public interface ISerializer
     {

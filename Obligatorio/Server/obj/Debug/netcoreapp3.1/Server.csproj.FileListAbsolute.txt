@@ -1,3 +1,4 @@
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/bin/Debug/netcoreapp3.1/Server.dll.config
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/bin/Debug/netcoreapp3.1/Server.deps.json
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/bin/Debug/netcoreapp3.1/Server.runtimeconfig.json
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/bin/Debug/netcoreapp3.1/Server.runtimeconfig.dev.json
@@ -34,4 +35,3 @@
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/obj/Debug/netcoreapp3.1/Server.dll
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/obj/Debug/netcoreapp3.1/Server.pdb
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/obj/Debug/netcoreapp3.1/Server.genruntimeconfig.cache
-/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/bin/Debug/netcoreapp3.1/Server.dll.config
