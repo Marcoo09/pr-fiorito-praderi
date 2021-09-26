@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/Client.csproj": {}
+    "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/Server.DataAccess.csproj": {}
   },
   "projects": {
-    "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/Client.csproj": {
+    "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/Server.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/Client.csproj",
-        "projectName": "Client",
-        "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/Client.csproj",
+        "projectUniqueName": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/Server.DataAccess.csproj",
+        "projectName": "Server.DataAccess",
+        "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/Server.DataAccess.csproj",
         "packagesPath": "/Users/marcofiorito/.nuget/packages/",
-        "outputPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/",
+        "outputPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/marcofiorito/.config/NuGet/NuGet.Config"
@@ -37,12 +37,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "dependencies": {
-            "System.Configuration.ConfigurationManager": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

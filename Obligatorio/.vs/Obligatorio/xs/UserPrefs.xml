@@ -1,19 +1,24 @@
 ﻿<Properties StartupConfiguration="{A67E6F82-F523-40C3-BEDC-57F688E2A024}|Default">
-  <MonoDevelop.Ide.ItemProperties.Server FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Client FirstBuild="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Program.cs">
-    <Files>
-      <File FileName="Obligatorio/Program.cs" Line="13" Column="1" />
-      <File FileName="Client/Program.cs" Line="1" Column="1" />
-      <File FileName="Server/Program.cs" Line="1" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.ItemProperties.Common.DTOs FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Common.Protocol FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Server.Server.DataAccess FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Client.Client FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
-            <Node name="Client" expanded="True" />
-            <Node name="Obligatorio" expanded="True" />
+            <Node name="Client" expanded="True">
+              <Node name="Client" expanded="True">
+                <Node name="Dependencies" expanded="True" />
+                <Node name="Connections" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Common" expanded="True" />
             <Node name="Server" expanded="True">
+              <Node name="Server.Domain" expanded="True" />
+            </Node>
+            <Node name="Obligatorio" expanded="True">
               <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
@@ -21,7 +26,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Server.Server.Domain FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Server.Server FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Common.Exceptions FirstBuild="True" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Obligatorio PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
