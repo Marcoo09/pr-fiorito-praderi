@@ -1,13 +1,13 @@
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/bin/Debug/netcoreapp3.1/Server.Domain.deps.json
-/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/bin/Debug/netcoreapp3.1/Server.Domain.runtimeconfig.json
-/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/bin/Debug/netcoreapp3.1/Server.Domain.runtimeconfig.dev.json
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/bin/Debug/netcoreapp3.1/Server.Domain.dll
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/bin/Debug/netcoreapp3.1/Server.Domain.pdb
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/bin/Debug/netcoreapp3.1/Exceptions.dll
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/bin/Debug/netcoreapp3.1/Exceptions.pdb
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.csproj.AssemblyReference.cache
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.GeneratedMSBuildEditorConfig.editorconfig
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.AssemblyInfoInputs.cache
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.AssemblyInfo.cs
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.csproj.CoreCompileInputs.cache
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.csproj.CopyComplete
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.dll
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.pdb
-/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.genruntimeconfig.cache

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DTOs;
+using DTOs.Response;
 using Protocol;
 using Protocol.Serialization;
-using Protocol.SerializationInterfaces;
 
 namespace Client
 {

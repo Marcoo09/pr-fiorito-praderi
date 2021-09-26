@@ -93,6 +93,9 @@
             "projectReferences": {
               "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Protocol.csproj": {
                 "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Protocol.csproj"
+              },
+              "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/Server.Domain.csproj": {
+                "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/Server.Domain.csproj"
               }
             }
           }

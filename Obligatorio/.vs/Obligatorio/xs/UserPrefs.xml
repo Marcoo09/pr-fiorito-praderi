@@ -1,19 +1,16 @@
 ﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Client/ResponseInterpreter.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Client/ClientUI.cs" Line="12" Column="37" />
-      <File FileName="Client/ClientProgram.cs" Line="10" Column="39" />
-      <File FileName="Client/ResponseInterpreter.cs" Line="43" Column="22" />
-      <File FileName="Client/RequestBuilder.cs" Line="54" Column="27" />
-      <File FileName="Protocol/Serialization/IDeserializable.cs" Line="9" Column="1" />
-      <File FileName="Protocol/Serialization/IDeserializer.cs" Line="12" Column="1" />
-      <File FileName="Protocol/Serialization/ISerializable.cs" Line="7" Column="1" />
-      <File FileName="Protocol/Serialization/ISerializer.cs" Line="12" Column="1" />
-      <File FileName="Protocol/Serialization/Serializer.cs" Line="20" Column="1" />
-      <File FileName="Protocol/Serialization/Deserializer.cs" Line="30" Column="54" />
-      <File FileName="Client/Connections/ClientState.cs" Line="1" Column="1" />
-      <File FileName="Client/Connections/ConnectionsHandler.cs" Line="1" Column="1" />
+      <File FileName="Protocol/DTOs/Request/CreateGameDTO.cs" Line="26" Column="1" />
+      <File FileName="Protocol/DTOs/Response/ErrorDTO.cs" Line="20" Column="14" />
+      <File FileName="Protocol/Exceptions/InvalidResourceException.cs" Line="1" Column="1" />
+      <File FileName="Protocol/Exceptions/ProtocolException.cs" Line="1" Column="1" />
+      <File FileName="Client/ClientProgram.cs" Line="10" Column="24" />
+      <File FileName="Client/ClientUI.cs" Line="1" Column="1" />
+      <File FileName="Client/RequestBuilder.cs" Line="1" Column="1" />
+      <File FileName="Client/ResponseInterpreter.cs" Line="1" Column="1" />
+      <File FileName="Client/Connections/ConnectionsHandler.cs" Line="28" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,12 +21,18 @@
                 <Node name="Dependencies" expanded="True">
                   <Node name="ProjectDependencies" expanded="True" />
                 </Node>
-                <Node name="Connections" expanded="True" />
+                <Node name="Connections" expanded="True">
+                  <Node name="ConnectionsHandler.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
             <Node name="Common" expanded="True">
+              <Node name="Exceptions" expanded="True">
+                <Node name="Dependencies" expanded="True" />
+              </Node>
               <Node name="Protocol" expanded="True" />
             </Node>
+            <Node name="Server" expanded="True" />
           </Node>
         </State>
       </Pad>

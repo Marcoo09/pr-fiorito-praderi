@@ -20,7 +20,14 @@
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.dll
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
-/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.csproj.AssemblyReference.cache
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/bin/Debug/netcoreapp3.1/DTOs.dll
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/bin/Debug/netcoreapp3.1/Exceptions.dll
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/bin/Debug/netcoreapp3.1/Protocol.dll
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/bin/Debug/netcoreapp3.1/Server.Domain.dll
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/bin/Debug/netcoreapp3.1/Protocol.pdb
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/bin/Debug/netcoreapp3.1/DTOs.pdb
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/bin/Debug/netcoreapp3.1/Exceptions.pdb
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/bin/Debug/netcoreapp3.1/Server.Domain.pdb
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.GeneratedMSBuildEditorConfig.editorconfig
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.AssemblyInfoInputs.cache
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.AssemblyInfo.cs
@@ -29,3 +36,4 @@
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.dll
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.pdb
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.genruntimeconfig.cache
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/Debug/netcoreapp3.1/Client.csproj.AssemblyReference.cache
