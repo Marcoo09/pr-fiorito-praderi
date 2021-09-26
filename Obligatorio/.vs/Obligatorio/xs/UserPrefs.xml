@@ -1,16 +1,14 @@
 ﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/ServerProgram.cs">
     <Files>
-      <File FileName="Protocol/DTOs/Request/CreateGameDTO.cs" Line="26" Column="1" />
-      <File FileName="Protocol/DTOs/Response/ErrorDTO.cs" Line="20" Column="14" />
-      <File FileName="Protocol/Exceptions/InvalidResourceException.cs" Line="1" Column="1" />
-      <File FileName="Protocol/Exceptions/ProtocolException.cs" Line="1" Column="1" />
-      <File FileName="Client/ClientProgram.cs" Line="10" Column="24" />
-      <File FileName="Client/ClientUI.cs" Line="1" Column="1" />
-      <File FileName="Client/RequestBuilder.cs" Line="1" Column="1" />
-      <File FileName="Client/ResponseInterpreter.cs" Line="1" Column="1" />
+      <File FileName="Server/ServerProgram.cs" Line="12" Column="27" />
+      <File FileName="Server/Connectios/ConnectionsHandler.cs" Line="42" Column="50" />
+      <File FileName="Server/Connectios/Connection.cs" Line="56" Column="14" />
+      <File FileName="Server/Connectios/ConnectionState.cs" Line="9" Column="2" />
+      <File FileName="Server/Connectios/ServerState.cs" Line="9" Column="2" />
       <File FileName="Client/Connections/ConnectionsHandler.cs" Line="28" Column="1" />
+      <File FileName="Server/App.config" Line="7" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,20 +19,30 @@
                 <Node name="Dependencies" expanded="True">
                   <Node name="ProjectDependencies" expanded="True" />
                 </Node>
-                <Node name="Connections" expanded="True">
-                  <Node name="ConnectionsHandler.cs" selected="True" />
-                </Node>
+                <Node name="Connections" expanded="True" />
               </Node>
             </Node>
             <Node name="Common" expanded="True">
+              <Node name="DTOs" expanded="True">
+                <Node name="Request" expanded="True" />
+              </Node>
               <Node name="Exceptions" expanded="True">
                 <Node name="Dependencies" expanded="True" />
               </Node>
               <Node name="Protocol" expanded="True" />
             </Node>
-            <Node name="Server" expanded="True" />
+            <Node name="Server" expanded="True">
+              <Node name="Server" expanded="True">
+                <Node name="Dependencies" expanded="True" />
+                <Node name="ServerProgram.cs" selected="True" />
+              </Node>
+              <Node name="Server.Domain" expanded="True" />
+            </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

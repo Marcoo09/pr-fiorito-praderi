@@ -52,5 +52,16 @@
     <None Remove="Server.Domain\obj\Debug\netcoreapp3.1\Server.Domain.dll" />
     <None Remove="Server.Domain\obj\Debug\netcoreapp3.1\Server.Domain.pdb" />
     <None Remove="Server.Domain\obj\Debug\netcoreapp3.1\Server.Domain.csproj.CopyComplete" />
+    <None Remove="Connectios\" />
+    <None Remove="System.Configuration.ConfigurationManager" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Connectios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Protocol\Protocol.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
   </ItemGroup>
 </Project>
