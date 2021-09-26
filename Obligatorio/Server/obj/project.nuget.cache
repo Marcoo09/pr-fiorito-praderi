@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "5AkPyDQOFczs0EqTCy2Cqo6qYKiMrNlq0wg38F7QgUwo1dbi6EeW/IYx01rzE+x0gN8Wfae3ZRLb2E8XqRCn4Q==",
+  "dgSpecHash": "ecvLdbGexYOToSvgg5nl6tdoAAHtqM/0JcgojcHV7WOT6ADe2ArUt4MX+PKIaVWOotA7aU3OfQxIyGznkQLsBQ==",
   "success": true,
   "projectFilePath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/marcofiorito/.nuget/packages/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/microsoft.win32.systemevents/5.0.0/microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/system.configuration.configurationmanager/5.0.0/system.configuration.configurationmanager.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/system.drawing.common/5.0.0/system.drawing.common.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/system.security.accesscontrol/5.0.0/system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/system.security.cryptography.protecteddata/5.0.0/system.security.cryptography.protecteddata.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/system.security.permissions/5.0.0/system.security.permissions.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/system.windows.extensions/5.0.0/system.windows.extensions.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
