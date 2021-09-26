@@ -1,14 +1,13 @@
 ﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/ServerProgram.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Protocol/DTOs/Request/UploadImageDTO.cs">
     <Files>
-      <File FileName="Server/ServerProgram.cs" Line="12" Column="27" />
-      <File FileName="Server/Connectios/ConnectionsHandler.cs" Line="42" Column="50" />
-      <File FileName="Server/Connectios/Connection.cs" Line="56" Column="14" />
-      <File FileName="Server/Connectios/ConnectionState.cs" Line="9" Column="2" />
-      <File FileName="Server/Connectios/ServerState.cs" Line="9" Column="2" />
-      <File FileName="Client/Connections/ConnectionsHandler.cs" Line="28" Column="1" />
-      <File FileName="Server/App.config" Line="7" Column="17" />
+      <File FileName="Server/Server.Domain/Game.cs" Line="5" Column="24" />
+      <File FileName="Server/Server.Domain/Documentr.cs" Line="14" Column="2" />
+      <File FileName="Protocol/DTOs/Request/CreateGameDTO.cs" Line="34" Column="36" />
+      <File FileName="Protocol/DTOs/Request/UploadImageDTO.cs" Line="62" Column="46" />
+      <File FileName="Protocol/SerializationInterfaces/ISerializable.cs" Line="6" Column="25" />
+      <File FileName="Protocol/SerializationInterfaces/IDeserializable.cs" Line="6" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,18 +23,23 @@
             </Node>
             <Node name="Common" expanded="True">
               <Node name="DTOs" expanded="True">
-                <Node name="Request" expanded="True" />
+                <Node name="Request" expanded="True">
+                  <Node name="UploadImageDTO.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="Exceptions" expanded="True">
                 <Node name="Dependencies" expanded="True" />
               </Node>
-              <Node name="Protocol" expanded="True" />
+              <Node name="Protocol" expanded="True">
+                <Node name="SerializationInterfaces" expanded="True" />
+              </Node>
             </Node>
             <Node name="Server" expanded="True">
               <Node name="Server" expanded="True">
                 <Node name="Dependencies" expanded="True" />
-                <Node name="ServerProgram.cs" selected="True" />
+                <Node name="Connectios" expanded="True" />
               </Node>
+              <Node name="Server.DataAccess" expanded="True" />
               <Node name="Server.Domain" expanded="True" />
             </Node>
           </Node>

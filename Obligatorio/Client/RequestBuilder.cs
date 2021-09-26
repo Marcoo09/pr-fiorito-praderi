@@ -22,9 +22,6 @@ namespace Client
             // Some commands do not need extra configuration
             switch ((Command)chosenOption)
             {
-                case Command.IndexClients:
-                    //Do sth
-                    break;
                 case Command.BuyGame:
                     //Do sth
                     break;

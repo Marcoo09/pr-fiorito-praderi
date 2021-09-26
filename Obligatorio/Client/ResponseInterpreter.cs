@@ -53,9 +53,6 @@ namespace Client
 
             switch (command)
             {
-                case Command.IndexClients:
-                    //Do sth
-                    break;
                 case Command.BuyGame:
                     //Do sth
                     break;
@@ -94,7 +91,7 @@ namespace Client
 
             switch (command)
             {
-                case Command.IndexClients:
+                case Command.IndexGamesCatalog:
                     isArray = true;
                     break;
                 case Command.GetGameReviews:

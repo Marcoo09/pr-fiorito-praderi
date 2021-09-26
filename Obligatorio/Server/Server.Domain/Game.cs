@@ -1,11 +1,16 @@
-﻿using Exceptions;
+﻿using System;
+using Domain;
+using Exceptions;
 
 namespace Server.Domain
 {
     public class Game
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Synopsis { get; set; }
+        public string Gender { get; set; }
+        public Document Cover { get; set; }
 
         public Game()
         {
@@ -13,18 +18,19 @@ namespace Server.Domain
 
         public void ValidOrFail()
         {
-            if (Title == null)
+            if (String.IsNullOrEmpty(Title))
                 throw new InvalidResourceException("Game must have a title");
-            if (Synopsis == null)
+            if (String.IsNullOrEmpty(Synopsis))
                 throw new InvalidResourceException("Game must have a posted at date");
-            //if (String.IsNullOrEmpty(Image))
-            //    throw new InvalidResourceException("Game must include an image");
+            if(String.IsNullOrEmpty(Gender))
+                throw new InvalidResourceException("Game must have a gender");
         }
 
         public void Update(Game newGame)
         {
             Title = newGame.Title;
             Synopsis = newGame.Synopsis;
+            Gender = newGame.Gender;
         }
 
         public override bool Equals(object? obj)

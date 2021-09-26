@@ -7,21 +7,22 @@ namespace DTOs.Request
     public class CreateGameDTO
     {
         public string Title { get; set; }
+        public string Gender { get; set; }
         public string Synopsis { get; set; }
-        //public string Image { get; set; }
 
         public Game ToEntity()
         {
             return new Game()
             {
                 Title = Title,
-                Synopsis = Synopsis
+                Synopsis = Synopsis,
+                Gender = Gender
             };
         }
 
         public byte[] Serialize()
         {
-            return Encoding.UTF8.GetBytes($"{Title}~~{Synopsis}");
+            return Encoding.UTF8.GetBytes($"{Title}~~{Synopsis}~~{Gender}");
         }
 
         public void Deserialize(byte[] serializedEntity)
@@ -30,6 +31,7 @@ namespace DTOs.Request
 
             Title = attributes[0];
             Synopsis = attributes[1];
+            Gender = attributes[2];
         }
     }
 }
