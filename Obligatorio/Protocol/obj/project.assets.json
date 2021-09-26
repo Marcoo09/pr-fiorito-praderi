@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Exceptions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Exceptions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Exceptions.dll": {}
+        }
+      },
+      "Server.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Exceptions": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Server.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Server.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Exceptions/1.0.0": {
+      "type": "project",
+      "path": "Exceptions/Exceptions.csproj",
+      "msbuildProject": "Exceptions/Exceptions.csproj"
+    },
+    "Server.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Server/Server.Domain/Server.Domain.csproj",
+      "msbuildProject": "../Server/Server.Domain/Server.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Server.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/marcofiorito/.nuget/packages/": {}
@@ -31,7 +68,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/Server.Domain.csproj": {
+              "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/Server.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

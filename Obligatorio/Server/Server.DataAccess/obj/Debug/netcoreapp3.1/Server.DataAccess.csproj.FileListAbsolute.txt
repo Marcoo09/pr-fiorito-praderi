@@ -1,0 +1,12 @@
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/bin/Debug/netcoreapp3.1/Server.DataAccess.deps.json
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/bin/Debug/netcoreapp3.1/Server.DataAccess.runtimeconfig.json
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/bin/Debug/netcoreapp3.1/Server.DataAccess.runtimeconfig.dev.json
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/bin/Debug/netcoreapp3.1/Server.DataAccess.dll
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/bin/Debug/netcoreapp3.1/Server.DataAccess.pdb
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/obj/Debug/netcoreapp3.1/Server.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/obj/Debug/netcoreapp3.1/Server.DataAccess.AssemblyInfoInputs.cache
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/obj/Debug/netcoreapp3.1/Server.DataAccess.AssemblyInfo.cs
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/obj/Debug/netcoreapp3.1/Server.DataAccess.csproj.CoreCompileInputs.cache
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/obj/Debug/netcoreapp3.1/Server.DataAccess.dll
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/obj/Debug/netcoreapp3.1/Server.DataAccess.pdb
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/obj/Debug/netcoreapp3.1/Server.DataAccess.genruntimeconfig.cache

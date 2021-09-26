@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Client
 {
@@ -6,7 +7,9 @@ namespace Client
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ClientUI clientUI = new ClientUI();
+            Thread thread = new Thread(() => clientUI.init());
+            thread.Start();
         }
     }
 }
