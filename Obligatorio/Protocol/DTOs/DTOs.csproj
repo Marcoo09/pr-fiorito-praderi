@@ -13,4 +13,7 @@
     <Folder Include="Request\" />
     <Folder Include="Response\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Protocol.csproj" />
+  </ItemGroup>
 </Project>

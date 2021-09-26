@@ -5,4 +5,15 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Server\Server.Domain\Server.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="SerializationInterfaces\" />
+    <None Remove="Serialization\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SerializationInterfaces\" />
+    <Folder Include="Serialization\" />
+  </ItemGroup>
 </Project>

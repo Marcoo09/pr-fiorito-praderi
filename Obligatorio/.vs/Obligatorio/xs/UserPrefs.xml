@@ -1,32 +1,51 @@
-﻿<Properties StartupConfiguration="{A67E6F82-F523-40C3-BEDC-57F688E2A024}|Default">
-  <MonoDevelop.Ide.ItemProperties.Common.Protocol FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Server.Server.DataAccess FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Client.Client FirstBuild="True" />
-  <MonoDevelop.Ide.Workbench>
+﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
+  <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Client/ResponseInterpreter.cs">
+    <Files>
+      <File FileName="Client/ClientUI.cs" Line="12" Column="37" />
+      <File FileName="Client/ClientProgram.cs" Line="10" Column="39" />
+      <File FileName="Client/ResponseInterpreter.cs" Line="43" Column="18" />
+      <File FileName="Client/RequestBuilder.cs" Line="54" Column="27" />
+      <File FileName="Protocol/Serialization/IDeserializable.cs" Line="9" Column="1" />
+      <File FileName="Protocol/Serialization/IDeserializer.cs" Line="12" Column="1" />
+      <File FileName="Protocol/Serialization/ISerializable.cs" Line="7" Column="1" />
+      <File FileName="Protocol/Serialization/ISerializer.cs" Line="12" Column="1" />
+      <File FileName="Protocol/Serialization/Serializer.cs" Line="20" Column="1" />
+      <File FileName="Protocol/Serialization/Deserializer.cs" Line="30" Column="54" />
+      <File FileName="Protocol/DTOs/Response/ErrorDTO.cs" Line="15" Column="34" />
+      <File FileName="Client/Connections/ClientState.cs" Line="1" Column="1" />
+      <File FileName="Client/Connections/ConnectionsHandler.cs" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
             <Node name="Client" expanded="True">
-              <Node name="Client" expanded="True" />
+              <Node name="Client" expanded="True">
+                <Node name="Dependencies" expanded="True">
+                  <Node name="ProjectDependencies" expanded="True" />
+                </Node>
+                <Node name="Connections" expanded="True" />
+                <Node name="ResponseInterpreter.cs" selected="True" />
+              </Node>
             </Node>
             <Node name="Common" expanded="True">
-              <Node name="DTOs" expanded="True" />
-              <Node name="Exceptions" expanded="True">
-                <Node name="ProtocolException.cs" selected="True" />
+              <Node name="DTOs" expanded="True">
+                <Node name="Dependencies" expanded="True" />
+                <Node name="Response" expanded="True" />
               </Node>
-              <Node name="Protocol" expanded="True" />
+              <Node name="Protocol" expanded="True">
+                <Node name="Serialization" expanded="True" />
+                <Node name="SerializationInterfaces" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Server.Server.Domain FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Server.Server FirstBuild="True" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Obligatorio PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

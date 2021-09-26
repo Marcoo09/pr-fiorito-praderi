@@ -1,0 +1,5 @@
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/obj/Debug/netcoreapp3.1/Server.csproj.AssemblyReference.cache
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/obj/Debug/netcoreapp3.1/Server.GeneratedMSBuildEditorConfig.editorconfig
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/obj/Debug/netcoreapp3.1/Server.AssemblyInfoInputs.cache
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/obj/Debug/netcoreapp3.1/Server.AssemblyInfo.cs
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/obj/Debug/netcoreapp3.1/Server.csproj.CoreCompileInputs.cache
