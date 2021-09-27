@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Exceptions;
 
 namespace Server.Domain
@@ -13,6 +14,8 @@ namespace Server.Domain
         public string Path { get; set; }
         public string CoverName { get; set; }
         public long FileSize { get; set; }
+
+        public List<Review> Reviews {get;set;}
 
         public Game()
         {
