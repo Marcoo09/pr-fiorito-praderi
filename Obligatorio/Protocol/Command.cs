@@ -4,7 +4,7 @@
     {
         IndexGamesCatalog, //SRF2 -> DONE
         BuyGame,//SRF3 -> Nico
-        CreateGame,//SRF4, CRF2 (missing part of cover) -> Marco
+        CreateGame,//SRF4, CRF2 Marco -> DONE -> Missing test
         CreateGameReview,//SRF5, CRF5
         GetGameReviews, //
         SearchGames,//SRF6 By title, gender, rating -> Marco

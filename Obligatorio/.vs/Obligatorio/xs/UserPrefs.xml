@@ -1,22 +1,19 @@
 ﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Protocol/DTOs/Request/CreateGameDTO.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Client/RequestBuilder.cs">
     <Files>
-      <File FileName="Server/Server.Domain/Game.cs" Line="1" Column="1" />
-      <File FileName="Server/Server.DataAccess/Implementations/GameRepository.cs" />
-      <File FileName="Server/Implementations/GameService.cs" />
-      <File FileName="Protocol/ProtocolHandler.cs" />
-      <File FileName="Server/ServerProgram.cs" />
-      <File FileName="Protocol/DTOs/Request/CreateGameDTO.cs" Line="75" Column="13" />
-      <File FileName="Client/RequestBuilder.cs" />
+      <File FileName="Server/Implementations/GameService.cs" Line="39" Column="40" />
+      <File FileName="Client/ClientUI.cs" Line="1" Column="1" />
+      <File FileName="Client/RequestBuilder.cs" Line="41" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
             <Node name="Client" expanded="True">
-              <Node name="Client" expanded="True" selected="True">
+              <Node name="Client" expanded="True">
                 <Node name="Connections" expanded="True" />
+                <Node name="RequestBuilder.cs" selected="True" />
               </Node>
             </Node>
             <Node name="Common" expanded="True">
