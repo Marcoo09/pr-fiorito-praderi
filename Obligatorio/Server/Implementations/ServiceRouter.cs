@@ -27,6 +27,7 @@ namespace Server.Implementations
                 case Command.CreateGameReview:
                     break;
                 case Command.DeleteGame:
+                    //response = _gameService.DeleteGame(frameRequest);
                     break;
                 case Command.GetGameReviews:
                     break;
@@ -39,6 +40,7 @@ namespace Server.Implementations
                 case Command.SearchGames:
                     break;
                 case Command.UpdateGame:
+                    response = _gameService.UpdateGame(frameRequest);
                     break;
             }
 
