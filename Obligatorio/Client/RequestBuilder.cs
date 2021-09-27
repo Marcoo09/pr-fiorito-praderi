@@ -49,6 +49,8 @@ namespace Client
                 case Command.UpdateGame:
                     //Do sth
                     break;
+                case Command.IndexUsers:
+                    break;
             }
             return requestFrame;
         }

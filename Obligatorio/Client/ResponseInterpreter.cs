@@ -81,6 +81,9 @@ namespace Client
                 case Command.UpdateGame:
                     //Do sth
                     break;
+                case Command.IndexUsers:
+                    entityType = typeof(UserDetailDTO);
+                    break;
             }
 
             return entityType;
@@ -99,6 +102,9 @@ namespace Client
                     isArray = true;
                     break;
                 case Command.SearchGames:
+                    isArray = true;
+                    break;
+                case Command.IndexUsers:
                     isArray = true;
                     break;
             }

@@ -10,6 +10,7 @@
         SearchGames,//SRF6 By title, gender, rating -> Marco
         IndexGame, //SRF7, CRF6-> Not completed -> Marco
         DeleteGame, //CRF3 -> Nico
-        UpdateGame //CRF3 -> Nico
+        UpdateGame, //CRF3 -> Nico
+        IndexUsers // -> DONE
     }
 }

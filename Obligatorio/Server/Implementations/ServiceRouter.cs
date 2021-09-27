@@ -7,10 +7,12 @@ namespace Server.Implementations
     public class ServiceRouter : IServiceRouter
     {
         private IGameService _gameService;
+        private IUserService _userService;
 
         public ServiceRouter()
         {
             _gameService = new GameService();
+            _userService = new UserService();
         }
 
         public Frame GetResponse(Frame frameRequest)
@@ -41,6 +43,9 @@ namespace Server.Implementations
                     break;
                 case Command.UpdateGame:
                     response = _gameService.UpdateGame(frameRequest);
+                    break;
+                case Command.IndexUsers:
+                    response = _userService.IndexUsers();
                     break;
             }
 
