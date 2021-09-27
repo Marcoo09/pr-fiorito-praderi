@@ -4,7 +4,6 @@ using System.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 
 namespace DTOs.Request
 {
@@ -26,7 +25,7 @@ namespace DTOs.Request
                 Synopsis = Synopsis,
                 Gender = Gender,
                 CoverName = CoverName,
-                Path = Directory.GetCurrentDirectory() + (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? "/" : "\\") + CoverName,
+                Path = Directory.GetCurrentDirectory() + "\\" + CoverName,
                 FileSize = FileSize
             };
         }
@@ -36,7 +35,7 @@ namespace DTOs.Request
             List<byte> serializedGame = new List<byte>();
             serializedGame.AddRange(BitConverter.GetBytes(FileSize));
             serializedGame.AddRange(Data);
-            serializedGame.AddRange(Encoding.UTF8.GetBytes($"{Title}~~{Gender}~~{Synopsis}"));
+            serializedGame.AddRange(Encoding.UTF8.GetBytes($"{Title}~~{Gender}~~{Synopsis}~~{CoverName}"));
 
             return serializedGame.ToArray();
         }
@@ -59,6 +58,7 @@ namespace DTOs.Request
             Title = attributes[0];
             Gender = attributes[1];
             Synopsis = attributes[2];
+            CoverName = attributes[3];
         }
 
         public bool IsValidPath(string path)
@@ -78,7 +78,7 @@ namespace DTOs.Request
 
         public void WriteFile()
         {
-            File.WriteAllBytes(Directory.GetCurrentDirectory() + ( RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? "/" :  "\\") + CoverName, Data);
+            File.WriteAllBytes(CoverName, Data);
         }
     }
 }

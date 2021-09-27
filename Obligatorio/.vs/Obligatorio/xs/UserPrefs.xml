@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Client/RequestBuilder.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Implementations/GameService.cs">
     <Files>
-      <File FileName="Server/Implementations/GameService.cs" Line="39" Column="40" />
-      <File FileName="Client/ClientUI.cs" Line="1" Column="1" />
-      <File FileName="Client/RequestBuilder.cs" Line="41" Column="29" />
+      <File FileName="Client/RequestBuilder.cs" Line="78" Column="34" />
+      <File FileName="Server/Server.DataAccess/Implementations/GameRepository.cs" Line="1" Column="1" />
+      <File FileName="Server/Implementations/GameService.cs" Line="50" Column="1" />
+      <File FileName="Protocol/DTOs/Request/CreateGameDTO.cs" Line="55" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,22 +14,19 @@
             <Node name="Client" expanded="True">
               <Node name="Client" expanded="True">
                 <Node name="Connections" expanded="True" />
-                <Node name="RequestBuilder.cs" selected="True" />
               </Node>
             </Node>
             <Node name="Common" expanded="True">
               <Node name="DTOs" expanded="True">
                 <Node name="Request" expanded="True" />
-                <Node name="Response" expanded="True" />
-              </Node>
-              <Node name="Protocol" expanded="True">
-                <Node name="Serialization" expanded="True" />
               </Node>
             </Node>
             <Node name="Server" expanded="True">
               <Node name="Server" expanded="True">
                 <Node name="Connectios" expanded="True" />
-                <Node name="Implementations" expanded="True" />
+                <Node name="Implementations" expanded="True">
+                  <Node name="GameService.cs" selected="True" />
+                </Node>
                 <Node name="Interfaces" expanded="True" />
               </Node>
               <Node name="Server.DataAccess" expanded="True">
@@ -45,7 +43,10 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/RequestBuilder.cs" relfile="Client/RequestBuilder.cs" line="89" column="1" />
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Implementations/GameService.cs" relfile="Server/Implementations/GameService.cs" line="35" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
