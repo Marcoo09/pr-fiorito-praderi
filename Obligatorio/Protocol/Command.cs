@@ -2,7 +2,6 @@
 {
     public enum Command : short
     {
-        IndexClients,
         IndexGamesCatalog,
         BuyGame,
         CreateGame,

@@ -4,6 +4,7 @@ using System.Linq;
 using DTOs.Response;
 using Protocol;
 using Protocol.Serialization;
+using Protocol.SerializationInterfaces;
 
 namespace Client
 {
@@ -53,14 +54,11 @@ namespace Client
 
             switch (command)
             {
-                case Command.IndexClients:
-                    //Do sth
-                    break;
                 case Command.BuyGame:
                     //Do sth
                     break;
                 case Command.CreateGame:
-                    //Do sth
+                    entityType = typeof(GameBasicInfoDTO);
                     break;
                 case Command.CreateGameReview:
                     //Do sth
@@ -72,10 +70,10 @@ namespace Client
                     //Do sth
                     break;
                 case Command.IndexGame:
-                    //Do sth
+                    entityType = typeof(GameDetailDTO);
                     break;
                 case Command.IndexGamesCatalog:
-                    //Do sth
+                    entityType = typeof(GameDetailDTO);
                     break;
                 case Command.SearchGames:
                     //Do sth
@@ -94,7 +92,7 @@ namespace Client
 
             switch (command)
             {
-                case Command.IndexClients:
+                case Command.IndexGamesCatalog:
                     isArray = true;
                     break;
                 case Command.GetGameReviews:

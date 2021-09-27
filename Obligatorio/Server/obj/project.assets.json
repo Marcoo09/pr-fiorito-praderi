@@ -148,6 +148,20 @@
           }
         }
       },
+      "DTOs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Protocol": "1.0.0",
+          "Server.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DTOs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTOs.dll": {}
+        }
+      },
       "Exceptions/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -169,6 +183,19 @@
         },
         "runtime": {
           "bin/placeholder/Protocol.dll": {}
+        }
+      },
+      "Server.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Server.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Server.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Server.DataAccess.dll": {}
         }
       },
       "Server.Domain/1.0.0": {
@@ -501,6 +528,11 @@
         "version.txt"
       ]
     },
+    "DTOs/1.0.0": {
+      "type": "project",
+      "path": "../Protocol/DTOs/DTOs.csproj",
+      "msbuildProject": "../Protocol/DTOs/DTOs.csproj"
+    },
     "Exceptions/1.0.0": {
       "type": "project",
       "path": "../Protocol/Exceptions/Exceptions.csproj",
@@ -511,6 +543,11 @@
       "path": "../Protocol/Protocol.csproj",
       "msbuildProject": "../Protocol/Protocol.csproj"
     },
+    "Server.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "Server.DataAccess/Server.DataAccess.csproj",
+      "msbuildProject": "Server.DataAccess/Server.DataAccess.csproj"
+    },
     "Server.Domain/1.0.0": {
       "type": "project",
       "path": "Server.Domain/Server.Domain.csproj",
@@ -519,7 +556,9 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "DTOs >= 1.0.0",
       "Protocol >= 1.0.0",
+      "Server.DataAccess >= 1.0.0",
       "System.Configuration.ConfigurationManager >= 5.0.0"
     ]
   },
@@ -548,8 +587,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/DTOs.csproj": {
+              "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/DTOs.csproj"
+            },
             "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Protocol.csproj": {
               "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Protocol.csproj"
+            },
+            "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/Server.DataAccess.csproj": {
+              "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/Server.DataAccess.csproj"
             }
           }
         }

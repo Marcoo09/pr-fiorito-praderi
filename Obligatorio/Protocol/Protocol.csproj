@@ -63,6 +63,17 @@
     <None Remove="Exceptions\bin\Debug\netcoreapp3.1\Exceptions.deps.json" />
     <None Remove="Exceptions\bin\Debug\netcoreapp3.1\Exceptions.dll" />
     <None Remove="Exceptions\bin\Debug\netcoreapp3.1\Exceptions.pdb" />
+    <None Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.AssemblyInfoInputs.cache" />
+    <None Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.csproj.CoreCompileInputs.cache" />
+    <None Remove="Exceptions\bin\Debug\netcoreapp3.1\Exceptions.deps.json" />
+    <None Remove="Exceptions\bin\Debug\netcoreapp3.1\Exceptions.dll" />
+    <None Remove="Exceptions\bin\Debug\netcoreapp3.1\Exceptions.pdb" />
+    <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.csproj.AssemblyReference.cache" />
+    <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.AssemblyInfoInputs.cache" />
+    <None Remove="Exceptions\bin\Debug\netcoreapp3.1\Exceptions.deps.json" />
+    <None Remove="Exceptions\bin\Debug\netcoreapp3.1\Exceptions.dll" />
+    <None Remove="Exceptions\bin\Debug\netcoreapp3.1\Exceptions.pdb" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SerializationInterfaces\" />
@@ -82,5 +93,12 @@
     <Compile Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.AssemblyInfo.cs" />
     <Compile Remove="DTOs\Request\CreateGameDTO.cs" />
     <Compile Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.AssemblyInfo.cs" />
+    <Compile Remove="DTOs\Request\CreateGameDTO.cs" />
+    <Compile Remove="DTOs\Request\UploadImageDTO.cs" />
+    <Compile Remove="DTOs\Response\ErrorDTO.cs" />
+    <Compile Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.AssemblyInfo.cs" />
+    <Compile Remove="DTOs\Response\GameBasicInfoDTO.cs" />
+    <Compile Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.AssemblyInfo.cs" />
+    <Compile Remove="DTOs\Response\GameDetailDTO.cs" />
   </ItemGroup>
 </Project>

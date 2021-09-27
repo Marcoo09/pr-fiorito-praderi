@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Protocol.Serialization
+namespace Protocol.SerializationInterfaces
 {
     public interface IDeserializable
     {

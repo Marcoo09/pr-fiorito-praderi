@@ -22,14 +22,11 @@ namespace Client
             // Some commands do not need extra configuration
             switch ((Command)chosenOption)
             {
-                case Command.IndexClients:
-                    //Do sth
-                    break;
                 case Command.BuyGame:
                     //Do sth
                     break;
                 case Command.CreateGame:
-                    //Do sth
+                    BuildCreateGameRequest(requestFrame);
                     break;
                 case Command.CreateGameReview:
                     //Do sth
@@ -80,12 +77,35 @@ namespace Client
             createGameDto.Title = Console.ReadLine();
             Console.WriteLine("Indicate the new game synopsis:");
             createGameDto.Synopsis = Console.ReadLine();
-            //Console.WriteLine("Indicate the new game image:");
-
+            Console.WriteLine("Indicate the new game gender:");
+            createGameDto.Gender = Console.ReadLine();
 
             byte[] createGameData = createGameDto.Serialize();
             requestFrame.Data = createGameData;
             requestFrame.DataLength = createGameData.Length;
         }
+
+        private void BuildUploadCoverToGameRequest(Frame requestFrame)
+        {
+            UploadImageDTO uploadImageDto = new UploadImageDTO();
+            Console.WriteLine("Indicate the full path of the cover to upload");
+            string path = Console.ReadLine();
+
+            while (!uploadImageDto.IsValidPath(path))
+            {
+                Console.WriteLine("Please indicate an existing path");
+                path = Console.ReadLine();
+            }
+
+            Console.WriteLine("Indicate the game Id related to the file");
+            uploadImageDto.GameId = GetIntFromConsoleApp();
+            uploadImageDto.UploadedAt = DateTime.Now;
+
+            uploadImageDto.ReadFile(path);
+            byte[] uploadFileData = uploadImageDto.Serialize();
+            requestFrame.Data = uploadFileData;
+            requestFrame.DataLength = uploadFileData.Length;
+        }
+
     }
 }

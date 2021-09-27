@@ -1,5 +1,5 @@
 ﻿using System.Text;
-using Protocol.Serialization;
+using Protocol.SerializationInterfaces;
 
 namespace DTOs.Response
 {

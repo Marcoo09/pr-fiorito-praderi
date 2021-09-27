@@ -1,14 +1,8 @@
 ﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/ServerProgram.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Protocol/DTOs/Response/GameBasicInfoDTO.cs">
     <Files>
-      <File FileName="Server/ServerProgram.cs" Line="12" Column="27" />
-      <File FileName="Server/Connectios/ConnectionsHandler.cs" Line="42" Column="50" />
-      <File FileName="Server/Connectios/Connection.cs" Line="56" Column="14" />
-      <File FileName="Server/Connectios/ConnectionState.cs" Line="9" Column="2" />
-      <File FileName="Server/Connectios/ServerState.cs" Line="9" Column="2" />
-      <File FileName="Client/Connections/ConnectionsHandler.cs" Line="28" Column="1" />
-      <File FileName="Server/App.config" Line="7" Column="17" />
+      <File FileName="Protocol/DTOs/Response/GameBasicInfoDTO.cs" Line="38" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,18 +18,22 @@
             </Node>
             <Node name="Common" expanded="True">
               <Node name="DTOs" expanded="True">
-                <Node name="Request" expanded="True" />
-              </Node>
-              <Node name="Exceptions" expanded="True">
-                <Node name="Dependencies" expanded="True" />
+                <Node name="Response" expanded="True">
+                  <Node name="GameBasicInfoDTO.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="Protocol" expanded="True" />
             </Node>
             <Node name="Server" expanded="True">
               <Node name="Server" expanded="True">
-                <Node name="Dependencies" expanded="True" />
-                <Node name="ServerProgram.cs" selected="True" />
+                <Node name="Dependencies" expanded="True">
+                  <Node name="ProjectDependencies" expanded="True" />
+                </Node>
+                <Node name="Connectios" expanded="True" />
+                <Node name="Implementations" expanded="True" />
+                <Node name="Interfaces" expanded="True" />
               </Node>
+              <Node name="Server.DataAccess" expanded="True" />
               <Node name="Server.Domain" expanded="True" />
             </Node>
           </Node>
@@ -49,7 +47,9 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Implementations/GameService.cs" relfile="Server/Implementations/GameService.cs" line="35" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
