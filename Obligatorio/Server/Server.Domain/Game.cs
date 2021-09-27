@@ -19,6 +19,7 @@ namespace Server.Domain
 
         public Game()
         {
+            Reviews = new List<Review>();
         }
 
         public void ValidOrFail()
@@ -43,6 +44,11 @@ namespace Server.Domain
         public override bool Equals(object? obj)
         {
             return Title == ((Game)obj).Title;
+        }
+
+        public void AddReview(Review review)
+        {
+            Reviews.Add(review);
         }
 
     }

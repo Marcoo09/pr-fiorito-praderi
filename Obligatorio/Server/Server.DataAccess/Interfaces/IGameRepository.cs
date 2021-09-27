@@ -12,5 +12,7 @@ namespace Server.DataAccess.Interfaces
         void Update(int id, Game game);
         void Delete(int id);
         public List<Game> GetBy(Func<Game, bool> predicate);
+        void AddReview(int id, Review review);
+        List<Review> GetAllReviews(int id);
     }
 }
