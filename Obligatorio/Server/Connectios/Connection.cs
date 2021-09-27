@@ -57,7 +57,7 @@ namespace Server.Connections
             try
             {
                 Frame receivedFrame = _protocolHandler.Receive();
-                Frame responseFrame = _serviceRouter.GetResponse(receivedFrame);
+                Frame responseFrame = _serviceRouter.GetResponse(receivedFrame, _user);
 
                 _protocolHandler.Send(responseFrame);
             }

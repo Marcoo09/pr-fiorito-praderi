@@ -1,5 +1,6 @@
 ﻿using System;
 using Protocol;
+using Server.Domain;
 using Server.Interfaces;
 
 namespace Server.Implementations
@@ -15,13 +16,17 @@ namespace Server.Implementations
             _userService = new UserService();
         }
 
-        public Frame GetResponse(Frame frameRequest)
+        public Frame GetResponse(Frame frameRequest, User user)
         {
             Frame response = null;
 
             switch ((Command)frameRequest.ChosenCommand)
             {
                 case Command.BuyGame:
+                    response = _userService.BuyGame(frameRequest, user.Id);
+                    break;
+                case Command.IndexBoughtGames:
+                    response = _userService.IndexBoughtGames(user.Id);
                     break;
                 case Command.CreateGame:
                     response = _gameService.CreateGame(frameRequest);

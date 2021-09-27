@@ -55,7 +55,7 @@ namespace Client
             switch (command)
             {
                 case Command.BuyGame:
-                    //Do sth
+                    entityType = typeof(MessageDTO);
                     break;
                 case Command.CreateGame:
                     entityType = typeof(GameBasicInfoDTO);
@@ -84,6 +84,9 @@ namespace Client
                 case Command.IndexUsers:
                     entityType = typeof(UserDetailDTO);
                     break;
+                case Command.IndexBoughtGames:
+                    entityType = typeof(GameDetailDTO);
+                    break;
             }
 
             return entityType;
@@ -105,6 +108,9 @@ namespace Client
                     isArray = true;
                     break;
                 case Command.IndexUsers:
+                    isArray = true;
+                    break;
+                case Command.IndexBoughtGames:
                     isArray = true;
                     break;
             }

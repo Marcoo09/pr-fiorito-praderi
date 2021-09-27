@@ -23,7 +23,9 @@ namespace Client
             switch ((Command)chosenOption)
             {
                 case Command.BuyGame:
-                    //Do sth
+                    BuildCreateBuyRequest(requestFrame);
+                    break;
+                case Command.IndexBoughtGames:
                     break;
                 case Command.CreateGame:
                     BuildCreateGameRequest(requestFrame);
@@ -69,6 +71,18 @@ namespace Client
             }
 
             return intFromConsole;
+        }
+
+        private void BuildCreateBuyRequest(Frame requestFrame)
+        {
+            BuyGameDTO buyGameDTO = new BuyGameDTO();
+
+            Console.WriteLine("Indicate the game id to buy:");
+            buyGameDTO.GameId = GetIntFromConsoleApp();
+
+            byte[] buyGameData = buyGameDTO.Serialize();
+            requestFrame.Data = buyGameData;
+            requestFrame.DataLength = buyGameData.Length;
         }
 
         private void BuildCreateGameRequest(Frame requestFrame)

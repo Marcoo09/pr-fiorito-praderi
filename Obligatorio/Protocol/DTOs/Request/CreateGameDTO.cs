@@ -4,10 +4,11 @@ using System.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Protocol.SerializationInterfaces;
 
 namespace DTOs.Request
 {
-    public class CreateGameDTO
+    public class CreateGameDTO : ISerializable, IDeserializable
     {
         public string Title { get; set; }
         public string Gender { get; set; }

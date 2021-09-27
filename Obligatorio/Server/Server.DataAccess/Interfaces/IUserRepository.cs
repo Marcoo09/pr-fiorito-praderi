@@ -9,5 +9,6 @@ namespace Server.DataAccess.Interfaces
         User Get(int id);
         List<User> GetAll();
         void Delete(int id);
+        void BuyGame(Game game, int userId);
     }
 }

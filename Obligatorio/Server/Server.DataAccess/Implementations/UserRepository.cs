@@ -80,5 +80,14 @@ namespace Server.DataAccess.Implementations
         {
             return _nextId++;
         }
+
+        public void BuyGame(Game game, int userId)
+        {
+            lock (_usersLocker)
+            {
+                User userToAddGame = Get(userId);
+                userToAddGame.BuyGame(game);
+            }
+        }
     }
 }

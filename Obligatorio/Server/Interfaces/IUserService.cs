@@ -5,6 +5,7 @@ namespace Server.Interfaces
     public interface IUserService
     {
         Frame IndexUsers();
-        Frame BuyGame(int UserId, int GameId);
+        Frame BuyGame(Frame requestFrame, int userId);
+        Frame IndexBoughtGames(int userId);
     }
 }
