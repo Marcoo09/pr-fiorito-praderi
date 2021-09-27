@@ -31,7 +31,7 @@ namespace Server.Connections
 
         public void StartListening()
         {
-            _tcpListener.Start(10);
+            _tcpListener.Start(20);
             _serverState = ServerState.Up;
 
             while (IsServerUp())
