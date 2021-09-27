@@ -3,8 +3,8 @@
     public enum Command : short
     {
         IndexGamesCatalog, //SRF2 -> DONE
-        BuyGame,//SRF3 -> Nico
-        CreateGame,//SRF4, CRF2 Marco -> DONE -> Missing test
+        BuyGame,//SRF3 -> Marco
+        CreateGame,//SRF4, CRF2 Marco -> DONE ->
         CreateGameReview,//SRF5, CRF5
         GetGameReviews, //
         SearchGames,//SRF6 By title, gender, rating -> Marco
