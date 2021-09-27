@@ -12,6 +12,11 @@
     <Compile Remove="Server.Domain\Game.cs" />
     <Compile Remove="Server.Domain\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
     <Compile Remove="Server.Domain\obj\Debug\netcoreapp3.1\Server.Domain.AssemblyInfo.cs" />
+    <Compile Remove="Server.DataAccess\Interfaces\IGameRepository.cs" />
+    <Compile Remove="Server.DataAccess\Implementations\GameRepository.cs" />
+    <Compile Remove="Server.DataAccess\obj\Debug\netcoreapp3.1\Server.DataAccess.AssemblyInfo.cs" />
+    <Compile Remove="Server.Domain\Game.cs" />
+    <Compile Remove="Server.Domain\Documentr.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Server.DataAccess\bin\Debug\netcoreapp3.1\Server.DataAccess.deps.json" />
@@ -54,12 +59,37 @@
     <None Remove="Server.Domain\obj\Debug\netcoreapp3.1\Server.Domain.csproj.CopyComplete" />
     <None Remove="Connectios\" />
     <None Remove="System.Configuration.ConfigurationManager" />
+    <None Remove="Interfaces\" />
+    <None Remove="Implementations\" />
+    <None Remove="Server.DataAccess\obj\project.nuget.cache" />
+    <None Remove="Server.DataAccess\obj\Server.DataAccess.csproj.nuget.dgspec.json" />
+    <None Remove="Server.DataAccess\obj\project.assets.json" />
+    <None Remove="Server.DataAccess\obj\Debug\netcoreapp3.1\Server.DataAccess.csproj.AssemblyReference.cache" />
+    <None Remove="Server.DataAccess\obj\Debug\netcoreapp3.1\Server.DataAccess.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Remove="Server.DataAccess\obj\Debug\netcoreapp3.1\Server.DataAccess.AssemblyInfoInputs.cache" />
+    <None Remove="Server.DataAccess\obj\Debug\netcoreapp3.1\Server.DataAccess.csproj.CoreCompileInputs.cache" />
+    <None Remove="Server.DataAccess\obj\Debug\netcoreapp3.1\Server.DataAccess.dll" />
+    <None Remove="Server.DataAccess\obj\Debug\netcoreapp3.1\Server.DataAccess.pdb" />
+    <None Remove="Server.DataAccess\bin\Debug\netcoreapp3.1\Exceptions.pdb" />
+    <None Remove="Server.DataAccess\bin\Debug\netcoreapp3.1\Exceptions.dll" />
+    <None Remove="Server.DataAccess\bin\Debug\netcoreapp3.1\Server.Domain.pdb" />
+    <None Remove="Server.DataAccess\bin\Debug\netcoreapp3.1\Server.Domain.dll" />
+    <None Remove="Server.DataAccess\obj\Debug\netcoreapp3.1\Server.DataAccess.csproj.CopyComplete" />
+    <None Remove="Server.DataAccess\bin\Debug\netcoreapp3.1\Server.DataAccess.deps.json" />
+    <None Remove="Server.DataAccess\bin\Debug\netcoreapp3.1\Server.DataAccess.dll" />
+    <None Remove="Server.DataAccess\bin\Debug\netcoreapp3.1\Server.DataAccess.pdb" />
+    <None Remove="Server.Domain\obj\Debug\netcoreapp3.1\Server.Domain.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Remove="Server.Domain\bin\Debug\netcoreapp3.1\Server.Domain.pdb" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Connectios\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Implementations\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Protocol\Protocol.csproj" />
+    <ProjectReference Include="Server.DataAccess\Server.DataAccess.csproj" />
+    <ProjectReference Include="..\Protocol\DTOs\DTOs.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
