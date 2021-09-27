@@ -7,8 +7,8 @@
         IndexBoughtGames, //SRF3 -> Marco -> DONE
         CreateGame,//SRF4, CRF2 Marco -> DONE 
         CreateGameReview,//SRF5, CRF5
-        GetGameReviews, //
-        SearchGames,//SRF6 By title, gender, rating -> Marco
+        GetGameReviews, //SRF5, CRF5
+        SearchGames,//SRF6 By title, gender, rating 
         IndexGame, //SRF7, CRF6-> Not completed
         DeleteGame, //CRF3 -> Nico
         UpdateGame, //CRF3 -> Nico
