@@ -32,5 +32,10 @@ namespace DTOs.Response
             Id = Int32.Parse(attributes[0]);
             Title = attributes[1];
         }
+
+        public override string ToString()
+        {
+            return $"Id: {Id}, Title {Title}";
+        }
     }
 }

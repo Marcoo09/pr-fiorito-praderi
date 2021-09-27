@@ -70,10 +70,10 @@ namespace Client
                     //Do sth
                     break;
                 case Command.IndexGame:
-                    //Do sth
+                    entityType = typeof(GameDetailDTO);
                     break;
                 case Command.IndexGamesCatalog:
-                    //Do sth
+                    entityType = typeof(GameDetailDTO);
                     break;
                 case Command.SearchGames:
                     //Do sth

@@ -4,6 +4,8 @@ using System.Net;
 using System.Net.Sockets;
 using Exceptions;
 using Protocol;
+using Server.Implementations;
+using Server.Interfaces;
 
 namespace Server.Connections
 {
@@ -11,7 +13,7 @@ namespace Server.Connections
     {
         private TcpClient _tcpClient;
         private ProtocolHandler _protocolHandler;
-        //private IServiceRouter _serviceRouter;
+        private IServiceRouter _serviceRouter;
         private ConnectionsState _connectionState;
         private Object _connectionStateLocker;
 
@@ -20,7 +22,7 @@ namespace Server.Connections
         {
             _tcpClient = tcpClient;
             _protocolHandler = new ProtocolHandler(_tcpClient);
-            //_serviceRouter = new ServiceRouter();
+            _serviceRouter = new ServiceRouter();
             _connectionState = ConnectionsState.Down;
             _connectionStateLocker = new Object();
         }
@@ -50,9 +52,9 @@ namespace Server.Connections
             try
             {
                 Frame receivedFrame = _protocolHandler.Receive();
-                //Frame responseFrame = _serviceRouter.GetResponse(receivedFrame);
+                Frame responseFrame = _serviceRouter.GetResponse(receivedFrame);
 
-                //_protocolHandler.Send(responseFrame);
+                _protocolHandler.Send(responseFrame);
             }
             catch (ProtocolException)
             {
