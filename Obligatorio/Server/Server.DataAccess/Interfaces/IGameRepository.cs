@@ -12,6 +12,5 @@ namespace Server.DataAccess.Interfaces
         void Update(int id, Game game);
         void Delete(int id);
         public List<Game> GetBy(Func<Game, bool> predicate);
-        public List<Document> GetCovers();
     }
 }

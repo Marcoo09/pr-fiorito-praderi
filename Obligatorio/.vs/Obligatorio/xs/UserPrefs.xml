@@ -2,31 +2,41 @@
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Server/Implementations/GameService.cs">
     <Files>
-      <File FileName="Server/Implementations/GameService.cs" Line="84" Column="26" />
+      <File FileName="Client/ResponseInterpreter.cs" Line="57" Column="14" />
+      <File FileName="Protocol/Command.cs" Line="7" Column="32" />
+      <File FileName="Client/RequestBuilder.cs" Line="92" Column="40" />
+      <File FileName="Protocol/DTOs/Request/CreateGameDTO.cs" Line="31" Column="10" />
+      <File FileName="Server/Server.Domain/Game.cs" Line="19" Column="10" />
+      <File FileName="Server/Server.DataAccess/Interfaces/IGameRepository.cs" Line="17" Column="1" />
+      <File FileName="Server/Server.DataAccess/Implementations/GameRepository.cs" Line="79" Column="47" />
+      <File FileName="Server/Implementations/GameService.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
             <Node name="Client" expanded="True">
-              <Node name="Client" expanded="True" />
+              <Node name="Client" expanded="True">
+                <Node name="Connections" expanded="True" />
+              </Node>
             </Node>
             <Node name="Common" expanded="True">
               <Node name="DTOs" expanded="True">
                 <Node name="Request" expanded="True" />
-                <Node name="Response" expanded="True" />
               </Node>
-              <Node name="Protocol" expanded="True">
-                <Node name="Serialization" expanded="True" />
-              </Node>
+              <Node name="Protocol" expanded="True" />
             </Node>
             <Node name="Server" expanded="True">
-              <Node name="Server" expanded="True" selected="True">
-                <Node name="Implementations" expanded="True" />
+              <Node name="Server" expanded="True">
+                <Node name="Implementations" expanded="True">
+                  <Node name="GameService.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="Server.DataAccess" expanded="True">
                 <Node name="Implementations" expanded="True" />
+                <Node name="Interfaces" expanded="True" />
               </Node>
+              <Node name="Server.Domain" expanded="True" />
             </Node>
           </Node>
         </State>

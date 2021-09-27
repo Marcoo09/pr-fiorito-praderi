@@ -60,17 +60,6 @@ namespace Server.DataAccess.Implementations
             }
         }
 
-        public List<Document> GetCovers()
-        {
-            lock (_gameLocker)
-            {
-                //TODO
-                //List<Document> covers = _games.Select(g => g.Cover).ToList();
-                //return covers.Where(c => c != null).ToList();
-                return new List<Document>();
-            }
-        }
-
         public int Insert(Game game)
         {
             lock (_gameLocker)
@@ -85,6 +74,9 @@ namespace Server.DataAccess.Implementations
                     Title = game.Title,
                     Gender = game.Gender,
                     Synopsis = game.Synopsis,
+                    Path = game.Path,
+                    FileSize = game.FileSize,
+                    CoverName = game.CoverName
                 };
                 _games.Add(newGame);
 
@@ -107,7 +99,6 @@ namespace Server.DataAccess.Implementations
                 gameToBeUpdated.Title = game.Title;
                 gameToBeUpdated.Synopsis = game.Synopsis;
                 gameToBeUpdated.Gender = game.Gender;
-                gameToBeUpdated.Cover = game.Cover;
             }
         }
 

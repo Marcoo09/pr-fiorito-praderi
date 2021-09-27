@@ -9,7 +9,10 @@ namespace Server.Domain
         public string Title { get; set; }
         public string Synopsis { get; set; }
         public string Gender { get; set; }
-        public Document Cover { get; set; }
+
+        public string Path { get; set; }
+        public string CoverName { get; set; }
+        public long FileSize { get; set; }
 
         public Game()
         {
@@ -23,6 +26,8 @@ namespace Server.Domain
                 throw new InvalidResourceException("Game must have a posted at date");
             if(String.IsNullOrEmpty(Gender))
                 throw new InvalidResourceException("Game must have a gender");
+            if (String.IsNullOrEmpty(Path))
+                throw new InvalidResourceException("Game must have a cover");
         }
 
         public void Update(Game newGame)
