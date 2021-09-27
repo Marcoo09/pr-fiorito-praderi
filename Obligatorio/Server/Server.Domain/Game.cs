@@ -23,7 +23,7 @@ namespace Server.Domain
             if (String.IsNullOrEmpty(Title))
                 throw new InvalidResourceException("Game must have a title");
             if (String.IsNullOrEmpty(Synopsis))
-                throw new InvalidResourceException("Game must have a posted at date");
+                throw new InvalidResourceException("Game must have a Synopsis");
             if(String.IsNullOrEmpty(Gender))
                 throw new InvalidResourceException("Game must have a gender");
             if (String.IsNullOrEmpty(Path))

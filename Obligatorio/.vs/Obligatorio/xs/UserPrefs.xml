@@ -1,36 +1,38 @@
 ﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Implementations/GameService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Protocol/DTOs/Request/CreateGameDTO.cs">
     <Files>
-      <File FileName="Client/ResponseInterpreter.cs" Line="57" Column="14" />
-      <File FileName="Protocol/Command.cs" Line="7" Column="32" />
-      <File FileName="Client/RequestBuilder.cs" Line="92" Column="40" />
-      <File FileName="Protocol/DTOs/Request/CreateGameDTO.cs" Line="31" Column="10" />
-      <File FileName="Server/Server.Domain/Game.cs" Line="19" Column="10" />
-      <File FileName="Server/Server.DataAccess/Interfaces/IGameRepository.cs" Line="17" Column="1" />
-      <File FileName="Server/Server.DataAccess/Implementations/GameRepository.cs" Line="79" Column="47" />
-      <File FileName="Server/Implementations/GameService.cs" Line="1" Column="1" />
+      <File FileName="Server/Server.Domain/Game.cs" Line="1" Column="1" />
+      <File FileName="Server/Server.DataAccess/Implementations/GameRepository.cs" />
+      <File FileName="Server/Implementations/GameService.cs" />
+      <File FileName="Protocol/ProtocolHandler.cs" />
+      <File FileName="Server/ServerProgram.cs" />
+      <File FileName="Protocol/DTOs/Request/CreateGameDTO.cs" Line="75" Column="13" />
+      <File FileName="Client/RequestBuilder.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
             <Node name="Client" expanded="True">
-              <Node name="Client" expanded="True">
+              <Node name="Client" expanded="True" selected="True">
                 <Node name="Connections" expanded="True" />
               </Node>
             </Node>
             <Node name="Common" expanded="True">
               <Node name="DTOs" expanded="True">
                 <Node name="Request" expanded="True" />
+                <Node name="Response" expanded="True" />
               </Node>
-              <Node name="Protocol" expanded="True" />
+              <Node name="Protocol" expanded="True">
+                <Node name="Serialization" expanded="True" />
+              </Node>
             </Node>
             <Node name="Server" expanded="True">
               <Node name="Server" expanded="True">
-                <Node name="Implementations" expanded="True">
-                  <Node name="GameService.cs" selected="True" />
-                </Node>
+                <Node name="Connectios" expanded="True" />
+                <Node name="Implementations" expanded="True" />
+                <Node name="Interfaces" expanded="True" />
               </Node>
               <Node name="Server.DataAccess" expanded="True">
                 <Node name="Implementations" expanded="True" />
@@ -40,9 +42,6 @@
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
