@@ -36,7 +36,7 @@ namespace Server.Implementations
 
                 int newGameId = _gameRepository.Insert(newGame);
                 Game createdGame = _gameRepository.Get(newGameId);
-
+                createGameDTO.WriteFile();
 
                 return CreateSuccessResponse(Command.CreateGame, new GameBasicInfoDTO(createdGame).Serialize());
             }

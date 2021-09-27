@@ -11,6 +11,7 @@ namespace DTOs.Response
         public string Title { get; set; }
         public string Synopsis { get; set; }
         public string Gender { get; set; }
+        public string Path { get; set; }
 
         public GameDetailDTO()
         {
@@ -22,6 +23,7 @@ namespace DTOs.Response
             Title = game.Title;
             Synopsis = game.Synopsis;
             Gender = game.Gender;
+            Path = game.Path;
         }
 
         public void Deserialize(byte[] entity)
@@ -32,16 +34,17 @@ namespace DTOs.Response
             Title = attributes[1];
             Synopsis = attributes[2];
             Gender = attributes[3];
+            Path = attributes[4];
         }
 
         public byte[] Serialize()
         {
-            return Encoding.UTF8.GetBytes($"{Id}~~{Title}~~{Synopsis}~~{Gender}");
+            return Encoding.UTF8.GetBytes($"{Id}~~{Title}~~{Synopsis}~~{Gender}~~{Path}");
         }
 
         public override string ToString()
         {
-            return $"Id: {Id}, Title: {Title}\n\tSynopsis: {Synopsis}\n\tGender = {Gender}";
+            return $"Id: {Id}\n\tTitle: {Title}\n\tSynopsis: {Synopsis}\n\tGender: {Gender}\n\tCover: {Path}";
         }
     }
 }

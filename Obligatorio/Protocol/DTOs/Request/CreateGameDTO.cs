@@ -4,6 +4,7 @@ using System.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace DTOs.Request
 {
@@ -25,42 +26,39 @@ namespace DTOs.Request
                 Synopsis = Synopsis,
                 Gender = Gender,
                 CoverName = CoverName,
-                Path = Directory.GetCurrentDirectory() + "\\" + CoverName,
+                Path = Directory.GetCurrentDirectory() + (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? "/" : "\\") + CoverName,
                 FileSize = FileSize
             };
         }
 
         public byte[] Serialize()
         {
-            List<byte> serializedDocument = new List<byte>();
-            serializedDocument.AddRange(BitConverter.GetBytes(FileSize));
-            serializedDocument.AddRange(Data);
-            serializedDocument.AddRange(Encoding.UTF8.GetBytes(Title));
-            serializedDocument.AddRange(Encoding.UTF8.GetBytes(Gender));
-            serializedDocument.AddRange(Encoding.UTF8.GetBytes(Synopsis));
+            List<byte> serializedGame = new List<byte>();
+            serializedGame.AddRange(BitConverter.GetBytes(FileSize));
+            serializedGame.AddRange(Data);
+            serializedGame.AddRange(Encoding.UTF8.GetBytes($"{Title}~~{Gender}~~{Synopsis}"));
 
-            return serializedDocument.ToArray();
+            return serializedGame.ToArray();
         }
 
         public void Deserialize(byte[] serializedEntity)
         {
-            string[] attributes = Encoding.UTF8.GetString(serializedEntity).Split("~~");
-
-            Title = attributes[0];
-            Synopsis = attributes[1];
-            Gender = attributes[2];
-
+    
             int offset = 0;
             FileSize = BitConverter.ToInt64(serializedEntity.Take(8).ToArray());
             offset += 8;
             Data = serializedEntity.Skip(offset).Take((int)FileSize).ToArray();
             offset += (int)FileSize;
+
             Title = Encoding.UTF8.GetString(serializedEntity.Skip(offset).ToArray());
-            offset += 8;
             Gender = Encoding.UTF8.GetString(serializedEntity.Skip(offset).ToArray());
-            offset += 8;
             Synopsis = Encoding.UTF8.GetString(serializedEntity.Skip(offset).ToArray());
-            offset += 8;
+
+            string[] attributes = Encoding.UTF8.GetString(serializedEntity.Skip(offset).ToArray()).Split("~~");
+
+            Title = attributes[0];
+            Gender = attributes[1];
+            Synopsis = attributes[2];
         }
 
         public bool IsValidPath(string path)
@@ -80,7 +78,7 @@ namespace DTOs.Request
 
         public void WriteFile()
         {
-            File.WriteAllBytes(CoverName, Data);
+            File.WriteAllBytes(Directory.GetCurrentDirectory() + ( RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? "/" :  "\\") + CoverName, Data);
         }
     }
 }
