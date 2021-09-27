@@ -64,8 +64,10 @@ namespace Server.DataAccess.Implementations
         {
             lock (_gameLocker)
             {
-                List<Document> covers = _games.Select(g => g.Cover).ToList();
-                return covers.Where(c => c != null).ToList();
+                //TODO
+                //List<Document> covers = _games.Select(g => g.Cover).ToList();
+                //return covers.Where(c => c != null).ToList();
+                return new List<Document>();
             }
         }
 

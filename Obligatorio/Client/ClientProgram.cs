@@ -8,7 +8,7 @@ namespace Client
         static void Main(string[] args)
         {
             ClientUI clientUI = new ClientUI();
-            Thread thread = new Thread(() => clientUI.init());
+            Thread thread = new Thread(() => clientUI.Init());
             thread.Start();
         }
     }

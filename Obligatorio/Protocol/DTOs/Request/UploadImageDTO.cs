@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using Protocol.SerializationInterfaces;
 using Server.Domain;
-using Protocol.Serialization;
 
 namespace DTOs.Request
 {
-    public class UploadImageDTO : Protocol.Serialization.ISerializable, IDeserializable
+    public class UploadImageDTO : ISerializable, IDeserializable
     {
         public string Name { get; set; }
         public byte[] Data { get; set; }

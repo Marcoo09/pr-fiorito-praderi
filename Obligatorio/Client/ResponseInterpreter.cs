@@ -4,6 +4,7 @@ using System.Linq;
 using DTOs.Response;
 using Protocol;
 using Protocol.Serialization;
+using Protocol.SerializationInterfaces;
 
 namespace Client
 {
@@ -57,7 +58,7 @@ namespace Client
                     //Do sth
                     break;
                 case Command.CreateGame:
-                    //Do sth
+                    entityType = typeof(GameBasicInfoDTO);
                     break;
                 case Command.CreateGameReview:
                     //Do sth

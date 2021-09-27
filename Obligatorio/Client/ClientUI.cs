@@ -18,7 +18,7 @@ namespace Client
             _responseInterpreter = new ResponseInterpreter();
         }
 
-        public void init()
+        public void Init()
         {
             _connectionsHandler.ConnectToServer();
             Console.WriteLine("Connected to server...");
