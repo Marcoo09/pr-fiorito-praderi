@@ -4,13 +4,13 @@ using Protocol.SerializationInterfaces;
 
 namespace DTOs.Request
 {
-    public class BuyGameDTO : ISerializable, IDeserializable
+    public class BasicGameRequestDTO : ISerializable, IDeserializable
     {
         public int GameId { get; set; }
 
         public byte[] Serialize()
         {
-            return Encoding.UTF8.GetBytes($"{GameId}");
+            return Encoding.UTF8.GetBytes($"{GameId}"); ;
         }
 
         public void Deserialize(byte[] entity)

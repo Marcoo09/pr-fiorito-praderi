@@ -79,14 +79,35 @@ namespace Server.Implementations
             }
         }
 
-        public Frame GetAllReviews(Frame requestFrame)
+        public Frame DeleteGame(Frame requestFrame)
         {
-            AllGameReviewsDTO allGameReviewsDTO = new AllGameReviewsDTO();
-            allGameReviewsDTO.Deserialize(requestFrame.Data);
+            BasicGameRequestDTO basicGameRequestDTO = new BasicGameRequestDTO();
+            basicGameRequestDTO.Deserialize(requestFrame.Data);
 
             try
             {
-                Game retrievedGame = _gameRepository.Get(allGameReviewsDTO.GameId);
+                Game gameToBeDeleted = _gameRepository.Get(basicGameRequestDTO.GameId);
+
+                _gameRepository.Delete(basicGameRequestDTO.GameId);
+
+                MessageDTO messageDto = new MessageDTO() { Message = "Game deleted!" };
+                return CreateSuccessResponse(Command.DeleteGame, messageDto.Serialize());
+            }
+            catch (ResourceNotFoundException e)
+            {
+                ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
+                return CreateErrorResponse(Command.DeleteGame, errorDto.Serialize());
+            }
+        }
+
+        public Frame GetAllReviews(Frame requestFrame)
+        {
+            BasicGameRequestDTO basicGameRequestDTO = new BasicGameRequestDTO();
+            basicGameRequestDTO.Deserialize(requestFrame.Data);
+
+            try
+            {
+                Game retrievedGame = _gameRepository.Get(basicGameRequestDTO.GameId);
 
                 List<ReviewDetailDTO> retrievedReviews = retrievedGame.Reviews.Select(r => new ReviewDetailDTO(r)).ToList();
 
@@ -144,12 +165,12 @@ namespace Server.Implementations
 
         public Frame ShowGame(Frame requestFrame)
         {
-            GetGameDTO getGameDTO = new GetGameDTO();
-            getGameDTO.Deserialize(requestFrame.Data);
+            BasicGameRequestDTO basicGameRequestDTO = new BasicGameRequestDTO();
+            basicGameRequestDTO.Deserialize(requestFrame.Data);
 
             try
             {
-                Game game = _gameRepository.Get(getGameDTO.GameId);
+                Game game = _gameRepository.Get(basicGameRequestDTO.GameId);
                 EnrichedGameDetailDTO response = new EnrichedGameDetailDTO(game);
                 response.ReadFile(game.Path);
 

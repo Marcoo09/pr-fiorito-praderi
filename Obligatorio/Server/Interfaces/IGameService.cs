@@ -11,5 +11,6 @@ namespace Server.Interfaces
         Frame AddReview(Frame requestFrame);
         Frame GetAllReviews(Frame requestFrame);
         Frame SearchGameBy(Frame requestFrame);
+        Frame DeleteGame(Frame requestFrame);
     }
 }
