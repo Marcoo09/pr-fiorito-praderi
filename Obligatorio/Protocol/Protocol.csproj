@@ -126,5 +126,8 @@
     <Compile Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.AssemblyInfo.cs" />
     <Compile Remove="DTOs\Request\BuyGameDTO.cs" />
     <Compile Remove="DTOs\Response\MessageDTO.cs" />
+    <Compile Remove="DTOs\Response\ReviewDetailDTO.cs" />
+    <Compile Remove="DTOs\Request\ReviewDTO.cs" />
+    <Compile Remove="DTOs\Request\AllGameReviewsDTO.cs" />
   </ItemGroup>
 </Project>

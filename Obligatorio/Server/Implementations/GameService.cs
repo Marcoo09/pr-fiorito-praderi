@@ -25,6 +25,34 @@ namespace Server.Implementations
             _serializer = new Serializer();
         }
 
+        public Frame AddReview(Frame requestFrame)
+        {
+            ReviewDTO reviewDTO = new ReviewDTO();
+            reviewDTO.Deserialize(requestFrame.Data);
+
+            try
+            {
+                Review newReview = reviewDTO.ToEntity();
+                Game gameToSendReview = _gameRepository.Get(reviewDTO.GameId);
+                newReview.Game = gameToSendReview;
+
+                _gameRepository.AddReview(reviewDTO.GameId ,newReview);
+
+                MessageDTO messageDto = new MessageDTO() { Message = "Review added!" };
+
+                return CreateSuccessResponse(Command.CreateGameReview, messageDto.Serialize());
+            }
+            catch (Exception e)
+            {
+                if (e is InvalidResourceException || e is ResourceNotFoundException)
+                {
+                    ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
+                    return CreateErrorResponse(Command.CreateGameReview, errorDto.Serialize());
+                }
+                throw;
+            }
+        }
+
         public Frame CreateGame(Frame requestFrame)
         {
             CreateGameDTO createGameDTO = new CreateGameDTO();
@@ -46,6 +74,39 @@ namespace Server.Implementations
                 {
                     ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
                     return CreateErrorResponse(Command.CreateGame, errorDto.Serialize());
+                }
+                throw;
+            }
+        }
+
+        public Frame GetAllReviews(Frame requestFrame)
+        {
+            AllGameReviewsDTO allGameReviewsDTO = new AllGameReviewsDTO();
+            allGameReviewsDTO.Deserialize(requestFrame.Data);
+
+            try
+            {
+                Game retrievedGame = _gameRepository.Get(allGameReviewsDTO.GameId);
+
+                List<ReviewDetailDTO> retrievedReviews = retrievedGame.Reviews.Select(r => new ReviewDetailDTO(r)).ToList();
+
+                byte[] serializedList = _serializer.SerializeEntityList(retrievedReviews.Cast<ISerializable>().ToList());
+
+                return new Frame()
+                {
+                    ChosenHeader = (short)Header.Response,
+                    ChosenCommand = (short)Command.GetGameReviews,
+                    ResultStatus = (short)Status.Ok,
+                    DataLength = serializedList.Length,
+                    Data = serializedList,
+                };
+            }
+            catch (Exception e)
+            {
+                if (e is InvalidResourceException || e is ResourceNotFoundException)
+                {
+                    ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
+                    return CreateErrorResponse(Command.GetGameReviews, errorDto.Serialize());
                 }
                 throw;
             }

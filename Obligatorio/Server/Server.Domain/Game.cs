@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Exceptions;
 
 namespace Server.Domain
@@ -14,8 +15,11 @@ namespace Server.Domain
         public string CoverName { get; set; }
         public long FileSize { get; set; }
 
+        public List<Review> Reviews {get;set;}
+
         public Game()
         {
+            Reviews = new List<Review>();
         }
 
         public void ValidOrFail()
@@ -40,6 +44,11 @@ namespace Server.Domain
         public override bool Equals(object? obj)
         {
             return Title == ((Game)obj).Title;
+        }
+
+        public void AddReview(Review review)
+        {
+            Reviews.Add(review);
         }
 
     }

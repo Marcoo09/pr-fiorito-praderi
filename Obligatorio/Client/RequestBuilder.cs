@@ -31,19 +31,18 @@ namespace Client
                     BuildCreateGameRequest(requestFrame);
                     break;
                 case Command.CreateGameReview:
-                    //Do sth
+                    BuildCreateGameReview(requestFrame);
                     break;
                 case Command.DeleteGame:
                     //Do sth
                     break;
                 case Command.GetGameReviews:
-                    //Do sth
+                    BuildCreateGetAllReviewsRequest(requestFrame);
                     break;
                 case Command.IndexGame:
                     //Do sth
                     break;
                 case Command.IndexGamesCatalog:
-                    //Do sth
                     break;
                 case Command.SearchGames:
                     //Do sth
@@ -83,6 +82,34 @@ namespace Client
             byte[] buyGameData = buyGameDTO.Serialize();
             requestFrame.Data = buyGameData;
             requestFrame.DataLength = buyGameData.Length;
+        }
+
+        private void BuildCreateGetAllReviewsRequest(Frame requestFrame)
+        {
+            AllGameReviewsDTO allGameReviewsDTO = new AllGameReviewsDTO();
+
+            Console.WriteLine("Indicate the game id to see the reviews:");
+            allGameReviewsDTO.GameId = GetIntFromConsoleApp();
+
+            byte[] allReviewsData = allGameReviewsDTO.Serialize();
+            requestFrame.Data = allReviewsData;
+            requestFrame.DataLength = allReviewsData.Length;
+        }
+
+        private void BuildCreateGameReview(Frame requestFrame)
+        {
+            ReviewDTO reviewDTO = new ReviewDTO();
+
+            Console.WriteLine("Indicate the game id to review:");
+            reviewDTO.GameId = GetIntFromConsoleApp();
+            Console.WriteLine("Indicate the rating between the range 1-5:");
+            reviewDTO.Rating = GetIntFromConsoleApp();
+            Console.WriteLine("Indicate a brief description about your experience");
+            reviewDTO.Description = Console.ReadLine();
+
+            byte[] reviewData = reviewDTO.Serialize();
+            requestFrame.Data = reviewData;
+            requestFrame.DataLength = reviewData.Length;
         }
 
         private void BuildCreateGameRequest(Frame requestFrame)

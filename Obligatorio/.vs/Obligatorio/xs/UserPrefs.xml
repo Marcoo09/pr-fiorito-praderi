@@ -2,21 +2,19 @@
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Protocol/Command.cs">
     <Files>
-      <File FileName="Server/Implementations/UserService.cs" Line="68" Column="41" />
-      <File FileName="Server/Implementations/GameService.cs" Line="79" Column="1" />
-      <File FileName="Server/Implementations/ServiceRouter.cs" Line="31" Column="41" />
-      <File FileName="Client/RequestBuilder.cs" Line="27" Column="27" />
-      <File FileName="Client/ResponseInterpreter.cs" Line="87" Column="47" />
-      <File FileName="Protocol/Command.cs" Line="13" Column="35" />
+      <File FileName="Server/Implementations/GameService.cs" Line="113" Column="1" />
+      <File FileName="Protocol/DTOs/Request/AllGameReviewsDTO.cs" Line="18" Column="57" />
+      <File FileName="Server/Implementations/ServiceRouter.cs" Line="60" Column="1" />
+      <File FileName="Server/Connectios/Connection.cs" Line="63" Column="1" />
+      <File FileName="Client/ResponseInterpreter.cs" Line="71" Column="27" />
+      <File FileName="Protocol/Command.cs" Line="15" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
             <Node name="Client" expanded="True">
-              <Node name="Client" expanded="True">
-                <Node name="Connections" expanded="True" />
-              </Node>
+              <Node name="Client" expanded="True" />
             </Node>
             <Node name="Common" expanded="True">
               <Node name="DTOs" expanded="True">
@@ -24,6 +22,7 @@
                 <Node name="Response" expanded="True" />
               </Node>
               <Node name="Protocol" expanded="True">
+                <Node name="Serialization" expanded="True" />
                 <Node name="Command.cs" selected="True" />
               </Node>
             </Node>
@@ -32,13 +31,9 @@
                 <Node name="Connectios" expanded="True" />
                 <Node name="Implementations" expanded="True" />
                 <Node name="Interfaces" expanded="True" />
-                <Node name="Server.DataAccess" expanded="True">
-                  <Node name="Implementations" expanded="True" />
-                </Node>
               </Node>
               <Node name="Server.DataAccess" expanded="True">
                 <Node name="Implementations" expanded="True" />
-                <Node name="Interfaces" expanded="True" />
               </Node>
               <Node name="Server.Domain" expanded="True" />
             </Node>
@@ -50,7 +45,10 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/RequestBuilder.cs" relfile="Client/RequestBuilder.cs" line="101" column="1" />
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/RequestBuilder.cs" relfile="Client/RequestBuilder.cs" line="110" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

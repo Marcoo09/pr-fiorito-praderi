@@ -122,5 +122,22 @@ namespace Server.DataAccess.Implementations
         {
             _nextId++;
         }
+
+        public void AddReview(int id, Review review)
+        {
+            Game gameToBeUpdated = Get(id);
+
+            lock (_gameLocker)
+            {
+                gameToBeUpdated.AddReview(review);
+            }
+        }
+
+        public List<Review> GetAllReviews(int id)
+        {
+            Game gameToSeeReviews = Get(id);
+
+            return gameToSeeReviews.Reviews;
+        }
     }
 }
