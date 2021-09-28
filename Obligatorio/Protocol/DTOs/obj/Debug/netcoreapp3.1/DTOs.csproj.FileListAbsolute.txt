@@ -1,3 +1,8 @@
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/obj/Debug/netcoreapp3.1/DTOs.csproj.AssemblyReference.cache
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/obj/Debug/netcoreapp3.1/DTOs.GeneratedMSBuildEditorConfig.editorconfig
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/obj/Debug/netcoreapp3.1/DTOs.AssemblyInfoInputs.cache
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/obj/Debug/netcoreapp3.1/DTOs.AssemblyInfo.cs
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/obj/Debug/netcoreapp3.1/DTOs.csproj.CoreCompileInputs.cache
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/bin/Debug/netcoreapp3.1/DTOs.deps.json
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/bin/Debug/netcoreapp3.1/DTOs.dll
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/bin/Debug/netcoreapp3.1/DTOs.pdb
@@ -7,11 +12,6 @@
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/bin/Debug/netcoreapp3.1/Protocol.pdb
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/bin/Debug/netcoreapp3.1/Server.Domain.pdb
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/bin/Debug/netcoreapp3.1/Exceptions.pdb
-/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/obj/Debug/netcoreapp3.1/DTOs.csproj.AssemblyReference.cache
-/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/obj/Debug/netcoreapp3.1/DTOs.GeneratedMSBuildEditorConfig.editorconfig
-/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/obj/Debug/netcoreapp3.1/DTOs.AssemblyInfoInputs.cache
-/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/obj/Debug/netcoreapp3.1/DTOs.AssemblyInfo.cs
-/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/obj/Debug/netcoreapp3.1/DTOs.csproj.CoreCompileInputs.cache
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/obj/Debug/netcoreapp3.1/DTOs.csproj.CopyComplete
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/obj/Debug/netcoreapp3.1/DTOs.dll
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/obj/Debug/netcoreapp3.1/DTOs.pdb

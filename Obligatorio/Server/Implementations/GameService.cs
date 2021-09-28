@@ -81,7 +81,35 @@ namespace Server.Implementations
 
         public Frame GetAllReviews(Frame requestFrame)
         {
-            throw new NotImplementedException();
+            AllGameReviewsDTO allGameReviewsDTO = new AllGameReviewsDTO();
+            allGameReviewsDTO.Deserialize(requestFrame.Data);
+
+            try
+            {
+                Game retrievedGame = _gameRepository.Get(allGameReviewsDTO.GameId);
+
+                List<ReviewDetailDTO> retrievedReviews = retrievedGame.Reviews.Select(r => new ReviewDetailDTO(r)).ToList();
+
+                byte[] serializedList = _serializer.SerializeEntityList(retrievedReviews.Cast<ISerializable>().ToList());
+
+                return new Frame()
+                {
+                    ChosenHeader = (short)Header.Response,
+                    ChosenCommand = (short)Command.GetGameReviews,
+                    ResultStatus = (short)Status.Ok,
+                    DataLength = serializedList.Length,
+                    Data = serializedList,
+                };
+            }
+            catch (Exception e)
+            {
+                if (e is InvalidResourceException || e is ResourceNotFoundException)
+                {
+                    ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
+                    return CreateErrorResponse(Command.GetGameReviews, errorDto.Serialize());
+                }
+                throw;
+            }
         }
 
         public Frame GetCoverFromGame(Frame requestFrame)

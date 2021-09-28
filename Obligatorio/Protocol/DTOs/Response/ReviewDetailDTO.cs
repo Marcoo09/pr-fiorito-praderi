@@ -7,7 +7,6 @@ namespace DTOs.Response
 {
     public class ReviewDetailDTO : ISerializable, IDeserializable
     {
-        public int Id { get; set; }
         public int Rating { get; set; }
         public string Description { get; set; }
 
@@ -17,7 +16,6 @@ namespace DTOs.Response
 
         public ReviewDetailDTO(Review review)
         {
-            Id = review.Id;
             Rating = review.Rating;
             Description = review.Description;
         }
@@ -26,19 +24,18 @@ namespace DTOs.Response
         {
             string[] attributes = Encoding.UTF8.GetString(entity).Split("~~");
 
-            Id = Int32.Parse(attributes[0]);
-            Rating = Int32.Parse(attributes[1]);
-            Description = attributes[2];
+            Rating = Int32.Parse(attributes[0]);
+            Description = attributes[1];
         }
 
         public byte[] Serialize()
         {
-            return Encoding.UTF8.GetBytes($"{Id}~~{Rating}~~{Description}");
+            return Encoding.UTF8.GetBytes($"{Rating}~~{Description}");
         }
 
         public override string ToString()
         {
-            return $"Id: {Id}\n\tRating: {Rating}\n\tDescription: {Description}";
+            return $"Review:\n\tRating: {Rating}\n\tDescription: {Description}";
         }
     }
 }

@@ -1,26 +1,33 @@
 ﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Implementations/UserService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Client/ResponseInterpreter.cs">
     <Files>
-      <File FileName="Server/Implementations/GameService.cs" Line="85" Column="62" />
-      <File FileName="Server/Implementations/UserService.cs" Line="1" Column="1" />
+      <File FileName="Server/Implementations/GameService.cs" Line="105" Column="14" />
+      <File FileName="Server/Implementations/UserService.cs" Line="60" Column="1" />
+      <File FileName="Server/Implementations/ServiceRouter.cs" Line="25" Column="38" />
+      <File FileName="Server/ServerProgram.cs" Line="1" Column="1" />
+      <File FileName="Client/RequestBuilder.cs" Line="53" Column="41" />
+      <File FileName="Client/ResponseInterpreter.cs" Line="70" Column="21" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
-            <Node name="Client" expanded="True" />
+            <Node name="Client" expanded="True">
+              <Node name="Client" expanded="True">
+                <Node name="ResponseInterpreter.cs" selected="True" />
+              </Node>
+            </Node>
             <Node name="Common" expanded="True">
               <Node name="DTOs" expanded="True">
                 <Node name="Request" expanded="True" />
+                <Node name="Response" expanded="True" />
               </Node>
               <Node name="Protocol" expanded="True" />
             </Node>
             <Node name="Server" expanded="True">
               <Node name="Server" expanded="True">
-                <Node name="Implementations" expanded="True">
-                  <Node name="UserService.cs" selected="True" />
-                </Node>
+                <Node name="Implementations" expanded="True" />
                 <Node name="Interfaces" expanded="True" />
               </Node>
               <Node name="Server.DataAccess" expanded="True">
