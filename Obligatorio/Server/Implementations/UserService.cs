@@ -29,12 +29,12 @@ namespace Server.Implementations
 
         public Frame BuyGame(Frame requestFrame, int userId)
         {
-            BuyGameDTO buyGameDTO = new BuyGameDTO();
-            buyGameDTO.Deserialize(requestFrame.Data);
+            BasicGameRequestDTO basicGameRequestDTO = new BasicGameRequestDTO();
+            basicGameRequestDTO.Deserialize(requestFrame.Data);
 
             try
             {
-                Game retrievedGame = _gameRepository.Get(buyGameDTO.GameId);
+                Game retrievedGame = _gameRepository.Get(basicGameRequestDTO.GameId);
 
                 _userRepository.BuyGame(retrievedGame, userId);
 

@@ -94,6 +94,7 @@ namespace Server.DataAccess.Implementations
             {
                 if (_games.Any(g => g.Title == game.Title && g.Id != game.Id))
                     throw new InvalidResourceException("Game name need to be unique");
+                game.Path = gameToBeUpdated.Path;
                 game.ValidOrFail();
 
                 gameToBeUpdated.Title = game.Title;

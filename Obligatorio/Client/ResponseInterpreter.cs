@@ -70,7 +70,7 @@ namespace Client
                     entityType = typeof(MessageDTO);
                     break;
                 case Command.DeleteGame:
-                    //Do sth
+                    entityType = typeof(MessageDTO);
                     break;
                 case Command.GetGameReviews:
                     entityType = typeof(ReviewDetailDTO);
@@ -85,7 +85,7 @@ namespace Client
                     entityType = typeof(GameDetailDTO);
                     break;
                 case Command.UpdateGame:
-                    //Do sth
+                    entityType = typeof(GameBasicInfoDTO);
                     break;
                 case Command.IndexUsers:
                     entityType = typeof(UserDetailDTO);

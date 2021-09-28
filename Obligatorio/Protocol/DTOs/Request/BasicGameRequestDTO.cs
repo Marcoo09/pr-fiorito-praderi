@@ -4,7 +4,7 @@ using Protocol.SerializationInterfaces;
 
 namespace DTOs.Request
 {
-    public class GetGameDTO : ISerializable, IDeserializable
+    public class BasicGameRequestDTO : ISerializable, IDeserializable
     {
         public int GameId { get; set; }
 

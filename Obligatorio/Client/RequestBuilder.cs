@@ -34,7 +34,7 @@ namespace Client
                     BuildCreateGameReview(requestFrame);
                     break;
                 case Command.DeleteGame:
-                    //Do sth
+                    BuildCreateDeleteRequest(requestFrame);
                     break;
                 case Command.GetGameReviews:
                     BuildCreateGetAllReviewsRequest(requestFrame);
@@ -48,7 +48,7 @@ namespace Client
                     BuildSearchGames(requestFrame);
                     break;
                 case Command.UpdateGame:
-                    //Do sth
+                    BuildUpdateGameRequest(requestFrame);
                     break;
                 case Command.IndexUsers:
                     break;
@@ -70,6 +70,23 @@ namespace Client
             }
 
             return intFromConsole;
+        }
+
+        private void BuildUpdateGameRequest(Frame requestFrame)
+        {
+            UpdateGameDTO updateGameDTO = new UpdateGameDTO();
+            Console.WriteLine("Indicate the Id of the game to update");
+            updateGameDTO.Id = GetIntFromConsoleApp();
+            Console.WriteLine("Indicate the new name for the game");
+            updateGameDTO.Title = Console.ReadLine();
+            Console.WriteLine("Indicate the new synopsis for the game");
+            updateGameDTO.Synopsis = Console.ReadLine();
+            Console.WriteLine("Indicate the new gender for the game");
+            updateGameDTO.Gender = Console.ReadLine();
+
+            byte[] updateGameData = updateGameDTO.Serialize();
+            requestFrame.Data = updateGameData;
+            requestFrame.DataLength = updateGameData.Length;
         }
 
         private void BuildSearchGames(Frame requestFrame)
@@ -101,36 +118,48 @@ namespace Client
 
         private void BuildGetGameDetail(Frame requestFrame)
         {
-            GetGameDTO gameDetailDTO = new GetGameDTO();
+            BasicGameRequestDTO basicGameRequestDTO = new BasicGameRequestDTO();
 
             Console.WriteLine("Indicate the game id to show:");
-            gameDetailDTO.GameId = GetIntFromConsoleApp();
+            basicGameRequestDTO.GameId = GetIntFromConsoleApp();
 
-            byte[] gameDetailData = gameDetailDTO.Serialize();
+            byte[] gameDetailData = basicGameRequestDTO.Serialize();
             requestFrame.Data = gameDetailData;
             requestFrame.DataLength = gameDetailData.Length;
         }
 
         private void BuildCreateBuyRequest(Frame requestFrame)
         {
-            BuyGameDTO buyGameDTO = new BuyGameDTO();
+            BasicGameRequestDTO basicGameRequestDTO = new BasicGameRequestDTO();
 
             Console.WriteLine("Indicate the game id to buy:");
-            buyGameDTO.GameId = GetIntFromConsoleApp();
+            basicGameRequestDTO.GameId = GetIntFromConsoleApp();
 
-            byte[] buyGameData = buyGameDTO.Serialize();
+            byte[] buyGameData = basicGameRequestDTO.Serialize();
+            requestFrame.Data = buyGameData;
+            requestFrame.DataLength = buyGameData.Length;
+        }
+
+        private void BuildCreateDeleteRequest(Frame requestFrame)
+        {
+            BasicGameRequestDTO basicGameRequestDTO = new BasicGameRequestDTO();
+
+            Console.WriteLine("Indicate the game id to delete:");
+            basicGameRequestDTO.GameId = GetIntFromConsoleApp();
+
+            byte[] buyGameData = basicGameRequestDTO.Serialize();
             requestFrame.Data = buyGameData;
             requestFrame.DataLength = buyGameData.Length;
         }
 
         private void BuildCreateGetAllReviewsRequest(Frame requestFrame)
         {
-            AllGameReviewsDTO allGameReviewsDTO = new AllGameReviewsDTO();
+            BasicGameRequestDTO basicGameRequestDTO = new BasicGameRequestDTO();
 
             Console.WriteLine("Indicate the game id to see the reviews:");
-            allGameReviewsDTO.GameId = GetIntFromConsoleApp();
+            basicGameRequestDTO.GameId = GetIntFromConsoleApp();
 
-            byte[] allReviewsData = allGameReviewsDTO.Serialize();
+            byte[] allReviewsData = basicGameRequestDTO.Serialize();
             requestFrame.Data = allReviewsData;
             requestFrame.DataLength = allReviewsData.Length;
         }
