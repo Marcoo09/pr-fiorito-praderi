@@ -35,6 +35,12 @@ namespace Client
                 else
                 {
                     IDeserializable entity = _deserializer.DeserializeEntity(response, expectedEntityTypeResponse);
+                    if (IsReturningAndImage(chosenCommand))
+                    {
+                        EnrichedGameDetailDTO enrichedGameDetailDTO = (EnrichedGameDetailDTO)entity;
+                        enrichedGameDetailDTO.WriteFile();
+
+                    }
                     interpretedResponse = entity.ToString();
                 }
             }
@@ -76,7 +82,7 @@ namespace Client
                     entityType = typeof(GameDetailDTO);
                     break;
                 case Command.SearchGames:
-                    entityType = typeof(EnrichedGameDetailDTO);
+                    entityType = typeof(GameDetailDTO);
                     break;
                 case Command.UpdateGame:
                     //Do sth
@@ -116,6 +122,20 @@ namespace Client
             }
 
             return isArray;
+        }
+
+        private bool IsReturningAndImage(Command command)
+        {
+            bool isReturningAndImage = false;
+
+            switch (command)
+            {
+                case Command.IndexGame:
+                    isReturningAndImage = true;
+                    break;
+            }
+
+            return isReturningAndImage;
         }
     }
 }

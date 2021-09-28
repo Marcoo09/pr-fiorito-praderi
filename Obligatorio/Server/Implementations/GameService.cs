@@ -135,7 +135,7 @@ namespace Server.Implementations
                 );
             }
 
-            List<EnrichedGameDetailDTO> response = gamesFiltered.Select(g => new EnrichedGameDetailDTO(g)).ToList();
+            List<GameDetailDTO> response = gamesFiltered.Select(g => new GameDetailDTO(g)).ToList();
             byte[] serializedList = _serializer.SerializeEntityList(response.Cast<ISerializable>().ToList());
 
             return CreateSuccessResponse(Command.SearchGames, serializedList);
@@ -150,8 +150,10 @@ namespace Server.Implementations
             try
             {
                 Game game = _gameRepository.Get(getGameDTO.GameId);
+                EnrichedGameDetailDTO response = new EnrichedGameDetailDTO(game);
+                response.ReadFile(game.Path);
 
-                return CreateSuccessResponse(Command.IndexGame, new EnrichedGameDetailDTO(game).Serialize());
+                return CreateSuccessResponse(Command.IndexGame, response.Serialize());
             }
             catch (ResourceNotFoundException e)
             {
