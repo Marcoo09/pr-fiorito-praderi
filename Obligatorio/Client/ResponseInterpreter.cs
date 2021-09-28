@@ -70,7 +70,7 @@ namespace Client
                     entityType = typeof(ReviewDetailDTO);
                     break;
                 case Command.IndexGame:
-                    entityType = typeof(GameDetailDTO);
+                    entityType = typeof(EnrichedGameDetailDTO);
                     break;
                 case Command.IndexGamesCatalog:
                     entityType = typeof(GameDetailDTO);

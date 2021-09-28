@@ -94,6 +94,22 @@
     <None Remove="Exceptions\bin\Debug\netcoreapp3.1\Exceptions.deps.json" />
     <None Remove="Exceptions\bin\Debug\netcoreapp3.1\Exceptions.dll" />
     <None Remove="Exceptions\bin\Debug\netcoreapp3.1\Exceptions.pdb" />
+    <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.csproj.AssemblyReference.cache" />
+    <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.AssemblyInfoInputs.cache" />
+    <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.csproj.CoreCompileInputs.cache" />
+    <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.dll" />
+    <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.pdb" />
+    <None Remove="DTOs\bin\Debug\netcoreapp3.1\Exceptions.dll" />
+    <None Remove="DTOs\bin\Debug\netcoreapp3.1\Protocol.dll" />
+    <None Remove="DTOs\bin\Debug\netcoreapp3.1\Server.Domain.pdb" />
+    <None Remove="DTOs\bin\Debug\netcoreapp3.1\Server.Domain.dll" />
+    <None Remove="DTOs\bin\Debug\netcoreapp3.1\Protocol.pdb" />
+    <None Remove="DTOs\bin\Debug\netcoreapp3.1\Exceptions.pdb" />
+    <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.csproj.CopyComplete" />
+    <None Remove="DTOs\bin\Debug\netcoreapp3.1\DTOs.deps.json" />
+    <None Remove="DTOs\bin\Debug\netcoreapp3.1\DTOs.dll" />
+    <None Remove="DTOs\bin\Debug\netcoreapp3.1\DTOs.pdb" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SerializationInterfaces\" />
@@ -129,5 +145,9 @@
     <Compile Remove="DTOs\Response\ReviewDetailDTO.cs" />
     <Compile Remove="DTOs\Request\ReviewDTO.cs" />
     <Compile Remove="DTOs\Request\AllGameReviewsDTO.cs" />
+    <Compile Remove="DTOs\Request\GameDetailDTO.cs" />
+    <Compile Remove="DTOs\Request\GetGameDTO.cs" />
+    <Compile Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.AssemblyInfo.cs" />
+    <Compile Remove="DTOs\Response\EnrichedGameDetalDTO.cs" />
   </ItemGroup>
 </Project>

@@ -1,13 +1,8 @@
 ﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Protocol/Command.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Protocol/DTOs/Response/EnrichedGameDetalDTO.cs">
     <Files>
-      <File FileName="Server/Implementations/GameService.cs" Line="113" Column="1" />
-      <File FileName="Protocol/DTOs/Request/AllGameReviewsDTO.cs" Line="18" Column="57" />
-      <File FileName="Server/Implementations/ServiceRouter.cs" Line="60" Column="1" />
-      <File FileName="Server/Connectios/Connection.cs" Line="63" Column="1" />
-      <File FileName="Client/ResponseInterpreter.cs" Line="71" Column="27" />
-      <File FileName="Protocol/Command.cs" Line="15" Column="31" />
+      <File FileName="Protocol/DTOs/Response/EnrichedGameDetalDTO.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,12 +14,11 @@
             <Node name="Common" expanded="True">
               <Node name="DTOs" expanded="True">
                 <Node name="Request" expanded="True" />
-                <Node name="Response" expanded="True" />
+                <Node name="Response" expanded="True">
+                  <Node name="EnrichedGameDetalDTO.cs" selected="True" />
+                </Node>
               </Node>
-              <Node name="Protocol" expanded="True">
-                <Node name="Serialization" expanded="True" />
-                <Node name="Command.cs" selected="True" />
-              </Node>
+              <Node name="Protocol" expanded="True" />
             </Node>
             <Node name="Server" expanded="True">
               <Node name="Server" expanded="True">
@@ -45,10 +39,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/RequestBuilder.cs" relfile="Client/RequestBuilder.cs" line="101" column="1" />
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/RequestBuilder.cs" relfile="Client/RequestBuilder.cs" line="110" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
