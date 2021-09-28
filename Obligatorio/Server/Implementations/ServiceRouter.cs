@@ -32,11 +32,13 @@ namespace Server.Implementations
                     response = _gameService.CreateGame(frameRequest);
                     break;
                 case Command.CreateGameReview:
+                    response = _gameService.AddReview(frameRequest);
                     break;
                 case Command.DeleteGame:
                     //response = _gameService.DeleteGame(frameRequest);
                     break;
                 case Command.GetGameReviews:
+                    response = _gameService.GetAllReviews(frameRequest);
                     break;
                 case Command.IndexGame:
                     response = _gameService.ShowGame(frameRequest);

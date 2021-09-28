@@ -25,6 +25,34 @@ namespace Server.Implementations
             _serializer = new Serializer();
         }
 
+        public Frame AddReview(Frame requestFrame)
+        {
+            ReviewDTO reviewDTO = new ReviewDTO();
+            reviewDTO.Deserialize(requestFrame.Data);
+
+            try
+            {
+                Review newReview = reviewDTO.ToEntity();
+                Game gameToSendReview = _gameRepository.Get(reviewDTO.GameId);
+                newReview.Game = gameToSendReview;
+
+                _gameRepository.AddReview(reviewDTO.GameId ,newReview);
+
+                MessageDTO messageDto = new MessageDTO() { Message = "Review added!" };
+
+                return CreateSuccessResponse(Command.CreateGame, messageDto.Serialize());
+            }
+            catch (Exception e)
+            {
+                if (e is InvalidResourceException || e is ResourceNotFoundException)
+                {
+                    ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
+                    return CreateErrorResponse(Command.CreateGameReview, errorDto.Serialize());
+                }
+                throw;
+            }
+        }
+
         public Frame CreateGame(Frame requestFrame)
         {
             CreateGameDTO createGameDTO = new CreateGameDTO();
@@ -49,6 +77,11 @@ namespace Server.Implementations
                 }
                 throw;
             }
+        }
+
+        public Frame GetAllReviews(Frame requestFrame)
+        {
+            throw new NotImplementedException();
         }
 
         public Frame GetCoverFromGame(Frame requestFrame)

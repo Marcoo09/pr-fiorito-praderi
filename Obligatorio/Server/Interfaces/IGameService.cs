@@ -10,10 +10,9 @@ namespace Server.Interfaces
         Frame ShowGames();
         Frame UpdateGame(Frame requestFrame);
         Frame UploadCoverToGame(Frame requestFrame);
+        Frame AddReview(Frame requestFrame);
+        Frame GetAllReviews(Frame requestFrame);
 
-
-        //Frame UpdateGameCover(Frame requestFrame);
-        //Frame IndexCovers(Frame requestFrame);
         //Frame IndexGameBy(Frame requestFrame);
     }
 }

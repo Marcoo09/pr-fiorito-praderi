@@ -5,7 +5,6 @@ namespace Server.Domain
 {
     public class Review
     {
-        public int Id { get; set; }
         public Game Game { get; set; }
         public int Rating { get; set; }
         public string Description { get; set; }

@@ -12,6 +12,6 @@
         IndexGame, //SRF7, CRF6-> Not completed
         DeleteGame, //CRF3 -> Nico
         UpdateGame, //CRF3 -> Nico
-        IndexUsers // -> DONE
+        IndexUsers, // -> DONE
     }
 }
