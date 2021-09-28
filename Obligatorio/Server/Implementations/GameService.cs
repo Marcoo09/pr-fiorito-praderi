@@ -174,12 +174,12 @@ namespace Server.Implementations
                 EnrichedGameDetailDTO response = new EnrichedGameDetailDTO(game);
                 response.ReadFile(game.Path);
 
-                return CreateSuccessResponse(Command.IndexGame, response.Serialize());
+                return CreateSuccessResponse(Command.GetGame, response.Serialize());
             }
             catch (ResourceNotFoundException e)
             {
                 ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
-                return CreateErrorResponse(Command.IndexGame, errorDto.Serialize());
+                return CreateErrorResponse(Command.GetGame, errorDto.Serialize());
             }
         }
 

@@ -40,7 +40,7 @@ namespace Server.Implementations
                 case Command.GetGameReviews:
                     response = _gameService.GetAllReviews(frameRequest);
                     break;
-                case Command.IndexGame:
+                case Command.GetGame:
                     response = _gameService.ShowGame(frameRequest);
                     break;
                 case Command.IndexGamesCatalog:
