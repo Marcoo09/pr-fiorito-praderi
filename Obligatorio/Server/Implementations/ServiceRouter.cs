@@ -47,6 +47,7 @@ namespace Server.Implementations
                     response = _gameService.ShowGames();
                     break;
                 case Command.SearchGames:
+                    response = _gameService.SearchGameBy(frameRequest);
                     break;
                 case Command.UpdateGame:
                     response = _gameService.UpdateGame(frameRequest);

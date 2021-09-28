@@ -48,7 +48,7 @@ namespace DTOs.Response
 
         public override string ToString()
         {
-            return $"Id: {Id}\n\tTitle: {Title}\n\tSynopsis: {Synopsis}\n\tGender: {Gender}\n\tCover: {Path}\n\tAverage Rating: {RatingAverage}";
+            return $"Id: {Id}\n\tTitle: {Title}\n\tSynopsis: {Synopsis}\n\tGender: {Gender}\n\tOriginal Cover Path: {Path}\n\tAverage Rating: {RatingAverage}";
         }
     }
 }

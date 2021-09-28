@@ -45,7 +45,7 @@ namespace Client
                 case Command.IndexGamesCatalog:
                     break;
                 case Command.SearchGames:
-                    //Do sth
+                    BuildSearchGames(requestFrame);
                     break;
                 case Command.UpdateGame:
                     //Do sth
@@ -70,6 +70,33 @@ namespace Client
             }
 
             return intFromConsole;
+        }
+
+        private void BuildSearchGames(Frame requestFrame)
+        {
+
+            Console.Write("Indicate the search metric you want to use:" + "\n1- Title\n2- Gender\n3 - Rating\n");
+            int searchMetric = GetIntFromConsoleApp();
+            SearchMetricDTO searchMetricDTO = new SearchMetricDTO();
+            if (searchMetric == 1)
+            {
+                Console.WriteLine("Indicate the title to search:");
+                searchMetricDTO.Title = Console.ReadLine();
+            }
+            else if(searchMetric == 2)
+            {
+                Console.WriteLine("Indicate the gender to search:");
+                searchMetricDTO.Gender = Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Indicate the Rating to search:");
+                searchMetricDTO.Rating = GetIntFromConsoleApp();
+            }
+
+            byte[] searchMetricData = searchMetricDTO.Serialize();
+            requestFrame.Data = searchMetricData;
+            requestFrame.DataLength = searchMetricData.Length;
         }
 
         private void BuildGetGameDetail(Frame requestFrame)

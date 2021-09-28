@@ -10,7 +10,6 @@ namespace Server.Interfaces
         Frame UpdateGame(Frame requestFrame);
         Frame AddReview(Frame requestFrame);
         Frame GetAllReviews(Frame requestFrame);
-
-        //Frame IndexGameBy(Frame requestFrame);
+        Frame SearchGameBy(Frame requestFrame);
     }
 }

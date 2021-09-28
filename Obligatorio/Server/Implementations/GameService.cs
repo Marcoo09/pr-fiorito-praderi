@@ -112,6 +112,36 @@ namespace Server.Implementations
             }
         }
 
+        public Frame SearchGameBy(Frame requestFrame)
+        {
+            SearchMetricDTO searchMetricDTO = new SearchMetricDTO();
+            searchMetricDTO.Deserialize(requestFrame.Data);
+
+            List<Game> gamesFiltered = new List<Game>();
+
+            if (!String.IsNullOrEmpty(searchMetricDTO.Title))
+            {
+                gamesFiltered = _gameRepository.GetBy(g => g.Title.Contains(searchMetricDTO.Title, System.StringComparison.CurrentCultureIgnoreCase) ||
+                   searchMetricDTO.Title.Contains(g.Title, System.StringComparison.CurrentCultureIgnoreCase));
+            }else if (!String.IsNullOrEmpty(searchMetricDTO.Gender))
+            {
+                gamesFiltered = _gameRepository.GetBy(g => g.Gender.Contains(searchMetricDTO.Gender, System.StringComparison.CurrentCultureIgnoreCase) ||
+                    searchMetricDTO.Gender.Contains(g.Gender, System.StringComparison.CurrentCultureIgnoreCase));
+            }
+            else
+            {
+                gamesFiltered = _gameRepository.GetBy(g =>
+                    (g.Reviews.Count > 0 ? g.Reviews.Select(g => g.Rating).ToList().Average() : 0) == searchMetricDTO.Rating
+                );
+            }
+
+            List<EnrichedGameDetailDTO> response = gamesFiltered.Select(g => new EnrichedGameDetailDTO(g)).ToList();
+            byte[] serializedList = _serializer.SerializeEntityList(response.Cast<ISerializable>().ToList());
+
+            return CreateSuccessResponse(Command.SearchGames, serializedList);
+
+        }
+
         public Frame ShowGame(Frame requestFrame)
         {
             GetGameDTO getGameDTO = new GetGameDTO();
