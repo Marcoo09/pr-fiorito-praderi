@@ -130,7 +130,9 @@ namespace Server.Implementations
             }
             else
             {
-                gamesFiltered = _gameRepository.GetBy(g => ((int)g.Reviews.Select(r => r.Rating).ToList().Average()) == searchMetricDTO.Rating );
+                gamesFiltered = _gameRepository.GetBy(g =>
+                    (g.Reviews.Count > 0 ? g.Reviews.Select(g => g.Rating).ToList().Average() : 0) == searchMetricDTO.Rating
+                );
             }
 
             List<EnrichedGameDetailDTO> response = gamesFiltered.Select(g => new EnrichedGameDetailDTO(g)).ToList();
