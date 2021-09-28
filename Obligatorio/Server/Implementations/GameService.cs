@@ -40,7 +40,7 @@ namespace Server.Implementations
 
                 MessageDTO messageDto = new MessageDTO() { Message = "Review added!" };
 
-                return CreateSuccessResponse(Command.CreateGame, messageDto.Serialize());
+                return CreateSuccessResponse(Command.CreateGameReview, messageDto.Serialize());
             }
             catch (Exception e)
             {
