@@ -66,9 +66,10 @@ namespace Server.Connections
                 Console.WriteLine("Client has disconnected");
                 ShutDown();
             }
-            catch (IOException)
+            catch (IOException e)
             {
                 Console.WriteLine("Connection shut down by the server");
+                Console.WriteLine(e.ToString());
             }
             catch (ObjectDisposedException) { }
         }

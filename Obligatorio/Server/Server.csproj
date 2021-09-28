@@ -116,6 +116,8 @@
     <None Remove="Server.Domain\obj\Debug\netcoreapp3.1\Server.Domain.pdb" />
     <None Remove="Server.Domain\obj\Debug\netcoreapp3.1\Server.Domain.csproj.CopyComplete" />
     <None Remove="Server.DataAccess\obj\Debug\netcoreapp3.1\Server.DataAccess.csproj.AssemblyReference.cache" />
+    <None Remove="Server.DataAccess\obj\Debug\netcoreapp3.1\Server.DataAccess.csproj.AssemblyReference.cache" />
+    <None Remove="Server.Domain\obj\Debug\netcoreapp3.1\Server.Domain.csproj.AssemblyReference.cache" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Connectios\" />

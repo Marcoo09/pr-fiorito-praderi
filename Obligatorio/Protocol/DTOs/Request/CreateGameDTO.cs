@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Protocol.SerializationInterfaces;
+using System.Runtime.InteropServices;
 
 namespace DTOs.Request
 {
@@ -26,7 +27,7 @@ namespace DTOs.Request
                 Synopsis = Synopsis,
                 Gender = Gender,
                 CoverName = CoverName,
-                Path = Directory.GetCurrentDirectory() + "\\" + CoverName,
+                Path = Directory.GetCurrentDirectory() + (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? "/" : "\\") + CoverName,
                 FileSize = FileSize
             };
         }
@@ -49,10 +50,6 @@ namespace DTOs.Request
             offset += 8;
             Data = serializedEntity.Skip(offset).Take((int)FileSize).ToArray();
             offset += (int)FileSize;
-
-            Title = Encoding.UTF8.GetString(serializedEntity.Skip(offset).ToArray());
-            Gender = Encoding.UTF8.GetString(serializedEntity.Skip(offset).ToArray());
-            Synopsis = Encoding.UTF8.GetString(serializedEntity.Skip(offset).ToArray());
 
             string[] attributes = Encoding.UTF8.GetString(serializedEntity.Skip(offset).ToArray()).Split("~~");
 

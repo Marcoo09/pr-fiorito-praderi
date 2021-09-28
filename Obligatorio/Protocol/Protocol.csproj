@@ -151,5 +151,7 @@
     <Compile Remove="DTOs\Response\EnrichedGameDetalDTO.cs" />
     <Compile Remove="DTOs\Response\EnrichedGameDetalDTO.cs" />
     <Compile Remove="DTOs\Request\SearchMetricDTO.cs" />
+    <Compile Remove="DTOs\Request\CreateGameDTO.cs" />
+    <Compile Remove="DTOs\Response\EnrichedGameDetalDTO.cs" />
   </ItemGroup>
 </Project>
