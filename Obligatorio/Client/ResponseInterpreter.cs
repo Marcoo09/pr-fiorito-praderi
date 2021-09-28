@@ -75,7 +75,7 @@ namespace Client
                 case Command.GetGameReviews:
                     entityType = typeof(ReviewDetailDTO);
                     break;
-                case Command.IndexGame:
+                case Command.GetGame:
                     entityType = typeof(EnrichedGameDetailDTO);
                     break;
                 case Command.IndexGamesCatalog:
@@ -130,7 +130,7 @@ namespace Client
 
             switch (command)
             {
-                case Command.IndexGame:
+                case Command.GetGame:
                     isReturningAndImage = true;
                     break;
             }

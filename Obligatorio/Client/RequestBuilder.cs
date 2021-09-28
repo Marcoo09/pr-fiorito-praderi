@@ -39,7 +39,7 @@ namespace Client
                 case Command.GetGameReviews:
                     BuildCreateGetAllReviewsRequest(requestFrame);
                     break;
-                case Command.IndexGame:
+                case Command.GetGame:
                     BuildGetGameDetail(requestFrame);
                     break;
                 case Command.IndexGamesCatalog:
