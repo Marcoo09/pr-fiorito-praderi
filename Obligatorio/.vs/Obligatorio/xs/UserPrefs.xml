@@ -1,20 +1,49 @@
 ﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Protocol/Command.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Server.DataAccess/Implementations/GameRepository.cs">
     <Files>
-      <File FileName="Protocol/Command.cs" Line="18" Column="1" />
+      <File FileName="Protocol/Command.cs" Line="14" Column="34" />
+      <File FileName="Client/RequestBuilder.cs" Line="86" Column="1" />
+      <File FileName="Client/ResponseInterpreter.cs" Line="77" Column="27" />
+      <File FileName="Protocol/DTOs/Request/BuyGameDTO.cs" Line="13" Column="56" />
+      <File FileName="Protocol/DTOs/Request/UpdateGameDTO.cs" Line="46" Column="2" />
+      <File FileName="Protocol/DTOs/Request/CreateGameDTO.cs" Line="1" Column="1" />
+      <File FileName="Protocol/DTOs/Response/EnrichedGameDetalDTO.cs" Line="1" Column="1" />
+      <File FileName="Protocol/DTOs/Response/ErrorDTO.cs" Line="1" Column="1" />
+      <File FileName="Protocol/DTOs/Response/GameBasicInfoDTO.cs" Line="1" Column="1" />
+      <File FileName="Server/Implementations/GameService.cs" Line="189" Column="37" />
+      <File FileName="Server/Server.DataAccess/Interfaces/IGameRepository.cs" Line="12" Column="14" />
+      <File FileName="Server/Server.DataAccess/Implementations/GameRepository.cs" Line="93" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
+            <Node name="Client" expanded="True">
+              <Node name="Client" expanded="True" />
+            </Node>
             <Node name="Common" expanded="True">
+              <Node name="DTOs" expanded="True">
+                <Node name="Dependencies" expanded="True" />
+                <Node name="Request" expanded="True" />
+                <Node name="Response" expanded="True" />
+              </Node>
               <Node name="Protocol" expanded="True">
-                <Node name="Command.cs" selected="True" />
+                <Node name="Dependencies" expanded="True">
+                  <Node name="ProjectDependencies" expanded="True" />
+                </Node>
               </Node>
             </Node>
             <Node name="Server" expanded="True">
-              <Node name="Server" expanded="True" />
+              <Node name="Server" expanded="True">
+                <Node name="Implementations" expanded="True" />
+              </Node>
+              <Node name="Server.DataAccess" expanded="True">
+                <Node name="Implementations" expanded="True">
+                  <Node name="GameRepository.cs" selected="True" />
+                </Node>
+                <Node name="Interfaces" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -25,9 +54,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Implementations/GameService.cs" relfile="Server/Implementations/GameService.cs" line="131" column="1" />
       <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/Connection.cs" relfile="Server/Connectios/Connection.cs" line="60" column="1" />
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/ResponseInterpreter.cs" relfile="Client/ResponseInterpreter.cs" line="37" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

@@ -179,7 +179,28 @@ namespace Server.Implementations
 
         public Frame UpdateGame(Frame requestFrame)
         {
-            throw new NotImplementedException();
+            UpdateGameDTO updateGameDTO = new UpdateGameDTO();
+            updateGameDTO.Deserialize(requestFrame.Data);
+
+            try
+            {
+                Game updatedGame = updateGameDTO.ToEntity();
+
+                _gameRepository.Update(updateGameDTO.Id, updatedGame);
+
+                Game storedGame = _gameRepository.Get(updatedGame.Id);
+
+                return CreateSuccessResponse(Command.UpdateGame, new GameBasicInfoDTO(storedGame).Serialize());
+            }
+            catch (Exception e)
+            {
+                if (e is ResourceNotFoundException || e is InvalidResourceException)
+                {
+                    ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
+                    return CreateErrorResponse(Command.UpdateGame, errorDto.Serialize());
+                }
+                throw;
+            }
         }
 
         private Frame CreateErrorResponse(Command command, byte[] data)
