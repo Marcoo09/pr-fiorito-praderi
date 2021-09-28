@@ -112,19 +112,16 @@ namespace Server.Implementations
             }
         }
 
-        public Frame GetCoverFromGame(Frame requestFrame)
-        {
-            throw new NotImplementedException();
-        }
-
         public Frame ShowGame(Frame requestFrame)
         {
-            int gameIdToShow = BitConverter.ToInt32(requestFrame.Data);
+            GetGameDTO getGameDTO = new GetGameDTO();
+            getGameDTO.Deserialize(requestFrame.Data);
 
             try
             {
-                Game game = _gameRepository.Get(gameIdToShow);
-                return CreateSuccessResponse(Command.IndexGame, new GameDetailDTO(game).Serialize());
+                Game game = _gameRepository.Get(getGameDTO.GameId);
+
+                return CreateSuccessResponse(Command.IndexGame, new EnrichedGameDetailDTO(game).Serialize());
             }
             catch (ResourceNotFoundException e)
             {
@@ -149,11 +146,6 @@ namespace Server.Implementations
         }
 
         public Frame UpdateGame(Frame requestFrame)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Frame UploadCoverToGame(Frame requestFrame)
         {
             throw new NotImplementedException();
         }

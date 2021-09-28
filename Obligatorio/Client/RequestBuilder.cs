@@ -40,7 +40,7 @@ namespace Client
                     BuildCreateGetAllReviewsRequest(requestFrame);
                     break;
                 case Command.IndexGame:
-                    //Do sth
+                    BuildGetGameDetail(requestFrame);
                     break;
                 case Command.IndexGamesCatalog:
                     break;
@@ -70,6 +70,18 @@ namespace Client
             }
 
             return intFromConsole;
+        }
+
+        private void BuildGetGameDetail(Frame requestFrame)
+        {
+            GetGameDTO gameDetailDTO = new GetGameDTO();
+
+            Console.WriteLine("Indicate the game id to show:");
+            gameDetailDTO.GameId = GetIntFromConsoleApp();
+
+            byte[] gameDetailData = gameDetailDTO.Serialize();
+            requestFrame.Data = gameDetailData;
+            requestFrame.DataLength = gameDetailData.Length;
         }
 
         private void BuildCreateBuyRequest(Frame requestFrame)
