@@ -79,7 +79,7 @@ namespace Client
                     //Do sth
                     break;
                 case Command.UpdateGame:
-                    //Do sth
+                    entityType = typeof(GameBasicInfoDTO);
                     break;
                 case Command.IndexUsers:
                     entityType = typeof(UserDetailDTO);

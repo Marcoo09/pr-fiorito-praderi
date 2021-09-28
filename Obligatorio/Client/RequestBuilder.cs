@@ -49,7 +49,7 @@ namespace Client
                     //Do sth
                     break;
                 case Command.UpdateGame:
-                    //Do sth
+                    BuildUpdateGameRequest(requestFrame);
                     break;
                 case Command.IndexUsers:
                     break;
@@ -111,7 +111,39 @@ namespace Client
             requestFrame.DataLength = createGameData.Length;
         }
 
+        private void BuildUpdateGameRequest(Frame requestFrame)
+        {
+            UpdateGameDTO updateGameDTO = new UpdateGameDTO();
+            Console.WriteLine("Indicate the Id of the game to update");
+            updateGameDTO.Id = GetIntFromConsole();
+            Console.WriteLine("Indicate the new name for the game");
+            updateGameDTO.Title = Console.ReadLine();
+            Console.WriteLine("Indicate the new synopsis for the game");
+            updateGameDTO.Synopsis = Console.ReadLine();
+            Console.WriteLine("Indicate the new gender for the game");
+            updateGameDTO.Gender = Console.ReadLine();
 
+
+            byte[] updateGameData = updateGameDTO.Serialize();
+            requestFrame.Data = updateGameData;
+            requestFrame.DataLength = updateGameData.Length;
+        }
+
+        private int GetIntFromConsole()
+        {
+            bool validEntrance = false;
+            int intFromConsole = 0;
+
+            while (!validEntrance)
+            {
+                if (Int32.TryParse(Console.ReadLine(), out intFromConsole))
+                    validEntrance = true;
+                else
+                    Console.WriteLine("Please enter a number");
+            }
+
+            return intFromConsole;
+        }
 
     }
 }

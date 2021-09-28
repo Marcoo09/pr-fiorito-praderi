@@ -7,3 +7,13 @@
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Exceptions/obj/Debug/netcoreapp3.1/Exceptions.csproj.CoreCompileInputs.cache
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Exceptions/obj/Debug/netcoreapp3.1/Exceptions.dll
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Exceptions/obj/Debug/netcoreapp3.1/Exceptions.pdb
+C:\Users\2innovateIT\Desktop\ProgDeRedesFioritoPraderi\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\bin\Debug\netcoreapp3.1\Exceptions.deps.json
+C:\Users\2innovateIT\Desktop\ProgDeRedesFioritoPraderi\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\bin\Debug\netcoreapp3.1\Exceptions.dll
+C:\Users\2innovateIT\Desktop\ProgDeRedesFioritoPraderi\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\bin\Debug\netcoreapp3.1\Exceptions.pdb
+C:\Users\2innovateIT\Desktop\ProgDeRedesFioritoPraderi\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\obj\Debug\netcoreapp3.1\Exceptions.csproj.AssemblyReference.cache
+C:\Users\2innovateIT\Desktop\ProgDeRedesFioritoPraderi\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\obj\Debug\netcoreapp3.1\Exceptions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\2innovateIT\Desktop\ProgDeRedesFioritoPraderi\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\obj\Debug\netcoreapp3.1\Exceptions.AssemblyInfoInputs.cache
+C:\Users\2innovateIT\Desktop\ProgDeRedesFioritoPraderi\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\obj\Debug\netcoreapp3.1\Exceptions.AssemblyInfo.cs
+C:\Users\2innovateIT\Desktop\ProgDeRedesFioritoPraderi\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\obj\Debug\netcoreapp3.1\Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\2innovateIT\Desktop\ProgDeRedesFioritoPraderi\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\obj\Debug\netcoreapp3.1\Exceptions.dll
+C:\Users\2innovateIT\Desktop\ProgDeRedesFioritoPraderi\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\obj\Debug\netcoreapp3.1\Exceptions.pdb

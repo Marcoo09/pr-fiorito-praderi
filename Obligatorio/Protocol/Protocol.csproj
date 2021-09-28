@@ -96,11 +96,13 @@
     <None Remove="Exceptions\bin\Debug\netcoreapp3.1\Exceptions.pdb" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DTOs\Request\" />
     <Folder Include="SerializationInterfaces\" />
     <Folder Include="Serialization\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="DTOs\Request\CreateGameDTO.cs" />
+    <Compile Remove="DTOs\Request\UpdateGameDTO.cs" />
     <Compile Remove="DTOs\Response\ErrorDTO.cs" />
     <Compile Remove="Exceptions\InvalidResourceException.cs" />
     <Compile Remove="Exceptions\ResourceNotFoundException.cs" />

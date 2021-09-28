@@ -10,7 +10,7 @@ namespace DTOs.Request
 
         public byte[] Serialize()
         {
-            return Encoding.UTF8.GetBytes($"{GameId}");;
+            return Encoding.UTF8.GetBytes($"{GameId}");
         }
 
         public void Deserialize(byte[] entity)
