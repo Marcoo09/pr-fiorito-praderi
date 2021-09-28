@@ -149,5 +149,7 @@
     <Compile Remove="DTOs\Request\GetGameDTO.cs" />
     <Compile Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.AssemblyInfo.cs" />
     <Compile Remove="DTOs\Response\EnrichedGameDetalDTO.cs" />
+    <Compile Remove="DTOs\Response\EnrichedGameDetalDTO.cs" />
+    <Compile Remove="DTOs\Request\SearchMetricDTO.cs" />
   </ItemGroup>
 </Project>

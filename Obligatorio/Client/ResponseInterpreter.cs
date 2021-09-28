@@ -76,7 +76,7 @@ namespace Client
                     entityType = typeof(GameDetailDTO);
                     break;
                 case Command.SearchGames:
-                    //Do sth
+                    entityType = typeof(EnrichedGameDetailDTO);
                     break;
                 case Command.UpdateGame:
                     //Do sth
