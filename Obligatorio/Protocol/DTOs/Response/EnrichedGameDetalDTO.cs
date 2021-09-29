@@ -44,7 +44,7 @@ namespace DTOs.Response
             Data = entity.Skip(offset).Take((int)FileSize).ToArray();
             offset += (int)FileSize;
 
-            string[] attributes = Encoding.UTF8.GetString(entity.Skip(offset).ToArray()).Split("~~");
+            string[] attributes = Encoding.UTF8.GetString(entity.Skip(offset).ToArray()).Split("#");
 
             Id = Int32.Parse(attributes[0]);
             Title = attributes[1];
@@ -60,7 +60,7 @@ namespace DTOs.Response
             List<byte> serializedGame = new List<byte>();
             serializedGame.AddRange(BitConverter.GetBytes(FileSize));
             serializedGame.AddRange(Data);
-            serializedGame.AddRange(Encoding.UTF8.GetBytes($"{Id}~~{Title}~~{Synopsis}~~{Gender}~~{RatingAverage}~~{CoverName}"));
+            serializedGame.AddRange(Encoding.UTF8.GetBytes($"{Id}#{Title}#{Synopsis}#{Gender}#{RatingAverage}#{CoverName}"));
 
             return serializedGame.ToArray();
         }

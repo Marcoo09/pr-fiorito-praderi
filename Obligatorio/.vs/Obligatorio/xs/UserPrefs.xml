@@ -1,25 +1,10 @@
 ﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Implementations/ServiceRouter.cs">
-    <Files>
-      <File FileName="Server/Implementations/UserService.cs" Line="45" Column="32" />
-      <File FileName="Protocol/DTOs/Request/UpdateGameDTO.cs" Line="1" Column="1" />
-      <File FileName="Server/Implementations/GameService.cs" Line="210" Column="36" />
-      <File FileName="Server/Server.DataAccess/Interfaces/IGameRepository.cs" Line="12" Column="14" />
-      <File FileName="Server/Server.DataAccess/Implementations/GameRepository.cs" Line="17" Column="1" />
-      <File FileName="Server/Server.Domain/Game.cs" Line="33" Column="42" />
-      <File FileName="Protocol/Command.cs" Line="15" Column="21" />
-      <File FileName="Client/RequestBuilder.cs" Line="189" Column="36" />
-      <File FileName="Client/ResponseInterpreter.cs" Line="135" Column="27" />
-      <File FileName="Client/ClientUI.cs" Line="1" Column="1" />
-      <File FileName="Client/Connections/ConnectionsHandler.cs" Line="1" Column="1" />
-      <File FileName="Server/Interfaces/IGameService.cs" Line="1" Column="1" />
-      <File FileName="Server/Implementations/ServiceRouter.cs" Line="47" Column="42" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Obligatorio" expanded="True">
+          <Node name="Obligatorio" expanded="True" selected="True">
             <Node name="Client" expanded="True">
               <Node name="Client" expanded="True">
                 <Node name="Connections" expanded="True" />
@@ -37,9 +22,7 @@
             </Node>
             <Node name="Server" expanded="True">
               <Node name="Server" expanded="True">
-                <Node name="Implementations" expanded="True">
-                  <Node name="ServiceRouter.cs" selected="True" />
-                </Node>
+                <Node name="Implementations" expanded="True" />
                 <Node name="Interfaces" expanded="True" />
               </Node>
               <Node name="Server.DataAccess" expanded="True">

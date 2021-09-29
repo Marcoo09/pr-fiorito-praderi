@@ -37,7 +37,7 @@ namespace DTOs.Request
             List<byte> serializedGame = new List<byte>();
             serializedGame.AddRange(BitConverter.GetBytes(FileSize));
             serializedGame.AddRange(Data);
-            serializedGame.AddRange(Encoding.UTF8.GetBytes($"{Title}~~{Gender}~~{Synopsis}~~{CoverName}"));
+            serializedGame.AddRange(Encoding.UTF8.GetBytes($"{Title}#{Gender}#{Synopsis}#{CoverName}"));
 
             return serializedGame.ToArray();
         }
@@ -51,7 +51,7 @@ namespace DTOs.Request
             Data = serializedEntity.Skip(offset).Take((int)FileSize).ToArray();
             offset += (int)FileSize;
 
-            string[] attributes = Encoding.UTF8.GetString(serializedEntity.Skip(offset).ToArray()).Split("~~");
+            string[] attributes = Encoding.UTF8.GetString(serializedEntity.Skip(offset).ToArray()).Split("#");
 
             Title = attributes[0];
             Gender = attributes[1];
