@@ -115,6 +115,34 @@
     <None Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.csproj.CoreCompileInputs.cache" />
     <None Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.dll" />
     <None Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.pdb" />
+    <None Remove="DTOs\obj\Release\netcoreapp3.1\DTOs.csproj.CoreCompileInputs.cache" />
+    <None Remove="DTOs\obj\Release\netcoreapp3.1\DTOs.pdb" />
+    <None Remove="DTOs\obj\Release\netcoreapp3.1\DTOs.AssemblyInfoInputs.cache" />
+    <None Remove="DTOs\obj\Release\netcoreapp3.1\DTOs.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Remove="DTOs\obj\Release\netcoreapp3.1\DTOs.dll" />
+    <None Remove="DTOs\obj\Release\netcoreapp3.1\DTOs.csproj.CopyComplete" />
+    <None Remove="DTOs\obj\Release\netcoreapp3.1\DTOs.assets.cache" />
+    <None Remove="DTOs\obj\Release\netcoreapp3.1\DTOs.csproj.AssemblyReference.cache" />
+    <None Remove="DTOs\obj\Release\netcoreapp3.1\DTOs.csproj.FileListAbsolute.txt" />
+    <None Remove="DTOs\bin\Release\netcoreapp3.1\Exceptions.dll" />
+    <None Remove="DTOs\bin\Release\netcoreapp3.1\Server.Domain.pdb" />
+    <None Remove="DTOs\bin\Release\netcoreapp3.1\DTOs.pdb" />
+    <None Remove="DTOs\bin\Release\netcoreapp3.1\Exceptions.pdb" />
+    <None Remove="DTOs\bin\Release\netcoreapp3.1\DTOs.dll" />
+    <None Remove="DTOs\bin\Release\netcoreapp3.1\Server.Domain.dll" />
+    <None Remove="DTOs\bin\Release\netcoreapp3.1\Protocol.pdb" />
+    <None Remove="DTOs\bin\Release\netcoreapp3.1\Protocol.dll" />
+    <None Remove="DTOs\bin\Release\netcoreapp3.1\DTOs.deps.json" />
+    <None Remove="Exceptions\bin\Release\netcoreapp3.1\Exceptions.dll" />
+    <None Remove="Exceptions\bin\Release\netcoreapp3.1\Exceptions.pdb" />
+    <None Remove="Exceptions\bin\Release\netcoreapp3.1\Exceptions.deps.json" />
+    <None Remove="Exceptions\obj\Release\netcoreapp3.1\Exceptions.dll" />
+    <None Remove="Exceptions\obj\Release\netcoreapp3.1\Exceptions.pdb" />
+    <None Remove="Exceptions\obj\Release\netcoreapp3.1\Exceptions.csproj.FileListAbsolute.txt" />
+    <None Remove="Exceptions\obj\Release\netcoreapp3.1\Exceptions.csproj.CoreCompileInputs.cache" />
+    <None Remove="Exceptions\obj\Release\netcoreapp3.1\Exceptions.AssemblyInfoInputs.cache" />
+    <None Remove="Exceptions\obj\Release\netcoreapp3.1\Exceptions.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Remove="Exceptions\obj\Release\netcoreapp3.1\Exceptions.assets.cache" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SerializationInterfaces\" />
@@ -163,5 +191,9 @@
     <Compile Remove="DTOs\Request\BasicGameRequestDTO.cs" />
     <Compile Remove="Exceptions\obj\Debug\netcoreapp3.1\Exceptions.AssemblyInfo.cs" />
     <Compile Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.AssemblyInfo.cs" />
+    <Compile Remove="DTOs\obj\Release\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
+    <Compile Remove="DTOs\obj\Release\netcoreapp3.1\DTOs.AssemblyInfo.cs" />
+    <Compile Remove="Exceptions\obj\Release\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
+    <Compile Remove="Exceptions\obj\Release\netcoreapp3.1\Exceptions.AssemblyInfo.cs" />
   </ItemGroup>
 </Project>

@@ -19,7 +19,7 @@ namespace Client
 
         public string DeserializeResponse(Frame responseFrame)
         {
-            string interpretedResponse = null;
+            string deserializedResponse = null;
             byte[] response = responseFrame.Data;
             CommandConstants chosenCommand = (CommandConstants)responseFrame.ChosenCommand;
             Type expectedEntityTypeResponse = EntityTypeResponse(chosenCommand);
@@ -30,7 +30,7 @@ namespace Client
                 {
                     List<IDeserializable> entities = _deserializer.DeserializeArrayOfEntities(response, expectedEntityTypeResponse);
                     List<string> entitiesToShow = entities.Select(entity => entity.ToString()).ToList();
-                    interpretedResponse = String.Join("\n", entitiesToShow);
+                    deserializedResponse = String.Join("\n", entitiesToShow);
                 }
                 else
                 {
@@ -41,17 +41,17 @@ namespace Client
                         enrichedGameDetailDTO.WriteFile();
 
                     }
-                    interpretedResponse = entity.ToString();
+                    deserializedResponse = entity.ToString();
                 }
             }
             else
             {
                 ErrorDTO errorDto = new ErrorDTO();
                 errorDto.Deserialize(responseFrame.Data);
-                interpretedResponse = errorDto.ToString();
+                deserializedResponse = errorDto.ToString();
             }
 
-            return interpretedResponse;
+            return deserializedResponse;
         }
 
         private Type EntityTypeResponse(CommandConstants command)
