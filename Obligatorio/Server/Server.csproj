@@ -26,6 +26,10 @@
     <Compile Remove="Server.DataAccess\Interfaces\IGameRepository.cs" />
     <Compile Remove="Server.Domain\Game.cs" />
     <Compile Remove="Server.Domain\Review.cs" />
+    <Compile Remove="Server.DataAccess\obj\Release\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
+    <Compile Remove="Server.DataAccess\obj\Release\netcoreapp3.1\Server.DataAccess.AssemblyInfo.cs" />
+    <Compile Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.AssemblyInfo.cs" />
+    <Compile Remove="Server.Domain\obj\Release\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Server.DataAccess\bin\Debug\netcoreapp3.1\Server.DataAccess.deps.json" />
@@ -120,6 +124,36 @@
     <None Remove="Server.Domain\obj\Debug\netcoreapp3.1\Server.Domain.csproj.AssemblyReference.cache" />
     <None Remove="Server.DataAccess\obj\Debug\netcoreapp3.1\Server.DataAccess.csproj.AssemblyReference.cache" />
     <None Remove="Server.Domain\obj\Debug\netcoreapp3.1\Server.Domain.csproj.AssemblyReference.cache" />
+    <None Remove="Server.DataAccess\obj\Release\netcoreapp3.1\Server.DataAccess.dll" />
+    <None Remove="Server.DataAccess\obj\Release\netcoreapp3.1\Server.DataAccess.pdb" />
+    <None Remove="Server.DataAccess\obj\Release\netcoreapp3.1\Server.DataAccess.csproj.CoreCompileInputs.cache" />
+    <None Remove="Server.DataAccess\obj\Release\netcoreapp3.1\Server.DataAccess.csproj.CopyComplete" />
+    <None Remove="Server.DataAccess\obj\Release\netcoreapp3.1\Server.DataAccess.assets.cache" />
+    <None Remove="Server.DataAccess\obj\Release\netcoreapp3.1\Server.DataAccess.csproj.FileListAbsolute.txt" />
+    <None Remove="Server.DataAccess\obj\Release\netcoreapp3.1\Server.DataAccess.AssemblyInfoInputs.cache" />
+    <None Remove="Server.DataAccess\obj\Release\netcoreapp3.1\Server.DataAccess.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Remove="Server.DataAccess\bin\Release\netcoreapp3.1\Server.DataAccess.dll" />
+    <None Remove="Server.DataAccess\bin\Release\netcoreapp3.1\Exceptions.dll" />
+    <None Remove="Server.DataAccess\bin\Release\netcoreapp3.1\Server.Domain.pdb" />
+    <None Remove="Server.DataAccess\bin\Release\netcoreapp3.1\Server.DataAccess.pdb" />
+    <None Remove="Server.DataAccess\bin\Release\netcoreapp3.1\Exceptions.pdb" />
+    <None Remove="Server.DataAccess\bin\Release\netcoreapp3.1\Server.DataAccess.deps.json" />
+    <None Remove="Server.DataAccess\bin\Release\netcoreapp3.1\Server.Domain.dll" />
+    <None Remove="Server.Domain\bin\Release\netcoreapp3.1\Exceptions.dll" />
+    <None Remove="Server.Domain\bin\Release\netcoreapp3.1\Server.Domain.deps.json" />
+    <None Remove="Server.Domain\bin\Release\netcoreapp3.1\Server.Domain.pdb" />
+    <None Remove="Server.Domain\bin\Release\netcoreapp3.1\Exceptions.pdb" />
+    <None Remove="Server.Domain\bin\Release\netcoreapp3.1\Server.Domain.dll" />
+    <None Remove="Server.Domain\obj\Debug\netcoreapp3.1\Server.Domain.csproj.AssemblyReference.cache" />
+    <None Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.pdb" />
+    <None Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.csproj.CopyComplete" />
+    <None Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.csproj.AssemblyReference.cache" />
+    <None Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.AssemblyInfoInputs.cache" />
+    <None Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.dll" />
+    <None Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.csproj.FileListAbsolute.txt" />
+    <None Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.assets.cache" />
+    <None Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.csproj.CoreCompileInputs.cache" />
+    <None Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.GeneratedMSBuildEditorConfig.editorconfig" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Connectios\" />
