@@ -8,7 +8,7 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Starting server...");
+            Console.WriteLine("Starting...");
             Thread connectionsThread = new Thread(() => HandleConnections());
             connectionsThread.Start();
         }
@@ -19,7 +19,7 @@ namespace Server
             Thread listiningThread = new Thread(() => connectionsHandler.StartListening());
             listiningThread.Start();
 
-            Console.WriteLine("Press a key to stop the server");
+            Console.WriteLine("Write any key to shutdown the server");
             Console.ReadLine();
             connectionsHandler.StartShutDown();
         }
