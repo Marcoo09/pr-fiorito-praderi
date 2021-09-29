@@ -2,6 +2,6 @@
 {
     public class ProtocolConstants
     {
-        public const int MaxPacketSize = 32768;
+        public const int MaxPacketSize = 32768; // 32KB
     }
 }

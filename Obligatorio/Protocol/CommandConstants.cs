@@ -3,9 +3,9 @@
     public enum CommandConstants : short
     {
         IndexGamesCatalog, //SRF2
-        BuyGame,//SRF3 -> Marco 
+        BuyGame,//SRF3 
         IndexBoughtGames, //SRF3 
-        CreateGame,//SRF4, CRF2 Marco
+        CreateGame,//SRF4, CRF2
         CreateGameReview,//SRF5, CRF5
         GetGameReviews, //SRF5, CRF5 
         SearchGames,//SRF6 

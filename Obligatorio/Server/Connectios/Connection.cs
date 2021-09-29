@@ -17,7 +17,7 @@ namespace Server.Connections
         private TcpClient _tcpClient;
         private ProtocolHandler _protocolHandler;
         private IServiceRouter _serviceRouter;
-        private ConnectionsState _connectionState;
+        private State _connectionState;
         private Object _connectionStateLocker;
         private User _user;
         private IUserRepository _userRepository;
@@ -27,7 +27,7 @@ namespace Server.Connections
             _tcpClient = tcpClient;
             _protocolHandler = new ProtocolHandler(_tcpClient);
             _serviceRouter = new ServiceRouter();
-            _connectionState = ConnectionsState.Down;
+            _connectionState = State.Down;
             _connectionStateLocker = new Object();
             _userRepository = UserRepository.GetInstance();
         }
@@ -36,7 +36,7 @@ namespace Server.Connections
 
         public void StartConnection()
         {
-            _connectionState = ConnectionsState.Up;
+            _connectionState = State.Up;
 
             IPEndPoint endpoint = (IPEndPoint)_tcpClient.Client.RemoteEndPoint;
             _user = new User()
@@ -78,7 +78,7 @@ namespace Server.Connections
         {
             lock (_connectionStateLocker)
             {
-                return _connectionState == ConnectionsState.Up;
+                return _connectionState == State.Up;
             }
         }
 
@@ -93,7 +93,7 @@ namespace Server.Connections
 
             lock (_connectionStateLocker)
             {
-                _connectionState = ConnectionsState.Down;
+                _connectionState = State.Down;
             }
         }
     }
