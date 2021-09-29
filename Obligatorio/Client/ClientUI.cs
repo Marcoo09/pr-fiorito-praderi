@@ -51,7 +51,7 @@ namespace Client
             Console.WriteLine("0 - Disconnect from server");
             for (int i = 0; i < commands.Length; i++)
             {
-                Console.WriteLine($"{i + 1} - {EnumToString(commands.GetValue(i).ToString())}");
+                Console.WriteLine($"{i + 1} - {GetMenuString((CommandConstants)commands.GetValue(i))}");
             }
 
             if (Int32.TryParse(Console.ReadLine(), out int chosenOption) && chosenOption != -1 && chosenOption <= commands.Length)
@@ -67,9 +67,47 @@ namespace Client
             return option;
         }
 
-        private static string EnumToString(string menuOption)
+        public string GetMenuString(CommandConstants command)
         {
-            return Regex.Replace(menuOption, "(?<=[^A-Z])(?=[A-Z])", " ");
+            string menuString = "";
+            switch (command)
+            {
+                case CommandConstants.BuyGame:
+                    menuString = "Buy a game";
+                    break;
+                case CommandConstants.IndexBoughtGames:
+                    menuString = "Show my bought games";
+                    break;
+                case CommandConstants.CreateGame:
+                    menuString = "Create a game";
+                    break;
+                case CommandConstants.CreateGameReview:
+                    menuString = "Give a review";
+                    break;
+                case CommandConstants.DeleteGame:
+                    menuString = "Delete a game";
+                    break;
+                case CommandConstants.GetGameReviews:
+                    menuString = "Get game reviews";
+                    break;
+                case CommandConstants.GetGame:
+                    menuString = "Get game information";
+                    break;
+                case CommandConstants.IndexGamesCatalog:
+                    menuString = "Get all games";
+                    break;
+                case CommandConstants.SearchGames:
+                    menuString = "Search games by title, gender or rating";
+                    break;
+                case CommandConstants.UpdateGame:
+                    menuString = "Update game info";
+                    break;
+                case CommandConstants.IndexUsers:
+                    menuString = "Get server users";
+                    break;
+            }
+
+            return menuString;
         }
     }
 }
