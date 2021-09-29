@@ -20,37 +20,37 @@ namespace Client
             Console.WriteLine("");
 
             // Some commands do not need extra configuration
-            switch ((Command)chosenOption)
+            switch ((CommandConstants)chosenOption)
             {
-                case Command.BuyGame:
+                case CommandConstants.BuyGame:
                     BuildCreateBuyRequest(requestFrame);
                     break;
-                case Command.IndexBoughtGames:
+                case CommandConstants.IndexBoughtGames:
                     break;
-                case Command.CreateGame:
+                case CommandConstants.CreateGame:
                     BuildCreateGameRequest(requestFrame);
                     break;
-                case Command.CreateGameReview:
+                case CommandConstants.CreateGameReview:
                     BuildCreateGameReview(requestFrame);
                     break;
-                case Command.DeleteGame:
+                case CommandConstants.DeleteGame:
                     BuildCreateDeleteRequest(requestFrame);
                     break;
-                case Command.GetGameReviews:
+                case CommandConstants.GetGameReviews:
                     BuildCreateGetAllReviewsRequest(requestFrame);
                     break;
-                case Command.GetGame:
+                case CommandConstants.GetGame:
                     BuildGetGameDetail(requestFrame);
                     break;
-                case Command.IndexGamesCatalog:
+                case CommandConstants.IndexGamesCatalog:
                     break;
-                case Command.SearchGames:
+                case CommandConstants.SearchGames:
                     BuildSearchGames(requestFrame);
                     break;
-                case Command.UpdateGame:
+                case CommandConstants.UpdateGame:
                     BuildUpdateGameRequest(requestFrame);
                     break;
-                case Command.IndexUsers:
+                case CommandConstants.IndexUsers:
                     break;
             }
             return requestFrame;

@@ -1,35 +1,45 @@
 ﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Implementations/UserService.cs">
+    <Files>
+      <File FileName="Client/ClientProgram.cs" Line="12" Column="25" />
+      <File FileName="Client/ClientUI.cs" Line="1" Column="1" />
+      <File FileName="Client/Connections/ConnectionsHandler.cs" Line="13" Column="29" />
+      <File FileName="Client/RequestBuilder.cs" Line="1" Column="1" />
+      <File FileName="Client/ResponseInterpreter.cs" Line="136" Column="14" />
+      <File FileName="Server/Implementations/ServiceRouter.cs" Line="13" Column="31" />
+      <File FileName="Client/Connections/ClientState.cs" Line="9" Column="2" />
+      <File FileName="Protocol/Frame.cs" Line="1" Column="1" />
+      <File FileName="Protocol/Command.cs" Line="13" Column="28" />
+      <File FileName="Server/Implementations/GameService.cs" Line="252" Column="1" />
+      <File FileName="Server/Implementations/UserService.cs" Line="94" Column="56" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Obligatorio" expanded="True" selected="True">
+          <Node name="Obligatorio" expanded="True">
             <Node name="Client" expanded="True">
               <Node name="Client" expanded="True">
                 <Node name="Connections" expanded="True" />
               </Node>
             </Node>
             <Node name="Common" expanded="True">
-              <Node name="DTOs" expanded="True">
-                <Node name="Dependencies" expanded="True" />
-                <Node name="Request" expanded="True" />
-                <Node name="Response" expanded="True" />
-              </Node>
-              <Node name="Protocol" expanded="True">
-                <Node name="Dependencies" expanded="True" />
-              </Node>
+              <Node name="DTOs" expanded="True" />
+              <Node name="Protocol" expanded="True" />
             </Node>
             <Node name="Server" expanded="True">
               <Node name="Server" expanded="True">
-                <Node name="Implementations" expanded="True" />
-                <Node name="Interfaces" expanded="True" />
+                <Node name="Implementations" expanded="True">
+                  <Node name="UserService.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="Server.DataAccess" expanded="True">
                 <Node name="Implementations" expanded="True" />
                 <Node name="Interfaces" expanded="True" />
               </Node>
-              <Node name="Server.Domain" expanded="True" />
+              <Node name="Server.Domain" expanded="True">
+                <Node name="Dependencies" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

@@ -1,6 +1,6 @@
 ﻿namespace Protocol
 {
-    public enum Command : short
+    public enum CommandConstants : short
     {
         IndexGamesCatalog, //SRF2
         BuyGame,//SRF3 -> Marco 

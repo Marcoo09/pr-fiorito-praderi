@@ -20,39 +20,39 @@ namespace Server.Implementations
         {
             Frame response = null;
 
-            switch ((Command)frameRequest.ChosenCommand)
+            switch ((CommandConstants)frameRequest.ChosenCommand)
             {
-                case Command.BuyGame:
+                case CommandConstants.BuyGame:
                     response = _userService.BuyGame(frameRequest, user.Id);
                     break;
-                case Command.IndexBoughtGames:
+                case CommandConstants.IndexBoughtGames:
                     response = _userService.IndexBoughtGames(user.Id);
                     break;
-                case Command.CreateGame:
+                case CommandConstants.CreateGame:
                     response = _gameService.CreateGame(frameRequest);
                     break;
-                case Command.CreateGameReview:
+                case CommandConstants.CreateGameReview:
                     response = _gameService.AddReview(frameRequest);
                     break;
-                case Command.DeleteGame:
+                case CommandConstants.DeleteGame:
                     response = _gameService.DeleteGame(frameRequest);
                     break;
-                case Command.GetGameReviews:
+                case CommandConstants.GetGameReviews:
                     response = _gameService.GetAllReviews(frameRequest);
                     break;
-                case Command.GetGame:
+                case CommandConstants.GetGame:
                     response = _gameService.ShowGame(frameRequest);
                     break;
-                case Command.IndexGamesCatalog:
+                case CommandConstants.IndexGamesCatalog:
                     response = _gameService.ShowGames();
                     break;
-                case Command.SearchGames:
+                case CommandConstants.SearchGames:
                     response = _gameService.SearchGameBy(frameRequest);
                     break;
-                case Command.UpdateGame:
+                case CommandConstants.UpdateGame:
                     response = _gameService.UpdateGame(frameRequest);
                     break;
-                case Command.IndexUsers:
+                case CommandConstants.IndexUsers:
                     response = _userService.IndexUsers();
                     break;
             }

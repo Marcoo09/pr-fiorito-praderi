@@ -45,7 +45,7 @@ namespace Client
         private int ShowMenu()
         {
             int option = -1;
-            Array commands = Command.GetValues(typeof(Command));
+            Array commands = CommandConstants.GetValues(typeof(CommandConstants));
 
             Console.WriteLine("\n\nChoose an option:");
             Console.WriteLine("0 - Disconnect from server");
