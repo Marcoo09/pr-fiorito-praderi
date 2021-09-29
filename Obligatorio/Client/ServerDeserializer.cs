@@ -8,16 +8,16 @@ using Protocol.SerializationInterfaces;
 
 namespace Client
 {
-    public class ResponseInterpreter
+    public class ServerDeserializer
     {
         private Deserializer _deserializer;
 
-        public ResponseInterpreter()
+        public ServerDeserializer()
         {
             _deserializer = new Deserializer();
         }
 
-        public string InterpretResponse(Frame responseFrame)
+        public string DeserializeResponse(Frame responseFrame)
         {
             string interpretedResponse = null;
             byte[] response = responseFrame.Data;

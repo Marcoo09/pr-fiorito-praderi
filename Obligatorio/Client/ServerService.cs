@@ -4,9 +4,9 @@ using Protocol;
 
 namespace Client
 {
-    public class RequestBuilder
+    public class ServerService
     {
-        public RequestBuilder()
+        public ServerService()
         {
         }
 

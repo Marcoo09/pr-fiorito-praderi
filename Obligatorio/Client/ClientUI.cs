@@ -8,14 +8,14 @@ namespace Client
     public class ClientUI
     {
         private ConnectionsHandler _connectionsHandler;
-        private RequestBuilder _requestBuilder;
-        private ResponseInterpreter _responseInterpreter;
+        private ServerService _serverService;
+        private ServerDeserializer _serverDeserializer;
 
         public ClientUI()
         {
             _connectionsHandler = new ConnectionsHandler();
-            _requestBuilder = new RequestBuilder();
-            _responseInterpreter = new ResponseInterpreter();
+            _serverService = new ServerService();
+            _serverDeserializer = new ServerDeserializer();
         }
 
         public void Init()
@@ -30,12 +30,12 @@ namespace Client
                     _connectionsHandler.ShutDown();
                 else
                 {
-                    Frame requestFrame = _requestBuilder.BuildRequest((short)chosenOption);
+                    Frame requestFrame = _serverService.BuildRequest((short)chosenOption);
                     Frame response = _connectionsHandler.SendRequest(requestFrame);
 
                     if (response != null)
                     {
-                        string interpretedResponse = _responseInterpreter.InterpretResponse(response);
+                        string interpretedResponse = _serverDeserializer.DeserializeResponse(response);
                         Console.WriteLine("\n" + interpretedResponse);
                     }
                 }
