@@ -22,7 +22,7 @@ namespace DTOs.Request
 
         public void Deserialize(byte[] entity)
         {
-            string[] attributes = Encoding.UTF8.GetString(entity).Split("~~");
+            string[] attributes = Encoding.UTF8.GetString(entity).Split("#");
 
             GameId = Int32.Parse(attributes[0]);
             Rating = Int32.Parse(attributes[1]);
@@ -31,7 +31,7 @@ namespace DTOs.Request
 
         public byte[] Serialize()
         {
-            return Encoding.UTF8.GetBytes($"{GameId}~~{Rating}~~{Description}");
+            return Encoding.UTF8.GetBytes($"{GameId}#{Rating}#{Description}");
         }
     }
 }

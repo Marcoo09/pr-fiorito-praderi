@@ -1,20 +1,15 @@
 ﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Implementations/ServiceRouter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/ServerProgram.cs">
     <Files>
-      <File FileName="Server/Implementations/UserService.cs" Line="45" Column="32" />
-      <File FileName="Protocol/DTOs/Request/UpdateGameDTO.cs" Line="1" Column="1" />
-      <File FileName="Server/Implementations/GameService.cs" Line="210" Column="36" />
-      <File FileName="Server/Server.DataAccess/Interfaces/IGameRepository.cs" Line="12" Column="14" />
-      <File FileName="Server/Server.DataAccess/Implementations/GameRepository.cs" Line="17" Column="1" />
-      <File FileName="Server/Server.Domain/Game.cs" Line="33" Column="42" />
-      <File FileName="Protocol/Command.cs" Line="15" Column="21" />
-      <File FileName="Client/RequestBuilder.cs" Line="189" Column="36" />
-      <File FileName="Client/ResponseInterpreter.cs" Line="135" Column="27" />
-      <File FileName="Client/ClientUI.cs" Line="1" Column="1" />
-      <File FileName="Client/Connections/ConnectionsHandler.cs" Line="1" Column="1" />
-      <File FileName="Server/Interfaces/IGameService.cs" Line="1" Column="1" />
-      <File FileName="Server/Implementations/ServiceRouter.cs" Line="47" Column="42" />
+      <File FileName="Server/Connectios/Connection.cs" Line="1" Column="1" />
+      <File FileName="Client/RequestBuilder.cs" Line="13" Column="31" />
+      <File FileName="Client/ResponseInterpreter.cs" Line="29" Column="40" />
+      <File FileName="Client/ClientUI.cs" Line="22" Column="10" />
+      <File FileName="Client/ClientProgram.cs" Line="1" Column="1" />
+      <File FileName="Client/Connections/ConnectionsHandler.cs" Line="20" Column="46" />
+      <File FileName="Protocol/ProtocolHandler.cs" Line="84" Column="42" />
+      <File FileName="Server/ServerProgram.cs" Line="22" Column="62" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,27 +21,13 @@
               </Node>
             </Node>
             <Node name="Common" expanded="True">
-              <Node name="DTOs" expanded="True">
-                <Node name="Dependencies" expanded="True" />
-                <Node name="Request" expanded="True" />
-                <Node name="Response" expanded="True" />
-              </Node>
-              <Node name="Protocol" expanded="True">
-                <Node name="Dependencies" expanded="True" />
-              </Node>
+              <Node name="DTOs" expanded="True" />
+              <Node name="Protocol" expanded="True" />
             </Node>
             <Node name="Server" expanded="True">
               <Node name="Server" expanded="True">
-                <Node name="Implementations" expanded="True">
-                  <Node name="ServiceRouter.cs" selected="True" />
-                </Node>
-                <Node name="Interfaces" expanded="True" />
+                <Node name="ServerProgram.cs" selected="True" />
               </Node>
-              <Node name="Server.DataAccess" expanded="True">
-                <Node name="Implementations" expanded="True" />
-                <Node name="Interfaces" expanded="True" />
-              </Node>
-              <Node name="Server.Domain" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -56,9 +37,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/Connection.cs" relfile="Server/Connectios/Connection.cs" line="60" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

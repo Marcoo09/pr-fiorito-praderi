@@ -5,8 +5,8 @@
         public short ChosenHeader { get; set; }
         public short ResultStatus { get; set; }
         public short ChosenCommand { get; set; }
-        public int DataLength { get; set; }
         public byte[] Data { get; set; }
+        public int DataLength { get; set; }
 
         public Frame()
         {

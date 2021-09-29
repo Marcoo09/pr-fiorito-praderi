@@ -15,7 +15,7 @@ namespace DTOs.Request
 
         public void Deserialize(byte[] entity)
         {
-            string[] attributes = Encoding.UTF8.GetString(entity).Split("~~");
+            string[] attributes = Encoding.UTF8.GetString(entity).Split("#");
 
             GameId = Int32.Parse(attributes[0]);
         }

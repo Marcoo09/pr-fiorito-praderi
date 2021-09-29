@@ -22,7 +22,7 @@ namespace DTOs.Response
 
         public void Deserialize(byte[] entity)
         {
-            string[] attributes = Encoding.UTF8.GetString(entity).Split("~~");
+            string[] attributes = Encoding.UTF8.GetString(entity).Split("#");
 
             Rating = Int32.Parse(attributes[0]);
             Description = attributes[1];
@@ -30,7 +30,7 @@ namespace DTOs.Response
 
         public byte[] Serialize()
         {
-            return Encoding.UTF8.GetBytes($"{Rating}~~{Description}");
+            return Encoding.UTF8.GetBytes($"{Rating}#{Description}");
         }
 
         public override string ToString()

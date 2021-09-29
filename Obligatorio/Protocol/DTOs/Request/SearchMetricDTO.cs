@@ -12,7 +12,7 @@ namespace DTOs.Request
 
         public void Deserialize(byte[] entity)
         {
-            string[] attributes = Encoding.UTF8.GetString(entity).Split("~~");
+            string[] attributes = Encoding.UTF8.GetString(entity).Split("#");
 
             Rating = Int32.Parse(attributes[0]);
             Title = attributes[1];
@@ -21,7 +21,7 @@ namespace DTOs.Request
 
         public byte[] Serialize()
         {
-            return Encoding.UTF8.GetBytes($"{Rating}~~{Title}~~{Gender}");
+            return Encoding.UTF8.GetBytes($"{Rating}#{Title}#{Gender}");
         }
     }
 }

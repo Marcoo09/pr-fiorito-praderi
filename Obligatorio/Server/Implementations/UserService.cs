@@ -40,14 +40,14 @@ namespace Server.Implementations
 
                 MessageDTO messageDto = new MessageDTO() { Message = "Game bought!" };
 
-                return CreateSuccessResponse(Command.BuyGame, messageDto.Serialize());
+                return CreateSuccessResponse(CommandConstants.BuyGame, messageDto.Serialize());
             }
             catch (Exception e)
             {
                 if (e is ResourceNotFoundException || e is InvalidResourceException)
                 {
                     ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
-                    return CreateErrorResponse(Command.BuyGame, errorDto.Serialize());
+                    return CreateErrorResponse(CommandConstants.BuyGame, errorDto.Serialize());
                 }
                 throw;
             }
@@ -66,7 +66,7 @@ namespace Server.Implementations
                 return new Frame()
                 {
                     ChosenHeader = (short)Header.Response,
-                    ChosenCommand = (short)Command.IndexBoughtGames,
+                    ChosenCommand = (short)CommandConstants.IndexBoughtGames,
                     ResultStatus = (short)Status.Ok,
                     DataLength = serializedList.Length,
                     Data = serializedList,
@@ -77,7 +77,7 @@ namespace Server.Implementations
                 if (e is ResourceNotFoundException || e is InvalidResourceException)
                 {
                     ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
-                    return CreateErrorResponse(Command.BuyGame, errorDto.Serialize());
+                    return CreateErrorResponse(CommandConstants.IndexBoughtGames, errorDto.Serialize());
                 }
                 throw;
             }
@@ -91,14 +91,14 @@ namespace Server.Implementations
             return new Frame()
             {
                 ChosenHeader = (short)Header.Response,
-                ChosenCommand = (short)Command.IndexUsers,
+                ChosenCommand = (short)CommandConstants.IndexUsers,
                 ResultStatus = (short)Status.Ok,
                 DataLength = serializedList.Length,
                 Data = serializedList,
             };
         }
 
-        private Frame CreateErrorResponse(Command command, byte[] data)
+        private Frame CreateErrorResponse(CommandConstants command, byte[] data)
         {
             return new Frame()
             {
@@ -110,7 +110,7 @@ namespace Server.Implementations
             };
         }
 
-        private Frame CreateSuccessResponse(Command command, byte[] data)
+        private Frame CreateSuccessResponse(CommandConstants command, byte[] data)
         {
             return new Frame()
             {

@@ -29,7 +29,7 @@ namespace DTOs.Request
         public void Deserialize(byte[] serializedEntity)
         {
 
-            string[] attributes = Encoding.UTF8.GetString(serializedEntity).Split("~~");
+            string[] attributes = Encoding.UTF8.GetString(serializedEntity).Split("#");
 
             Id = Int32.Parse(attributes[0]);
             Title = attributes[1];
@@ -40,7 +40,7 @@ namespace DTOs.Request
 
         public byte[] Serialize()
         {
-            return Encoding.UTF8.GetBytes($"{Id}~~{Title}~~{Synopsis}~~{Gender}");
+            return Encoding.UTF8.GetBytes($"{Id}#{Title}#{Synopsis}#{Gender}");
         }
     }
 }

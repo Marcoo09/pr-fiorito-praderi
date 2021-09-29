@@ -8,20 +8,20 @@ using Protocol.SerializationInterfaces;
 
 namespace Client
 {
-    public class ResponseInterpreter
+    public class ServerDeserializer
     {
         private Deserializer _deserializer;
 
-        public ResponseInterpreter()
+        public ServerDeserializer()
         {
             _deserializer = new Deserializer();
         }
 
-        public string InterpretResponse(Frame responseFrame)
+        public string DeserializeResponse(Frame responseFrame)
         {
             string interpretedResponse = null;
             byte[] response = responseFrame.Data;
-            Command chosenCommand = (Command)responseFrame.ChosenCommand;
+            CommandConstants chosenCommand = (CommandConstants)responseFrame.ChosenCommand;
             Type expectedEntityTypeResponse = EntityTypeResponse(chosenCommand);
 
             if (responseFrame.IsSuccessful())
@@ -54,43 +54,43 @@ namespace Client
             return interpretedResponse;
         }
 
-        private Type EntityTypeResponse(Command command)
+        private Type EntityTypeResponse(CommandConstants command)
         {
             Type entityType = null;
 
             switch (command)
             {
-                case Command.BuyGame:
+                case CommandConstants.BuyGame:
                     entityType = typeof(MessageDTO);
                     break;
-                case Command.CreateGame:
+                case CommandConstants.CreateGame:
                     entityType = typeof(GameBasicInfoDTO);
                     break;
-                case Command.CreateGameReview:
+                case CommandConstants.CreateGameReview:
                     entityType = typeof(MessageDTO);
                     break;
-                case Command.DeleteGame:
+                case CommandConstants.DeleteGame:
                     entityType = typeof(MessageDTO);
                     break;
-                case Command.GetGameReviews:
+                case CommandConstants.GetGameReviews:
                     entityType = typeof(ReviewDetailDTO);
                     break;
-                case Command.GetGame:
+                case CommandConstants.GetGame:
                     entityType = typeof(EnrichedGameDetailDTO);
                     break;
-                case Command.IndexGamesCatalog:
+                case CommandConstants.IndexGamesCatalog:
                     entityType = typeof(GameDetailDTO);
                     break;
-                case Command.SearchGames:
+                case CommandConstants.SearchGames:
                     entityType = typeof(GameDetailDTO);
                     break;
-                case Command.UpdateGame:
+                case CommandConstants.UpdateGame:
                     entityType = typeof(GameBasicInfoDTO);
                     break;
-                case Command.IndexUsers:
+                case CommandConstants.IndexUsers:
                     entityType = typeof(UserDetailDTO);
                     break;
-                case Command.IndexBoughtGames:
+                case CommandConstants.IndexBoughtGames:
                     entityType = typeof(GameDetailDTO);
                     break;
             }
@@ -98,25 +98,25 @@ namespace Client
             return entityType;
         }
 
-        private bool IsResponseAnArray(Command command)
+        private bool IsResponseAnArray(CommandConstants command)
         {
             bool isArray = false;
 
             switch (command)
             {
-                case Command.IndexGamesCatalog:
+                case CommandConstants.IndexGamesCatalog:
                     isArray = true;
                     break;
-                case Command.GetGameReviews:
+                case CommandConstants.GetGameReviews:
                     isArray = true;
                     break;
-                case Command.SearchGames:
+                case CommandConstants.SearchGames:
                     isArray = true;
                     break;
-                case Command.IndexUsers:
+                case CommandConstants.IndexUsers:
                     isArray = true;
                     break;
-                case Command.IndexBoughtGames:
+                case CommandConstants.IndexBoughtGames:
                     isArray = true;
                     break;
             }
@@ -124,13 +124,13 @@ namespace Client
             return isArray;
         }
 
-        private bool IsReturningAndImage(Command command)
+        private bool IsReturningAndImage(CommandConstants command)
         {
             bool isReturningAndImage = false;
 
             switch (command)
             {
-                case Command.GetGame:
+                case CommandConstants.GetGame:
                     isReturningAndImage = true;
                     break;
             }

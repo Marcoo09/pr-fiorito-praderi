@@ -14,7 +14,7 @@ namespace Server.Connections
         private int _serverPort;
         private TcpListener _tcpListener;
         private List<Connection> _connections;
-        private ServerState _serverState;
+        private State _serverState;
         private Object _serverStateLocker;
         private Object _connectionsListLocker;
 
@@ -26,13 +26,13 @@ namespace Server.Connections
             _serverIp = IPAddress.Parse(ConfigurationManager.AppSettings["ServerIP"]);
             _serverPort = Int32.Parse(ConfigurationManager.AppSettings["ServerPort"]);
             _tcpListener = new TcpListener(_serverIp, _serverPort);
-            _serverState = ServerState.Down;
+            _serverState = State.Down;
         }
 
         public void StartListening()
         {
             _tcpListener.Start(20);
-            _serverState = ServerState.Up;
+            _serverState = State.Up;
 
             while (IsServerUp())
             {
@@ -56,7 +56,7 @@ namespace Server.Connections
         {
             lock (_serverStateLocker)
             {
-                _serverState = ServerState.ShuttingDown;
+                _serverState = State.ShuttingDown;
                 _tcpListener.Stop();
             }
         }
@@ -65,7 +65,7 @@ namespace Server.Connections
         {
             lock (_serverStateLocker)
             {
-                _serverState = ServerState.Down;
+                _serverState = State.Down;
 
                 lock (_connectionsListLocker)
                 {
@@ -87,7 +87,7 @@ namespace Server.Connections
         {
             lock (_serverStateLocker)
             {
-                return _serverState == ServerState.Up;
+                return _serverState == State.Up;
             }
         }
 

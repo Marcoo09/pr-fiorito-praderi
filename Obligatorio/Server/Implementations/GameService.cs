@@ -40,14 +40,14 @@ namespace Server.Implementations
 
                 MessageDTO messageDto = new MessageDTO() { Message = "Review added!" };
 
-                return CreateSuccessResponse(Command.CreateGameReview, messageDto.Serialize());
+                return CreateSuccessResponse(CommandConstants.CreateGameReview, messageDto.Serialize());
             }
             catch (Exception e)
             {
                 if (e is InvalidResourceException || e is ResourceNotFoundException)
                 {
                     ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
-                    return CreateErrorResponse(Command.CreateGameReview, errorDto.Serialize());
+                    return CreateErrorResponse(CommandConstants.CreateGameReview, errorDto.Serialize());
                 }
                 throw;
             }
@@ -66,14 +66,14 @@ namespace Server.Implementations
                 Game createdGame = _gameRepository.Get(newGameId);
                 createGameDTO.WriteFile();
 
-                return CreateSuccessResponse(Command.CreateGame, new GameBasicInfoDTO(createdGame).Serialize());
+                return CreateSuccessResponse(CommandConstants.CreateGame, new GameBasicInfoDTO(createdGame).Serialize());
             }
             catch (Exception e)
             {
                 if (e is InvalidResourceException || e is ResourceNotFoundException)
                 {
                     ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
-                    return CreateErrorResponse(Command.CreateGame, errorDto.Serialize());
+                    return CreateErrorResponse(CommandConstants.CreateGame, errorDto.Serialize());
                 }
                 throw;
             }
@@ -91,12 +91,12 @@ namespace Server.Implementations
                 _gameRepository.Delete(basicGameRequestDTO.GameId);
 
                 MessageDTO messageDto = new MessageDTO() { Message = "Game deleted!" };
-                return CreateSuccessResponse(Command.DeleteGame, messageDto.Serialize());
+                return CreateSuccessResponse(CommandConstants.DeleteGame, messageDto.Serialize());
             }
             catch (ResourceNotFoundException e)
             {
                 ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
-                return CreateErrorResponse(Command.DeleteGame, errorDto.Serialize());
+                return CreateErrorResponse(CommandConstants.DeleteGame, errorDto.Serialize());
             }
         }
 
@@ -116,7 +116,7 @@ namespace Server.Implementations
                 return new Frame()
                 {
                     ChosenHeader = (short)Header.Response,
-                    ChosenCommand = (short)Command.GetGameReviews,
+                    ChosenCommand = (short)CommandConstants.GetGameReviews,
                     ResultStatus = (short)Status.Ok,
                     DataLength = serializedList.Length,
                     Data = serializedList,
@@ -127,7 +127,7 @@ namespace Server.Implementations
                 if (e is InvalidResourceException || e is ResourceNotFoundException)
                 {
                     ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
-                    return CreateErrorResponse(Command.GetGameReviews, errorDto.Serialize());
+                    return CreateErrorResponse(CommandConstants.GetGameReviews, errorDto.Serialize());
                 }
                 throw;
             }
@@ -159,7 +159,7 @@ namespace Server.Implementations
             List<GameDetailDTO> response = gamesFiltered.Select(g => new GameDetailDTO(g)).ToList();
             byte[] serializedList = _serializer.SerializeEntityList(response.Cast<ISerializable>().ToList());
 
-            return CreateSuccessResponse(Command.SearchGames, serializedList);
+            return CreateSuccessResponse(CommandConstants.SearchGames, serializedList);
 
         }
 
@@ -174,12 +174,12 @@ namespace Server.Implementations
                 EnrichedGameDetailDTO response = new EnrichedGameDetailDTO(game);
                 response.ReadFile(game.Path);
 
-                return CreateSuccessResponse(Command.GetGame, response.Serialize());
+                return CreateSuccessResponse(CommandConstants.GetGame, response.Serialize());
             }
             catch (ResourceNotFoundException e)
             {
                 ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
-                return CreateErrorResponse(Command.GetGame, errorDto.Serialize());
+                return CreateErrorResponse(CommandConstants.GetGame, errorDto.Serialize());
             }
         }
 
@@ -191,7 +191,7 @@ namespace Server.Implementations
             return new Frame()
             {
                 ChosenHeader = (short)Header.Response,
-                ChosenCommand = (short)Command.IndexGamesCatalog,
+                ChosenCommand = (short)CommandConstants.IndexGamesCatalog,
                 ResultStatus = (short)Status.Ok,
                 DataLength = serializedList.Length,
                 Data = serializedList,
@@ -211,20 +211,20 @@ namespace Server.Implementations
 
                 Game storedGame = _gameRepository.Get(updatedGame.Id);
 
-                return CreateSuccessResponse(Command.UpdateGame, new GameBasicInfoDTO(storedGame).Serialize());
+                return CreateSuccessResponse(CommandConstants.UpdateGame, new GameBasicInfoDTO(storedGame).Serialize());
             }
             catch (Exception e)
             {
                 if (e is ResourceNotFoundException || e is InvalidResourceException)
                 {
                     ErrorDTO errorDto = new ErrorDTO() { Message = e.Message };
-                    return CreateErrorResponse(Command.UpdateGame, errorDto.Serialize());
+                    return CreateErrorResponse(CommandConstants.UpdateGame, errorDto.Serialize());
                 }
                 throw;
             }
         }
 
-        private Frame CreateErrorResponse(Command command, byte[] data)
+        private Frame CreateErrorResponse(CommandConstants command, byte[] data)
         {
             return new Frame()
             {
@@ -236,7 +236,7 @@ namespace Server.Implementations
             };
         }
 
-        private Frame CreateSuccessResponse(Command command, byte[] data)
+        private Frame CreateSuccessResponse(CommandConstants command, byte[] data)
         {
             return new Frame()
             {

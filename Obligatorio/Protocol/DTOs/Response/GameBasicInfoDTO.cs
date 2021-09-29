@@ -22,12 +22,12 @@ namespace DTOs.Response
 
         public byte[] Serialize()
         {
-            return Encoding.UTF8.GetBytes($"{Id}~~{Title}");
+            return Encoding.UTF8.GetBytes($"{Id}#{Title}");
         }
 
         public void Deserialize(byte[] entity)
         {
-            string[] attributes = Encoding.UTF8.GetString(entity).Split("~~");
+            string[] attributes = Encoding.UTF8.GetString(entity).Split("#");
 
             Id = Int32.Parse(attributes[0]);
             Title = attributes[1];

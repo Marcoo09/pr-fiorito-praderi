@@ -1,6 +1,6 @@
 ﻿namespace Server.Connections
 {
-    public enum ConnectionsState
+    public enum State
     {
         Up,
         ShuttingDown,
