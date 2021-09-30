@@ -52,6 +52,9 @@ namespace Client
                     break;
                 case CommandConstants.IndexUsers:
                     break;
+                case CommandConstants.Login:
+                    BuildLoginRequest(requestFrame);
+                    break;
             }
             return requestFrame;
         }
@@ -70,6 +73,18 @@ namespace Client
             }
 
             return intFromConsole;
+        }
+
+        private void BuildLoginRequest(Frame requestFrame)
+        {
+            LoginDTO loginDTO = new LoginDTO();
+
+            Console.WriteLine("Indicate the user name:");
+            loginDTO.UserName = Console.ReadLine();
+
+            byte[] loginData = loginDTO.Serialize();
+            requestFrame.Data = loginData;
+            requestFrame.DataLength = loginData.Length;
         }
 
         private void BuildUpdateGameRequest(Frame requestFrame)

@@ -154,6 +154,7 @@
     <None Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.assets.cache" />
     <None Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.csproj.CoreCompileInputs.cache" />
     <None Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Remove="Server.DataAccess\obj\Release\netcoreapp3.1\Server.DataAccess.csproj.AssemblyReference.cache" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Connectios\" />

@@ -19,7 +19,6 @@ namespace Server.Connections
         private IServiceRouter _serviceRouter;
         private State _connectionState;
         private Object _connectionStateLocker;
-        private User _user;
         private IUserRepository _userRepository;
 
         public Connection(TcpClient tcpClient)
@@ -38,14 +37,6 @@ namespace Server.Connections
         {
             _connectionState = State.Up;
 
-            IPEndPoint endpoint = (IPEndPoint)_tcpClient.Client.RemoteEndPoint;
-            _user = new User()
-            {
-                Name = endpoint.Address.ToString(),
-            };
-            int userId = _userRepository.Insert(_user);
-            _user = _userRepository.Get(userId);
-
             while (ConnectionIsUp())
             {
                 HandleRequests();
@@ -57,7 +48,7 @@ namespace Server.Connections
             try
             {
                 Frame receivedFrame = _protocolHandler.Receive();
-                Frame responseFrame = _serviceRouter.GetResponse(receivedFrame, _user);
+                Frame responseFrame = _serviceRouter.GetResponse(receivedFrame);
 
                 _protocolHandler.Send(responseFrame);
             }
@@ -84,11 +75,6 @@ namespace Server.Connections
 
         public void ShutDown()
         {
-            try
-            {
-                _userRepository.Delete(_user.Id);
-            }
-            catch (ResourceNotFoundException) { }
             _tcpClient.Close();
 
             lock (_connectionStateLocker)

@@ -93,6 +93,9 @@ namespace Client
                 case CommandConstants.IndexBoughtGames:
                     entityType = typeof(GameDetailDTO);
                     break;
+                case CommandConstants.Login:
+                    entityType = typeof(UserDetailDTO);
+                    break;
             }
 
             return entityType;
