@@ -575,7 +575,7 @@
       "outputPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/marcofiorito/.config/NuGet/NuGet.Config"
+        "/Users/marcofiorito/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

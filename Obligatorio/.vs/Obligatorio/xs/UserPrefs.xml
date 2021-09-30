@@ -1,34 +1,39 @@
 ﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Server.DataAccess/Implementations/GameRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Server.DataAccess/Implementations/UserRepository.cs">
     <Files>
-      <File FileName="Client/ClientUI.cs" Line="59" Column="77" />
+      <File FileName="Client/ClientUI.cs" Line="60" Column="50" />
       <File FileName="Client/ServerDeserializer.cs" Line="46" Column="14" />
       <File FileName="Client/ServerService.cs" Line="205" Column="38" />
       <File FileName="Server/Implementations/UserService.cs" Line="1" Column="1" />
       <File FileName="Server/Implementations/GameService.cs" Line="63" Column="20" />
       <File FileName="Server/Server.Domain/Game.cs" Line="25" Column="1" />
       <File FileName="Server/Server.Domain/Review.cs" Line="16" Column="32" />
-      <File FileName="Server/Server.DataAccess/Implementations/GameRepository.cs" Line="69" Column="36" />
+      <File FileName="Server/Server.DataAccess/Implementations/GameRepository.cs" Line="134" Column="17" />
+      <File FileName="Server/Connectios/ConnectionsHandler.cs" Line="17" Column="35" />
+      <File FileName="Server/Implementations/ServiceRouter.cs" Line="70" Column="39" />
+      <File FileName="Server/Interfaces/IUserService.cs" Line="10" Column="45" />
+      <File FileName="Server/Interfaces/IServiceRouter.cs" Line="1" Column="1" />
+      <File FileName="Server/Server.DataAccess/Implementations/UserRepository.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
             <Node name="Client" expanded="True">
-              <Node name="Client" expanded="True" />
-            </Node>
-            <Node name="Common" expanded="True" />
-            <Node name="Server" expanded="True">
-              <Node name="Server" expanded="True">
-                <Node name="Implementations" expanded="True" />
+              <Node name="Client" expanded="True">
+                <Node name="Connections" expanded="True" />
               </Node>
+            </Node>
+            <Node name="Common" expanded="True">
+              <Node name="Protocol" expanded="True" />
+            </Node>
+            <Node name="Server" expanded="True">
               <Node name="Server.DataAccess" expanded="True">
                 <Node name="Implementations" expanded="True">
-                  <Node name="GameRepository.cs" selected="True" />
+                  <Node name="UserRepository.cs" selected="True" />
                 </Node>
               </Node>
-              <Node name="Server.Domain" expanded="True" />
             </Node>
           </Node>
         </State>
