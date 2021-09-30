@@ -111,7 +111,7 @@ namespace Client
             else
             {
                 Console.WriteLine("Invalid option, please enter a new one");
-                option = ShowMenu();
+                option = LoginMenu();
             }
 
             return option;

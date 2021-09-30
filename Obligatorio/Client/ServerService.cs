@@ -19,7 +19,6 @@ namespace Client
             };
             Console.WriteLine("");
 
-            // Some commands do not need extra configuration
             switch ((CommandConstants)chosenOption)
             {
                 case CommandConstants.BuyGame:

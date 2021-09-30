@@ -1,35 +1,32 @@
 ﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Client/ServerDeserializer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Server.DataAccess/Implementations/GameRepository.cs">
     <Files>
       <File FileName="Client/ClientUI.cs" Line="59" Column="77" />
-      <File FileName="Client/ServerDeserializer.cs" Line="97" Column="54" />
+      <File FileName="Client/ServerDeserializer.cs" Line="46" Column="14" />
+      <File FileName="Client/ServerService.cs" Line="205" Column="38" />
+      <File FileName="Server/Implementations/UserService.cs" Line="1" Column="1" />
+      <File FileName="Server/Implementations/GameService.cs" Line="63" Column="20" />
+      <File FileName="Server/Server.Domain/Game.cs" Line="25" Column="1" />
+      <File FileName="Server/Server.Domain/Review.cs" Line="16" Column="32" />
+      <File FileName="Server/Server.DataAccess/Implementations/GameRepository.cs" Line="69" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
             <Node name="Client" expanded="True">
-              <Node name="Client" expanded="True">
-                <Node name="ServerDeserializer.cs" selected="True" />
-              </Node>
+              <Node name="Client" expanded="True" />
             </Node>
-            <Node name="Common" expanded="True">
-              <Node name="DTOs" expanded="True">
-                <Node name="Request" expanded="True" />
-                <Node name="Response" expanded="True" />
-              </Node>
-              <Node name="Protocol" expanded="True" />
-            </Node>
+            <Node name="Common" expanded="True" />
             <Node name="Server" expanded="True">
               <Node name="Server" expanded="True">
-                <Node name="Connectios" expanded="True" />
                 <Node name="Implementations" expanded="True" />
-                <Node name="Interfaces" expanded="True" />
               </Node>
               <Node name="Server.DataAccess" expanded="True">
-                <Node name="Implementations" expanded="True" />
-                <Node name="Interfaces" expanded="True" />
+                <Node name="Implementations" expanded="True">
+                  <Node name="GameRepository.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="Server.Domain" expanded="True" />
             </Node>

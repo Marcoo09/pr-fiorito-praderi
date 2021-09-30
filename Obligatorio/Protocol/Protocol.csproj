@@ -146,6 +146,9 @@
     <None Remove="Exceptions\obj\Release\netcoreapp3.1\Exceptions.csproj.AssemblyReference.cache" />
     <None Remove="DTOs\.DS_Store" />
     <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.csproj.AssemblyReference.cache" />
+    <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.csproj.AssemblyReference.cache" />
+    <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.csproj.AssemblyReference.cache" />
+    <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.csproj.AssemblyReference.cache" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SerializationInterfaces\" />

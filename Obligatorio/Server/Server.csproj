@@ -30,6 +30,7 @@
     <Compile Remove="Server.DataAccess\obj\Release\netcoreapp3.1\Server.DataAccess.AssemblyInfo.cs" />
     <Compile Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.AssemblyInfo.cs" />
     <Compile Remove="Server.Domain\obj\Release\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
+    <Compile Remove="Server.DataAccess\Implementations\GameRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Server.DataAccess\bin\Debug\netcoreapp3.1\Server.DataAccess.deps.json" />
@@ -155,6 +156,7 @@
     <None Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.csproj.CoreCompileInputs.cache" />
     <None Remove="Server.Domain\obj\Release\netcoreapp3.1\Server.Domain.GeneratedMSBuildEditorConfig.editorconfig" />
     <None Remove="Server.DataAccess\obj\Release\netcoreapp3.1\Server.DataAccess.csproj.AssemblyReference.cache" />
+    <None Remove="Server.DataAccess\obj\Debug\netcoreapp3.1\Server.DataAccess.csproj.AssemblyReference.cache" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Connectios\" />
