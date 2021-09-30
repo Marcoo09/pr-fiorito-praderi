@@ -199,5 +199,6 @@
     <Compile Remove="Exceptions\obj\Release\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
     <Compile Remove="Exceptions\obj\Release\netcoreapp3.1\Exceptions.AssemblyInfo.cs" />
     <Compile Remove="DTOs\Request\LoginDTO.cs" />
+    <Compile Remove="DTOs\Request\LoginDTO.cs" />
   </ItemGroup>
 </Project>
