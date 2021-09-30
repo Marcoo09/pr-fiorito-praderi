@@ -7,5 +7,6 @@ namespace Server.Interfaces
         Frame IndexUsers();
         Frame BuyGame(Frame requestFrame, int userId);
         Frame IndexBoughtGames(int userId);
+        Frame CreateUser(Frame requestFrame);
     }
 }

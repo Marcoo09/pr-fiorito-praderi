@@ -53,6 +53,29 @@ namespace Server.Implementations
             }
         }
 
+        public Frame CreateUser(Frame requestFrame)
+        {
+            LoginDTO loginDTO = new LoginDTO();
+            loginDTO.Deserialize(requestFrame.Data);
+
+            User currentUser;
+
+            bool userAlreadyExist = _userRepository.GetAll().Any(u => u.Name == loginDTO.UserName);
+
+            if (!userAlreadyExist)
+            {
+                User newUser = new User();
+                newUser = loginDTO.ToEntity();
+                _userRepository.Insert(newUser);
+            }
+
+            currentUser = _userRepository.GetAll().Find(u => u.Name == loginDTO.UserName);
+
+            UserDetailDTO userDetailDTO = new UserDetailDTO(currentUser);
+
+            return CreateSuccessResponse(CommandConstants.Login, userDetailDTO.Serialize());
+        }
+
         public Frame IndexBoughtGames(int userId)
         {
             try

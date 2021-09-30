@@ -6,6 +6,6 @@ namespace Server.Interfaces
 {
     public interface IServiceRouter
     {
-        Frame GetResponse(Frame request, User user);
+        Frame GetResponse(Frame request);
     }
 }

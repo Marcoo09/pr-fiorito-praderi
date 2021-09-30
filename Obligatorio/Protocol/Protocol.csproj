@@ -143,6 +143,9 @@
     <None Remove="Exceptions\obj\Release\netcoreapp3.1\Exceptions.AssemblyInfoInputs.cache" />
     <None Remove="Exceptions\obj\Release\netcoreapp3.1\Exceptions.GeneratedMSBuildEditorConfig.editorconfig" />
     <None Remove="Exceptions\obj\Release\netcoreapp3.1\Exceptions.assets.cache" />
+    <None Remove="Exceptions\obj\Release\netcoreapp3.1\Exceptions.csproj.AssemblyReference.cache" />
+    <None Remove="DTOs\.DS_Store" />
+    <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.csproj.AssemblyReference.cache" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SerializationInterfaces\" />
@@ -195,5 +198,6 @@
     <Compile Remove="DTOs\obj\Release\netcoreapp3.1\DTOs.AssemblyInfo.cs" />
     <Compile Remove="Exceptions\obj\Release\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
     <Compile Remove="Exceptions\obj\Release\netcoreapp3.1\Exceptions.AssemblyInfo.cs" />
+    <Compile Remove="DTOs\Request\LoginDTO.cs" />
   </ItemGroup>
 </Project>

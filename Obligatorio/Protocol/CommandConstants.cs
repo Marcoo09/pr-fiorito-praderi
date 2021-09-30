@@ -12,6 +12,7 @@
         CreateGameReview,//SRF5, CRF5
         GetGameReviews, //SRF5, CRF5 
         SearchGames,//SRF6 
-        IndexUsers, 
+        IndexUsers,
+        Login,
     }
 }
