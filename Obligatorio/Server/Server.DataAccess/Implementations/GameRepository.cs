@@ -130,6 +130,7 @@ namespace Server.DataAccess.Implementations
 
             lock (_gameLocker)
             {
+                review.ValidOrFail();
                 gameToBeUpdated.AddReview(review);
             }
         }
