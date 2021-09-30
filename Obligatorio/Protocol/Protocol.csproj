@@ -149,6 +149,7 @@
     <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.csproj.AssemblyReference.cache" />
     <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.csproj.AssemblyReference.cache" />
     <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.csproj.AssemblyReference.cache" />
+    <None Remove="DTOs\obj\Debug\netcoreapp3.1\DTOs.csproj.AssemblyReference.cache" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SerializationInterfaces\" />
