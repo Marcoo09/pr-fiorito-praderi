@@ -7,3 +7,4 @@
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Exceptions/obj/Debug/netcoreapp3.1/Exceptions.csproj.CoreCompileInputs.cache
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Exceptions/obj/Debug/netcoreapp3.1/Exceptions.dll
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Exceptions/obj/Debug/netcoreapp3.1/Exceptions.pdb
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Exceptions/obj/Debug/netcoreapp3.1/Exceptions.csproj.AssemblyReference.cache

@@ -17,7 +17,7 @@ namespace Server.Domain
         {
             if (String.IsNullOrEmpty(Description))
                 throw new InvalidResourceException("Review must have a description");
-            if (Rating < 1 || Rating > 0)
+            if (Rating < 1 || Rating > 5)
                 throw new InvalidResourceException("Review must be in the range 1-5");
             if (Game == null)
                 throw new InvalidResourceException("Review must be associated to a game");
