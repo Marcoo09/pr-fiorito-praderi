@@ -23,7 +23,6 @@ namespace Client
         public void Init()
         {
             _connectionsHandler.ConnectToServer();
-            Console.WriteLine("Connected to server.");
 
             while (_connectionsHandler.IsClientStateUp())
             {

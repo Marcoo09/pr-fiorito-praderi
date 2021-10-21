@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net.Sockets;
-using System.Text;
 using Exceptions;
 
 namespace Protocol
@@ -48,29 +47,6 @@ namespace Protocol
 
         private void SendBytesInChunks(byte[] data, int chunks)
         {
-            //NetworkStream stream = _tcpClient.GetStream();
-            //int offset = 0;
-            //int currentChunk = 1;
-
-            //while (offset < data.Length)
-            //{
-            //    if (currentChunk < chunks)
-            //    {
-            //        var dataToSend = new byte[ProtocolConstants.MaxPacketSize];
-            //        Array.Copy(data, offset, dataToSend, 0, ProtocolConstants.MaxPacketSize);
-            //        stream.Write(dataToSend);
-            //        offset += ProtocolConstants.MaxPacketSize;
-            //    }
-            //    else
-            //    {
-            //        int dataLeftSize = data.Length - offset;
-            //        byte[] dataToSend = new byte[dataLeftSize];
-            //        Array.Copy(data, offset, dataToSend, 0, dataLeftSize);
-            //        stream.Write(dataToSend);
-            //        offset += dataLeftSize;
-            //    }
-            //    currentChunk++;
-            //}
             var sentBytes = 0;
             while (sentBytes < data.Length)
             {
@@ -81,29 +57,6 @@ namespace Protocol
 
         private byte[] ReceiveBytesInChunks(int fileLength, int chunks)
         {
-            //NetworkStream stream = _tcpClient.GetStream();
-            //byte[] buffer = new byte[fileLength];
-            //var offset = 0;
-            //var currentChunk = 1;
-
-            //while (offset < fileLength)
-            //{
-            //    if (currentChunk < chunks)
-            //    {
-            //        byte[] receivedBytes = Read(ProtocolConstants.MaxPacketSize, stream);
-            //        Array.Copy(receivedBytes, 0, buffer, offset, ProtocolConstants.MaxPacketSize);
-            //        offset += ProtocolConstants.MaxPacketSize;
-            //    }
-            //    else
-            //    {
-            //        int dataLeft = fileLength - offset;
-            //        byte[] receivedBytes = Read(dataLeft, stream);
-            //        Array.Copy(receivedBytes, 0, buffer, offset, dataLeft);
-            //        offset += dataLeft;
-            //    }
-            //    currentChunk++;
-            //}
-            //return buffer;
             byte[] buffer = new byte[fileLength];
 
             var iRecv = 0;
@@ -112,17 +65,9 @@ namespace Protocol
                 try
                 {
                     var localRecv = _socket.Receive(buffer, iRecv, fileLength - iRecv, SocketFlags.None);
-                    if (localRecv == 0) // Si recieve retorna 0 -> la conexion se cerro desde el endpoint remoto
+                    if (localRecv == 0) // If receive 0, the connections was closed from remote
                     {
-                        //if (!_exit)
-                        //{
-                        //    _socket.Shutdown(SocketShutdown.Both);
-                        //    _socket.Close();
-                        //}
-                        //else
-                        //{
-                        //    throw new Exception("Server is closing");
-                        //}
+                        throw new ProtocolException();
                     }
 
                     iRecv += localRecv;

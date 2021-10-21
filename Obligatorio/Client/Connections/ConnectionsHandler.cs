@@ -9,7 +9,6 @@ namespace Client.Connections
 {
     public class ConnectionsHandler
     {
-        //private TcpClient _tcpClient;
         private IPEndPoint _serverEndpoint;
         private ProtocolHandler _protocolHandler;
         private ClientState _clientState;
@@ -20,7 +19,6 @@ namespace Client.Connections
         {
             _serverEndpoint = new IPEndPoint(IPAddress.Parse(ConfigurationManager.AppSettings["ServerIP"]),
                     Int32.Parse(ConfigurationManager.AppSettings["ServerPort"]));
-            //_tcpClient = new TcpClient(new IPEndPoint(IPAddress.Parse(ConfigurationManager.AppSettings["ClientIP"]), 0));
             _clientState = ClientState.Down;
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             _socket.Bind(new IPEndPoint(IPAddress.Parse(ConfigurationManager.AppSettings["ClientIP"]), 0));
@@ -30,14 +28,23 @@ namespace Client.Connections
 
         public void ConnectToServer()
         {
-            _socket.Connect(_serverEndpoint);
-            //_tcpClient.Connect(_serverEndpoint);
-            _clientState = ClientState.Up;
+            try
+            {
+                _socket.Connect(_serverEndpoint);
+                _clientState = ClientState.Up;
+                Console.WriteLine("Connected to server.");
+            }
+            catch (SocketException)
+            {
+                Console.WriteLine("Server is down! Please try again");
+            }
+
         }
 
         public void ShutDown()
         {
             _clientState = ClientState.ShuttingDown;
+            _socket.Shutdown(SocketShutdown.Both);
             _socket.Close();
             _clientState = ClientState.Down;
         }

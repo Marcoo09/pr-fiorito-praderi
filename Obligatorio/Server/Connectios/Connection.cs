@@ -1,12 +1,10 @@
 ﻿using System;
 using System.IO;
-using System.Net;
 using System.Net.Sockets;
 using Exceptions;
 using Protocol;
 using Server.DataAccess.Implementations;
 using Server.DataAccess.Interfaces;
-using Server.Domain;
 using Server.Implementations;
 using Server.Interfaces;
 
@@ -16,8 +14,6 @@ namespace Server.Connections
     {
 
         private Socket _socket;
-
-        //private TcpClient _tcpClient;
         private ProtocolHandler _protocolHandler;
         private IServiceRouter _serviceRouter;
         private State _connectionState;
@@ -27,7 +23,6 @@ namespace Server.Connections
         public Connection(Socket socket)
         {
             _socket = socket;
-            //_tcpClient = tcpClient;
             _protocolHandler = new ProtocolHandler(_socket);
             _serviceRouter = new ServiceRouter();
             _connectionState = State.Down;

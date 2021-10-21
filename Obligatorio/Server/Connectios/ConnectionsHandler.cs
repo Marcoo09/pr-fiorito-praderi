@@ -12,10 +12,8 @@ namespace Server.Connections
     {
 
         private Socket _socketServer;
-
         private IPAddress _serverIp;
         private int _serverPort;
-        //private TcpListener _tcpListener;
         private List<Connection> _connections;
         private State _serverState;
         private Object _serverStateLocker;
@@ -29,12 +27,8 @@ namespace Server.Connections
             _connections = new List<Connection>();
             _serverIp = IPAddress.Parse(ConfigurationManager.AppSettings["ServerIP"]);
             _serverPort = Int32.Parse(ConfigurationManager.AppSettings["ServerPort"]);
-
             _socketServer = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             _socketServer.Bind(new IPEndPoint(_serverIp, _serverPort));
-
-            //_tcpListener = new TcpListener(_serverIp, _serverPort);
-
             _serverState = State.Down;
         }
 
@@ -42,7 +36,6 @@ namespace Server.Connections
         {
 
             _socketServer.Listen(100);
-            //_tcpListener.Start(20);
             _serverState = State.Up;
 
             while (IsServerUp())
@@ -68,7 +61,6 @@ namespace Server.Connections
             lock (_serverStateLocker)
             {
                 _serverState = State.ShuttingDown;
-                //_tcpListener.Stop();
                 _socketServer.Close(0);
             }
         }
