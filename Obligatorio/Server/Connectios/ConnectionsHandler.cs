@@ -18,7 +18,7 @@ namespace Server.Connections
         private State _serverState;
         private Object _serverStateLocker;
         private Object _connectionsListLocker;
-
+        private bool _isShuttingDown = false;
 
         public ConnectionsHandler()
         {
@@ -47,13 +47,17 @@ namespace Server.Connections
 
                     AddConnection(clientConnection);
                     clientThread.Start();
-                    Console.WriteLine("Client accepted");
+                    if (!_isShuttingDown)
+                    {
+                        Console.WriteLine("Client accepted");
+                    }
                 }
                 catch (SocketException)
                 {
                     ShutDownConnections();
                 }
             }
+            Console.WriteLine("Exiting....");
         }
 
         public void StartShutDown()
@@ -63,6 +67,10 @@ namespace Server.Connections
                 _serverState = State.ShuttingDown;
                 _socketServer.Close(0);
             }
+            ShutDownConnections();
+            _isShuttingDown = true;
+            var fakeSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            fakeSocket.Connect(_serverIp, _serverPort);
         }
 
         private void ShutDownConnections()

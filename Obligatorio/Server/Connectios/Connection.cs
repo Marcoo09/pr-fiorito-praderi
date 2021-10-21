@@ -54,7 +54,6 @@ namespace Server.Connections
             catch (ProtocolException)
             {
                 Console.WriteLine("Client has disconnected");
-                ShutDown();
             }
             catch (IOException e)
             {
