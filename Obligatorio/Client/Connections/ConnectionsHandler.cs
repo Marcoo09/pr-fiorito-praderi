@@ -62,7 +62,7 @@ namespace Client.Connections
                 Frame response = _protocolHandler.Receive();
                 return response;
             }
-            catch (IOException)
+            catch (SocketException)
             {
                 Console.WriteLine("Server is down! Please try again");
                 ShutDown();
