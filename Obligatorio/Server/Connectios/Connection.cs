@@ -14,17 +14,21 @@ namespace Server.Connections
 {
     public class Connection
     {
-        private TcpClient _tcpClient;
+
+        private Socket _socket;
+
+        //private TcpClient _tcpClient;
         private ProtocolHandler _protocolHandler;
         private IServiceRouter _serviceRouter;
         private State _connectionState;
         private Object _connectionStateLocker;
         private IUserRepository _userRepository;
 
-        public Connection(TcpClient tcpClient)
+        public Connection(Socket socket)
         {
-            _tcpClient = tcpClient;
-            _protocolHandler = new ProtocolHandler(_tcpClient);
+            _socket = socket;
+            //_tcpClient = tcpClient;
+            _protocolHandler = new ProtocolHandler(_socket);
             _serviceRouter = new ServiceRouter();
             _connectionState = State.Down;
             _connectionStateLocker = new Object();
@@ -75,7 +79,8 @@ namespace Server.Connections
 
         public void ShutDown()
         {
-            _tcpClient.Close();
+            _socket.Shutdown(SocketShutdown.Both);
+            _socket.Close();
 
             lock (_connectionStateLocker)
             {

@@ -9,30 +9,36 @@ namespace Client.Connections
 {
     public class ConnectionsHandler
     {
-        private TcpClient _tcpClient;
+        //private TcpClient _tcpClient;
         private IPEndPoint _serverEndpoint;
         private ProtocolHandler _protocolHandler;
         private ClientState _clientState;
+
+        private Socket _socket;
 
         public ConnectionsHandler()
         {
             _serverEndpoint = new IPEndPoint(IPAddress.Parse(ConfigurationManager.AppSettings["ServerIP"]),
                     Int32.Parse(ConfigurationManager.AppSettings["ServerPort"]));
-            _tcpClient = new TcpClient(new IPEndPoint(IPAddress.Parse(ConfigurationManager.AppSettings["ClientIP"]), 0));
-            _protocolHandler = new ProtocolHandler(_tcpClient);
+            //_tcpClient = new TcpClient(new IPEndPoint(IPAddress.Parse(ConfigurationManager.AppSettings["ClientIP"]), 0));
             _clientState = ClientState.Down;
+            _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            _socket.Bind(new IPEndPoint(IPAddress.Parse(ConfigurationManager.AppSettings["ClientIP"]), 0));
+            _protocolHandler = new ProtocolHandler(_socket);
+
         }
 
         public void ConnectToServer()
         {
-            _tcpClient.Connect(_serverEndpoint);
+            _socket.Connect(_serverEndpoint);
+            //_tcpClient.Connect(_serverEndpoint);
             _clientState = ClientState.Up;
         }
 
         public void ShutDown()
         {
             _clientState = ClientState.ShuttingDown;
-            _tcpClient.Close();
+            _socket.Close();
             _clientState = ClientState.Down;
         }
 

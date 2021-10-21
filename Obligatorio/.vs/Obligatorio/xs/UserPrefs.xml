@@ -1,57 +1,29 @@
 ﻿<Properties StartupConfiguration="{0A5D2987-B979-4345-9FC9-0D7D690E375D}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Protocol/DTOs/Request/CreateGameDTO.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Connectios/ConnectionsHandler.cs">
     <Files>
-      <File FileName="Client/ClientUI.cs" Line="60" Column="50" />
-      <File FileName="Client/ServerDeserializer.cs" Line="46" Column="14" />
-      <File FileName="Client/ServerService.cs" Line="61" Column="21" />
-      <File FileName="Server/Implementations/UserService.cs" />
-      <File FileName="Server/Implementations/GameService.cs" Line="59" Column="31" />
-      <File FileName="Server/Server.Domain/Game.cs" Line="14" Column="27" />
-      <File FileName="Server/Server.Domain/Review.cs" Line="19" Column="72" />
-      <File FileName="Server/Server.DataAccess/Implementations/GameRepository.cs" Line="127" Column="40" />
-      <File FileName="Server/Connectios/ConnectionsHandler.cs" Line="1" Column="1" />
-      <File FileName="Server/Implementations/ServiceRouter.cs" Line="75" Column="18" />
-      <File FileName="Server/Interfaces/IUserService.cs" />
-      <File FileName="Server/Interfaces/IServiceRouter.cs" />
-      <File FileName="Server/Server.DataAccess/Implementations/UserRepository.cs" />
-      <File FileName="Protocol/ProtocolHandler.cs" Line="1" Column="1" />
-      <File FileName="Protocol/Frame.cs" Line="1" Column="1" />
-      <File FileName="Client/ClientProgram.cs" />
-      <File FileName="Protocol/ProtocolConstants.cs" Line="1" Column="1" />
-      <File FileName="Protocol/Header.cs" Line="1" Column="1" />
-      <File FileName="Protocol/CommandConstants.cs" Line="1" Column="1" />
-      <File FileName="Protocol/Serialization/Deserializer.cs" Line="1" Column="1" />
-      <File FileName="Protocol/Serialization/Serializer.cs" Line="26" Column="37" />
-      <File FileName="Server/ServerProgram.cs" Line="1" Column="1" />
-      <File FileName="Protocol/DTOs/Request/CreateGameDTO.cs" Line="1" Column="1" />
+      <File FileName="Server/ServerProgram.cs" Line="18" Column="68" />
+      <File FileName="Server/Connectios/ConnectionsHandler.cs" Line="31" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
             <Node name="Client" expanded="True">
-              <Node name="Client" expanded="True" />
+              <Node name="Client" expanded="True">
+                <Node name="Connections" expanded="True" />
+              </Node>
             </Node>
             <Node name="Common" expanded="True">
-              <Node name="DTOs" expanded="True">
-                <Node name="Request" expanded="True">
-                  <Node name="CreateGameDTO.cs" selected="True" />
-                </Node>
-              </Node>
-              <Node name="Protocol" expanded="True">
-                <Node name="DTOs" expanded="True" />
-                <Node name="Serialization" expanded="True" />
-                <Node name="SerializationInterfaces" expanded="True" />
-              </Node>
+              <Node name="Protocol" expanded="True" />
             </Node>
             <Node name="Server" expanded="True">
               <Node name="Server" expanded="True">
-                <Node name="Connectios" expanded="True" />
+                <Node name="Connectios" expanded="True">
+                  <Node name="ConnectionsHandler.cs" selected="True" />
+                </Node>
                 <Node name="Implementations" expanded="True" />
-                <Node name="Server.DataAccess" expanded="True" />
               </Node>
-              <Node name="Server.Domain" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -62,7 +34,9 @@
   <MonoDevelop.Ide.ItemProperties.Server.Server PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/ServerService.cs" relfile="Client/ServerService.cs" line="79" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
