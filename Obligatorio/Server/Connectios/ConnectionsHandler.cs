@@ -10,13 +10,15 @@ namespace Server.Connections
 {
     public class ConnectionsHandler
     {
+
+        private Socket _socketServer;
         private IPAddress _serverIp;
         private int _serverPort;
-        private TcpListener _tcpListener;
         private List<Connection> _connections;
         private State _serverState;
         private Object _serverStateLocker;
         private Object _connectionsListLocker;
+
 
         public ConnectionsHandler()
         {
@@ -25,20 +27,22 @@ namespace Server.Connections
             _connections = new List<Connection>();
             _serverIp = IPAddress.Parse(ConfigurationManager.AppSettings["ServerIP"]);
             _serverPort = Int32.Parse(ConfigurationManager.AppSettings["ServerPort"]);
-            _tcpListener = new TcpListener(_serverIp, _serverPort);
+            _socketServer = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            _socketServer.Bind(new IPEndPoint(_serverIp, _serverPort));
             _serverState = State.Down;
         }
 
         public void StartListening()
         {
-            _tcpListener.Start(20);
+
+            _socketServer.Listen(100);
             _serverState = State.Up;
 
             while (IsServerUp())
             {
                 try
                 {
-                    Connection clientConnection = new Connection(_tcpListener.AcceptTcpClient());
+                    Connection clientConnection = new Connection(_socketServer.Accept());
                     Thread clientThread = new Thread(() => clientConnection.StartConnection());
 
                     AddConnection(clientConnection);
@@ -57,7 +61,7 @@ namespace Server.Connections
             lock (_serverStateLocker)
             {
                 _serverState = State.ShuttingDown;
-                _tcpListener.Stop();
+                _socketServer.Close(0);
             }
         }
 

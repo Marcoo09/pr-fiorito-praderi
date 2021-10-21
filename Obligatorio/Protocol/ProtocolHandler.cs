@@ -6,11 +6,11 @@ namespace Protocol
 {
     public class ProtocolHandler
     {
-        private TcpClient _tcpClient;
+        private Socket _socket;
 
-        public ProtocolHandler(TcpClient tcpClient)
+        public ProtocolHandler(Socket socket)
         {
-            _tcpClient = tcpClient;
+            _socket = socket;
         }
 
         public void Send(Frame frame)
@@ -47,54 +47,35 @@ namespace Protocol
 
         private void SendBytesInChunks(byte[] data, int chunks)
         {
-            NetworkStream stream = _tcpClient.GetStream();
-            int offset = 0;
-            int currentChunk = 1;
-
-            while (offset < data.Length)
+            var sentBytes = 0;
+            while (sentBytes < data.Length)
             {
-                if (currentChunk < chunks)
-                {
-                    var dataToSend = new byte[ProtocolConstants.MaxPacketSize];
-                    Array.Copy(data, offset, dataToSend, 0, ProtocolConstants.MaxPacketSize);
-                    stream.Write(dataToSend);
-                    offset += ProtocolConstants.MaxPacketSize;
-                }
-                else
-                {
-                    int dataLeftSize = data.Length - offset;
-                    byte[] dataToSend = new byte[dataLeftSize];
-                    Array.Copy(data, offset, dataToSend, 0, dataLeftSize);
-                    stream.Write(dataToSend);
-                    offset += dataLeftSize;
-                }
-                currentChunk++;
+                sentBytes += _socket.Send(data, sentBytes, data.Length - sentBytes, SocketFlags.None);
             }
+
         }
 
         private byte[] ReceiveBytesInChunks(int fileLength, int chunks)
         {
-            NetworkStream stream = _tcpClient.GetStream();
             byte[] buffer = new byte[fileLength];
-            var offset = 0;
-            var currentChunk = 1;
 
-            while (offset < fileLength)
+            var iRecv = 0;
+            while (iRecv < fileLength)
             {
-                if (currentChunk < chunks)
+                try
                 {
-                    byte[] receivedBytes = Read(ProtocolConstants.MaxPacketSize, stream);
-                    Array.Copy(receivedBytes, 0, buffer, offset, ProtocolConstants.MaxPacketSize);
-                    offset += ProtocolConstants.MaxPacketSize;
+                    var localRecv = _socket.Receive(buffer, iRecv, fileLength - iRecv, SocketFlags.None);
+                    if (localRecv == 0) // If receive 0, the connections was closed from remote
+                    {
+                        throw new ProtocolException();
+                    }
+
+                    iRecv += localRecv;
                 }
-                else
+                catch (SocketException se)
                 {
-                    int dataLeft = fileLength - offset;
-                    byte[] receivedBytes = Read(dataLeft, stream);
-                    Array.Copy(receivedBytes, 0, buffer, offset, dataLeft);
-                    offset += dataLeft;
+                    Console.WriteLine(se.Message);
                 }
-                currentChunk++;
             }
             return buffer;
         }
