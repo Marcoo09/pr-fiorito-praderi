@@ -11,6 +11,7 @@ using Server.Domain;
 using Server.Interfaces;
 using System.Linq;
 using Protocol.SerializationInterfaces;
+using System.Threading.Tasks;
 
 namespace Server.Implementations
 {
@@ -25,7 +26,7 @@ namespace Server.Implementations
             _serializer = new Serializer();
         }
 
-        public Frame AddReview(Frame requestFrame)
+        public async Task<Frame> AddReviewAsync(Frame requestFrame)
         {
             ReviewDTO reviewDTO = new ReviewDTO();
             reviewDTO.Deserialize(requestFrame.Data);
@@ -33,10 +34,10 @@ namespace Server.Implementations
             try
             {
                 Review newReview = reviewDTO.ToEntity();
-                Game gameToSendReview = _gameRepository.Get(reviewDTO.GameId);
+                Game gameToSendReview = await _gameRepository.GetAsync(reviewDTO.GameId);
                 newReview.Game = gameToSendReview;
 
-                _gameRepository.AddReview(reviewDTO.GameId ,newReview);
+                _gameRepository.AddReviewAsync(reviewDTO.GameId ,newReview);
 
                 MessageDTO messageDto = new MessageDTO() { Message = "Review added!" };
 
@@ -53,7 +54,7 @@ namespace Server.Implementations
             }
         }
 
-        public Frame CreateGame(Frame requestFrame)
+        public async Task<Frame> CreateGameAsync(Frame requestFrame)
         {
             CreateGameDTO createGameDTO = new CreateGameDTO();
             createGameDTO.Deserialize(requestFrame.Data);
@@ -62,8 +63,8 @@ namespace Server.Implementations
             {
                 Game newGame = createGameDTO.ToEntity();
 
-                int newGameId = _gameRepository.Insert(newGame);
-                Game createdGame = _gameRepository.Get(newGameId);
+                int newGameId = await _gameRepository.InsertAsync(newGame);
+                Game createdGame = await _gameRepository.GetAsync(newGameId);
                 createGameDTO.WriteFile();
 
                 return CreateSuccessResponse(CommandConstants.CreateGame, new GameBasicInfoDTO(createdGame).Serialize());
@@ -79,16 +80,16 @@ namespace Server.Implementations
             }
         }
 
-        public Frame DeleteGame(Frame requestFrame)
+        public async Task<Frame> DeleteGameAsync(Frame requestFrame)
         {
             BasicGameRequestDTO basicGameRequestDTO = new BasicGameRequestDTO();
             basicGameRequestDTO.Deserialize(requestFrame.Data);
 
             try
             {
-                Game gameToBeDeleted = _gameRepository.Get(basicGameRequestDTO.GameId);
+                Game gameToBeDeleted = await _gameRepository.GetAsync(basicGameRequestDTO.GameId);
 
-                _gameRepository.Delete(basicGameRequestDTO.GameId);
+                await _gameRepository.DeleteAsync(basicGameRequestDTO.GameId);
 
                 MessageDTO messageDto = new MessageDTO() { Message = "Game deleted!" };
                 return CreateSuccessResponse(CommandConstants.DeleteGame, messageDto.Serialize());
@@ -100,14 +101,14 @@ namespace Server.Implementations
             }
         }
 
-        public Frame GetAllReviews(Frame requestFrame)
+        public async Task<Frame> GetAllReviewsAsync(Frame requestFrame)
         {
             BasicGameRequestDTO basicGameRequestDTO = new BasicGameRequestDTO();
             basicGameRequestDTO.Deserialize(requestFrame.Data);
 
             try
             {
-                Game retrievedGame = _gameRepository.Get(basicGameRequestDTO.GameId);
+                Game retrievedGame = await _gameRepository.GetAsync(basicGameRequestDTO.GameId);
 
                 List<ReviewDetailDTO> retrievedReviews = retrievedGame.Reviews.Select(r => new ReviewDetailDTO(r)).ToList();
 
@@ -133,7 +134,7 @@ namespace Server.Implementations
             }
         }
 
-        public Frame SearchGameBy(Frame requestFrame)
+        public async Task<Frame> SearchGameByAsync(Frame requestFrame)
         {
             SearchMetricDTO searchMetricDTO = new SearchMetricDTO();
             searchMetricDTO.Deserialize(requestFrame.Data);
@@ -142,16 +143,16 @@ namespace Server.Implementations
 
             if (!String.IsNullOrEmpty(searchMetricDTO.Title))
             {
-                gamesFiltered = _gameRepository.GetBy(g => g.Title.Contains(searchMetricDTO.Title, System.StringComparison.CurrentCultureIgnoreCase) ||
+                gamesFiltered = await _gameRepository.GetByAsync(g => g.Title.Contains(searchMetricDTO.Title, System.StringComparison.CurrentCultureIgnoreCase) ||
                    searchMetricDTO.Title.Contains(g.Title, System.StringComparison.CurrentCultureIgnoreCase));
             }else if (!String.IsNullOrEmpty(searchMetricDTO.Gender))
             {
-                gamesFiltered = _gameRepository.GetBy(g => g.Gender.Contains(searchMetricDTO.Gender, System.StringComparison.CurrentCultureIgnoreCase) ||
+                gamesFiltered = await _gameRepository.GetByAsync(g => g.Gender.Contains(searchMetricDTO.Gender, System.StringComparison.CurrentCultureIgnoreCase) ||
                     searchMetricDTO.Gender.Contains(g.Gender, System.StringComparison.CurrentCultureIgnoreCase));
             }
             else
             {
-                gamesFiltered = _gameRepository.GetBy(g =>
+                gamesFiltered = await _gameRepository.GetByAsync(g =>
                     (g.Reviews.Count > 0 ? g.Reviews.Select(g => g.Rating).ToList().Average() : 0) == searchMetricDTO.Rating
                 );
             }
@@ -163,14 +164,14 @@ namespace Server.Implementations
 
         }
 
-        public Frame ShowGame(Frame requestFrame)
+        public async Task<Frame> ShowGameAsync(Frame requestFrame)
         {
             BasicGameRequestDTO basicGameRequestDTO = new BasicGameRequestDTO();
             basicGameRequestDTO.Deserialize(requestFrame.Data);
 
             try
             {
-                Game game = _gameRepository.Get(basicGameRequestDTO.GameId);
+                Game game = await _gameRepository.GetAsync(basicGameRequestDTO.GameId);
                 EnrichedGameDetailDTO response = new EnrichedGameDetailDTO(game);
                 response.ReadFile(game.Path);
 
@@ -183,9 +184,9 @@ namespace Server.Implementations
             }
         }
 
-        public Frame ShowGames()
+        public async Task<Frame> ShowGamesAsync()
         {
-            List<GameDetailDTO> retrievedGames = _gameRepository.GetAll().Select(g => new GameDetailDTO(g)).ToList();
+            List<GameDetailDTO> retrievedGames = (await _gameRepository.GetAllAsync()).Select(g => new GameDetailDTO(g)).ToList();
             byte[] serializedList = _serializer.SerializeEntityList(retrievedGames.Cast<ISerializable>().ToList());
 
             return new Frame()
@@ -198,7 +199,7 @@ namespace Server.Implementations
             };
         }
 
-        public Frame UpdateGame(Frame requestFrame)
+        public async Task<Frame> UpdateGameAsync(Frame requestFrame)
         {
             UpdateGameDTO updateGameDTO = new UpdateGameDTO();
             updateGameDTO.Deserialize(requestFrame.Data);
@@ -207,9 +208,9 @@ namespace Server.Implementations
             {
                 Game updatedGame = updateGameDTO.ToEntity();
 
-                _gameRepository.Update(updateGameDTO.Id, updatedGame);
+                await _gameRepository.UpdateAsync(updateGameDTO.Id, updatedGame);
 
-                Game storedGame = _gameRepository.Get(updatedGame.Id);
+                Game storedGame = await _gameRepository.GetAsync(updatedGame.Id);
 
                 return CreateSuccessResponse(CommandConstants.UpdateGame, new GameBasicInfoDTO(storedGame).Serialize());
             }

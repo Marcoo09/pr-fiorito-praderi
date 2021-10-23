@@ -1,36 +1,38 @@
 {
   "format": 1,
   "restore": {
-    "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/Client.csproj": {}
+    "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Client\\Client.csproj": {}
   },
   "projects": {
-    "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/Client.csproj": {
+    "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/Client.csproj",
+        "projectUniqueName": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Client\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/Client.csproj",
-        "packagesPath": "/Users/marcofiorito/.nuget/packages/",
-        "outputPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/obj/",
+        "projectPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Client\\Client.csproj",
+        "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/marcofiorito/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Nico\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/DTOs.csproj": {
-                "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/DTOs.csproj"
+              "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\DTOs\\DTOs.csproj": {
+                "projectPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\DTOs\\DTOs.csproj"
               },
-              "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Protocol.csproj": {
-                "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Protocol.csproj"
+              "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\Protocol.csproj": {
+                "projectPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\Protocol.csproj"
               }
             }
           }
@@ -65,37 +67,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/DTOs.csproj": {
+    "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\DTOs\\DTOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/DTOs.csproj",
+        "projectUniqueName": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\DTOs\\DTOs.csproj",
         "projectName": "DTOs",
-        "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/DTOs.csproj",
-        "packagesPath": "/Users/marcofiorito/.nuget/packages/",
-        "outputPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/obj/",
+        "projectPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\DTOs\\DTOs.csproj",
+        "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\DTOs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/marcofiorito/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Nico\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Protocol.csproj": {
-                "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Protocol.csproj"
+              "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\Protocol.csproj": {
+                "projectPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\Protocol.csproj"
               },
-              "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/Server.Domain.csproj": {
-                "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/Server.Domain.csproj"
+              "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Server\\Server.Domain\\Server.Domain.csproj": {
+                "projectPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Server\\Server.Domain\\Server.Domain.csproj"
               }
             }
           }
@@ -124,26 +128,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Exceptions/Exceptions.csproj": {
+    "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\Exceptions\\Exceptions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Exceptions/Exceptions.csproj",
+        "projectUniqueName": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\Exceptions\\Exceptions.csproj",
         "projectName": "Exceptions",
-        "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Exceptions/Exceptions.csproj",
-        "packagesPath": "/Users/marcofiorito/.nuget/packages/",
-        "outputPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Exceptions/obj/",
+        "projectPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\Exceptions\\Exceptions.csproj",
+        "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\Exceptions\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/marcofiorito/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Nico\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -176,34 +182,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Protocol.csproj": {
+    "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\Protocol.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Protocol.csproj",
+        "projectUniqueName": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\Protocol.csproj",
         "projectName": "Protocol",
-        "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Protocol.csproj",
-        "packagesPath": "/Users/marcofiorito/.nuget/packages/",
-        "outputPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/obj/",
+        "projectPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\Protocol.csproj",
+        "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/marcofiorito/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Nico\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/Server.Domain.csproj": {
-                "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/Server.Domain.csproj"
+              "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Server\\Server.Domain\\Server.Domain.csproj": {
+                "projectPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Server\\Server.Domain\\Server.Domain.csproj"
               }
             }
           }
@@ -232,34 +240,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/Server.Domain.csproj": {
+    "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Server\\Server.Domain\\Server.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/Server.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Server\\Server.Domain\\Server.Domain.csproj",
         "projectName": "Server.Domain",
-        "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/Server.Domain.csproj",
-        "packagesPath": "/Users/marcofiorito/.nuget/packages/",
-        "outputPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/",
+        "projectPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Server\\Server.Domain\\Server.Domain.csproj",
+        "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Server\\Server.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/marcofiorito/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Nico\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Exceptions/Exceptions.csproj": {
-                "projectPath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Exceptions/Exceptions.csproj"
+              "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\Exceptions\\Exceptions.csproj": {
+                "projectPath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\Exceptions\\Exceptions.csproj"
               }
             }
           }
@@ -288,7 +298,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

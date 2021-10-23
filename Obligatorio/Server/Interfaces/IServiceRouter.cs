@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Protocol;
 using Server.Domain;
 
@@ -6,6 +7,6 @@ namespace Server.Interfaces
 {
     public interface IServiceRouter
     {
-        Frame GetResponse(Frame request);
+        Task<Frame> GetResponseAsync(Frame request);
     }
 }

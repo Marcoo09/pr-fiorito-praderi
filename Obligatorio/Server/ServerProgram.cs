@@ -16,12 +16,12 @@ namespace Server
         static void HandleConnections()
         {
             ConnectionsHandler connectionsHandler = new ConnectionsHandler();
-            Thread listiningThread = new Thread(() => connectionsHandler.StartListening());
+            Thread listiningThread = new Thread(() => connectionsHandler.StartListeningAsync());
             listiningThread.Start();
 
             Console.WriteLine("Write any key to shutdown the server");
             Console.ReadLine();
-            connectionsHandler.StartShutDown();
+            connectionsHandler.StartShutDownAsync();
         }
     }
 }
