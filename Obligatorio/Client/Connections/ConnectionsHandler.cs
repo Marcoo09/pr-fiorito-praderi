@@ -3,6 +3,8 @@ using System.Configuration;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading;
+using System.Threading.Tasks;
 using Protocol;
 
 namespace Client.Connections
@@ -12,6 +14,9 @@ namespace Client.Connections
         private IPEndPoint _serverEndpoint;
         private ProtocolHandler _protocolHandler;
         private ClientState _clientState;
+        private SemaphoreSlim _clientStateSemaphore;
+        private IPAddress _serverIpAddress;
+        private int _serverPort;
 
         private Socket _socket;
 
@@ -26,7 +31,7 @@ namespace Client.Connections
 
         }
 
-        public void ConnectToServer()
+        public async Task ConnectToServerAsync()
         {
             try
             {
@@ -41,12 +46,14 @@ namespace Client.Connections
 
         }
 
-        public void ShutDown()
+        public async Task ShutDownAsync()
         {
             _clientState = ClientState.ShuttingDown;
             _socket.Shutdown(SocketShutdown.Both);
             _socket.Close();
             _clientState = ClientState.Down;
+
+            _clientStateSemaphore.Release();
         }
 
         public bool IsClientStateUp()
@@ -54,18 +61,18 @@ namespace Client.Connections
             return _clientState == ClientState.Up;
         }
 
-        public Frame SendRequest(Frame requestFrame)
+        public async Task<Frame> SendRequestAsync(Frame requestFrame)
         {
             try
             {
-                _protocolHandler.Send(requestFrame);
-                Frame response = _protocolHandler.Receive();
+                await _protocolHandler.SendAsync(requestFrame);
+                Frame response = await _protocolHandler.ReceiveAsync();
                 return response;
             }
             catch (SocketException)
             {
                 Console.WriteLine("Server is down! Please try again");
-                ShutDown();
+                await ShutDownAsync();
                 return null;
             }
         }

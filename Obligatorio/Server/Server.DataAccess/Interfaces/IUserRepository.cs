@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Server.Domain;
 
 namespace Server.DataAccess.Interfaces
 {
     public interface IUserRepository
     {
-        int Insert(User user);
-        User Get(int id);
-        List<User> GetAll();
-        void Delete(int id);
-        void BuyGame(Game game, int userId);
+        Task<int> InsertAsync(User user);
+        Task<User> GetAsync(int id);
+        Task<List<User>> GetAllAsync();
+        Task DeleteAsync(int id);
+        Task BuyGameAsync(Game game, int userId);
     }
 }

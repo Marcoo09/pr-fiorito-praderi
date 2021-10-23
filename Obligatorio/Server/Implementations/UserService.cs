@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using DTOs.Request;
 using DTOs.Response;
 using Exceptions;
@@ -22,21 +23,21 @@ namespace Server.Implementations
 
         public UserService()
         {
-            _userRepository = UserRepository.GetInstance();
+            _userRepository = UserRepository.GetInstanceAsync();
             _gameRepository = GameRepository.GetInstance();
             _serializer = new Serializer();
         }
 
-        public Frame BuyGame(Frame requestFrame, int userId)
+        public async Task<Frame> BuyGameAsync(Frame requestFrame, int userId)
         {
             BasicGameRequestDTO basicGameRequestDTO = new BasicGameRequestDTO();
             basicGameRequestDTO.Deserialize(requestFrame.Data);
 
             try
             {
-                Game retrievedGame = _gameRepository.Get(basicGameRequestDTO.GameId);
+                Game retrievedGame = await _gameRepository.GetAsync(basicGameRequestDTO.GameId);
 
-                _userRepository.BuyGame(retrievedGame, userId);
+                await _userRepository.BuyGameAsync(retrievedGame, userId);
 
                 MessageDTO messageDto = new MessageDTO() { Message = "Game bought!" };
 
@@ -53,34 +54,34 @@ namespace Server.Implementations
             }
         }
 
-        public Frame CreateUser(Frame requestFrame)
+        public async Task<Frame> CreateUserAsync(Frame requestFrame)
         {
             LoginDTO loginDTO = new LoginDTO();
             loginDTO.Deserialize(requestFrame.Data);
 
             User currentUser;
 
-            bool userAlreadyExist = _userRepository.GetAll().Any(u => u.Name == loginDTO.UserName);
+            bool userAlreadyExist = (await _userRepository.GetAllAsync()).Any(u => u.Name == loginDTO.UserName);
 
             if (!userAlreadyExist)
             {
                 User newUser = new User();
                 newUser = loginDTO.ToEntity();
-                _userRepository.Insert(newUser);
+                await _userRepository.InsertAsync(newUser);
             }
 
-            currentUser = _userRepository.GetAll().Find(u => u.Name == loginDTO.UserName);
+            currentUser = (await _userRepository.GetAllAsync()).Find(u => u.Name == loginDTO.UserName);
 
             UserDetailDTO userDetailDTO = new UserDetailDTO(currentUser);
 
             return CreateSuccessResponse(CommandConstants.Login, userDetailDTO.Serialize());
         }
 
-        public Frame IndexBoughtGames(int userId)
+        public async Task<Frame> IndexBoughtGamesAsync(int userId)
         {
             try
             {
-                User retrievedUser = _userRepository.Get(userId);
+                User retrievedUser = await _userRepository.GetAsync(userId);
 
                 List<GameDetailDTO> retrievedGames = retrievedUser.BoughtGames.Select(g => new GameDetailDTO(g)).ToList();
 
@@ -106,9 +107,9 @@ namespace Server.Implementations
             }
         }
 
-        public Frame IndexUsers()
+        public async Task<Frame> IndexUsersAsync()
         {
-            List<UserDetailDTO> retrievedUsers = _userRepository.GetAll().Select(u => new UserDetailDTO(u)).ToList();
+            List<UserDetailDTO> retrievedUsers = (await _userRepository.GetAllAsync()).Select(u => new UserDetailDTO(u)).ToList();
             byte[] serializedList = _serializer.SerializeEntityList(retrievedUsers.Cast<ISerializable>().ToList());
 
             return new Frame()

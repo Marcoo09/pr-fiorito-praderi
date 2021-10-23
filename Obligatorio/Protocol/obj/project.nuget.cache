@@ -1,8 +1,12 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "M7KCYUSo51WHNn4LEGW7tPK6hfLa16/sv2mP4mr6e6WqbKN2LX4ELAudEFUY/UHb/kfTZDzgcQlWLPr6m4dg9w==",
+=======
+  "dgSpecHash": "vH1vwPLMCPxJVBfmOxS7bpsB/ksCbqc1uC1u5+LQ+vrZpZWL4hy1hVHmZRVMO1KTwug9V48KLE2mO5XMAzf1zA==",
+>>>>>>> refactor/ServerAsync
   "success": true,
-  "projectFilePath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/Protocol.csproj",
+  "projectFilePath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\Protocol.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

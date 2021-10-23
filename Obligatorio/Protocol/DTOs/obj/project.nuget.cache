@@ -1,8 +1,12 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "MvmWP+t2cPuq3c79YepvB8VqFmnKBpr2tFLd/4VMXI01MflptMgWFOhIlSQAxhfv9gMe4arXcRTI+Eq4oqXswA==",
+=======
+  "dgSpecHash": "rJHu7HKWYoCdgAELySV0MG+wQekfkAR3FIAlapLwLYUUNFl7qwa5FOD06lYJncj2Z28VjSJMwDHH67UiWzCPzA==",
+>>>>>>> refactor/ServerAsync
   "success": true,
-  "projectFilePath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Protocol/DTOs/DTOs.csproj",
+  "projectFilePath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Protocol\\DTOs\\DTOs.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

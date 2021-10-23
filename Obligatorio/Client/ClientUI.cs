@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Client.Connections;
 using Protocol;
 
@@ -20,9 +21,10 @@ namespace Client
             _clientAuthenticated = false;
         }
 
-        public void Init()
+        public async Task InitAsync()
         {
-            _connectionsHandler.ConnectToServer();
+            await _connectionsHandler.ConnectToServerAsync();
+            Console.WriteLine("Connected to server.");
 
             while (_connectionsHandler.IsClientStateUp())
             {
@@ -30,11 +32,11 @@ namespace Client
                 {
                     int chosenOption = ShowMenu();
                     if (chosenOption == -1)
-                        _connectionsHandler.ShutDown();
+                        await _connectionsHandler.ShutDownAsync();
                     else
                     {
                         Frame requestFrame = _serverService.BuildRequest((short)chosenOption);
-                        Frame response = _connectionsHandler.SendRequest(requestFrame);
+                        Frame response = await _connectionsHandler.SendRequestAsync(requestFrame);
 
                         if (response != null)
                         {
@@ -47,11 +49,11 @@ namespace Client
                 {
                     int chosenOption = LoginMenu();
                     if (chosenOption == -1)
-                        _connectionsHandler.ShutDown();
+                        await _connectionsHandler.ShutDownAsync();
                     else
                     {
                         Frame requestFrame = _serverService.BuildRequest((short)CommandConstants.Login);
-                        Frame response = _connectionsHandler.SendRequest(requestFrame);
+                        Frame response = await _connectionsHandler.SendRequestAsync(requestFrame);
 
                         if (response != null)
                         {

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Net.Sockets;
+using System.Threading;
+using System.Threading.Tasks;
 using Exceptions;
 using Protocol;
 using Server.DataAccess.Implementations;
@@ -17,7 +19,7 @@ namespace Server.Connections
         private ProtocolHandler _protocolHandler;
         private IServiceRouter _serviceRouter;
         private State _connectionState;
-        private Object _connectionStateLocker;
+        private SemaphoreSlim _connectionStateSemaphore;
         private IUserRepository _userRepository;
 
         public Connection(Socket socket)
@@ -26,34 +28,35 @@ namespace Server.Connections
             _protocolHandler = new ProtocolHandler(_socket);
             _serviceRouter = new ServiceRouter();
             _connectionState = State.Down;
-            _connectionStateLocker = new Object();
-            _userRepository = UserRepository.GetInstance();
+            _connectionStateSemaphore = new SemaphoreSlim(1);
+            _userRepository = UserRepository.GetInstanceAsync();
         }
 
         protected Connection() { }
 
-        public void StartConnection()
+        public async Task StartConnectionAsync()
         {
             _connectionState = State.Up;
 
             while (ConnectionIsUp())
             {
-                HandleRequests();
+                await HandleRequestsAsync();
             }
         }
 
-        private void HandleRequests()
+        private async Task HandleRequestsAsync()
         {
             try
             {
-                Frame receivedFrame = _protocolHandler.Receive();
-                Frame responseFrame = _serviceRouter.GetResponse(receivedFrame);
+                Frame receivedFrame = await _protocolHandler.ReceiveAsync();
+                Frame responseFrame = await _serviceRouter.GetResponseAsync(receivedFrame);
 
-                _protocolHandler.Send(responseFrame);
+                await _protocolHandler.SendAsync(responseFrame);
             }
             catch (ProtocolException)
             {
                 Console.WriteLine("Client has disconnected");
+                await ShutDownAsync();
             }
             catch (IOException e)
             {
@@ -65,21 +68,19 @@ namespace Server.Connections
 
         public bool ConnectionIsUp()
         {
-            lock (_connectionStateLocker)
-            {
-                return _connectionState == State.Up;
-            }
+            
+             return _connectionState == State.Up;
+            
         }
 
-        public void ShutDown()
+        public async Task ShutDownAsync()
         {
             _socket.Shutdown(SocketShutdown.Both);
             _socket.Close();
 
-            lock (_connectionStateLocker)
-            {
-                _connectionState = State.Down;
-            }
+            await _connectionStateSemaphore.WaitAsync();
+            _connectionState = State.Down;
+            _connectionStateSemaphore.Release();
         }
     }
 }
