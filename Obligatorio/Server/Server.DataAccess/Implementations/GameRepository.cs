@@ -13,15 +13,12 @@ namespace Server.DataAccess.Implementations
     {
         private static GameRepository _instance;
         private readonly List<Game> _games;
-        private object _gameLocker;
-        //private static Object _instanceLocker = new Object();
         private readonly SemaphoreSlim _gamesSemaphore;
         private static readonly SemaphoreSlim _instanceSemaphore = new SemaphoreSlim(1);
         private int _nextId;
 
         public GameRepository()
         {
-            //_gameLocker = new Object();
             _gamesSemaphore = new SemaphoreSlim(1);
             _games = new List<Game>();
             _nextId = 1;
@@ -33,7 +30,6 @@ namespace Server.DataAccess.Implementations
                 Game gameToRemove = await GetAsync(id);
                 await _gamesSemaphore.WaitAsync();
 
-                //VERIFICAR SI HAY QUE ELIMINAR PREVIAMENTE LOS COMENTARIOS
                  _games.Remove(gameToRemove);
 
                 _gamesSemaphore.Release();

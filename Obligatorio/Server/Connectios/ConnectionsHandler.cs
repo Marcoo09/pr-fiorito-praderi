@@ -21,6 +21,7 @@ namespace Server.Connections
         private SemaphoreSlim _serverStateSemaphore;
 
 
+
         public ConnectionsHandler()
         {
 
@@ -45,14 +46,15 @@ namespace Server.Connections
                 try
                 {
                     Connection clientConnection = new Connection(_socketServer.Accept());
-                    Thread clientThread = new Thread(() => clientConnection.StartConnection());
+                    Thread clientThread = new Thread(async () => await clientConnection.StartConnectionAsync());
 
-                    AddConnection(clientConnection);
+                    await AddConnectionAsync(clientConnection);
                     clientThread.Start();
-                    if (!_isShuttingDown)
+
+                  /*  if (!_isShuttingDown)
                     {
                         Console.WriteLine("Client accepted");
-                    }
+                    }*/
                 }
                 catch (SocketException)
                 {
@@ -64,13 +66,13 @@ namespace Server.Connections
 
         public async Task StartShutDownAsync()
         {
-            lock (_serverStateLocker)
-            {
+            await _serverStateSemaphore.WaitAsync();
                 _serverState = State.ShuttingDown;
                 _socketServer.Close(0);
-            }
-            ShutDownConnections();
-            _isShuttingDown = true;
+            _serverStateSemaphore.Release();
+
+           await ShutDownConnectionsAsync();
+
             var fakeSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             fakeSocket.Connect(_serverIp, _serverPort);
         }

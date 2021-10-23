@@ -39,6 +39,11 @@
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/obj/Debug/netcoreapp3.1/Server.dll
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/obj/Debug/netcoreapp3.1/Server.pdb
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/obj/Debug/netcoreapp3.1/Server.genruntimeconfig.cache
+C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\obj\Debug\netcoreapp3.1\Server.csproj.AssemblyReference.cache
+C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\obj\Debug\netcoreapp3.1\Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\obj\Debug\netcoreapp3.1\Server.AssemblyInfoInputs.cache
+C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\obj\Debug\netcoreapp3.1\Server.AssemblyInfo.cs
+C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\obj\Debug\netcoreapp3.1\Server.csproj.CoreCompileInputs.cache
 C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\bin\Debug\netcoreapp3.1\Server.exe
 C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\bin\Debug\netcoreapp3.1\Server.dll.config
 C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\bin\Debug\netcoreapp3.1\Server.deps.json
@@ -72,11 +77,6 @@ C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\bin\Debug\netcoreapp
 C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\bin\Debug\netcoreapp3.1\DTOs.pdb
 C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\bin\Debug\netcoreapp3.1\Exceptions.pdb
 C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\bin\Debug\netcoreapp3.1\Server.Domain.pdb
-C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\obj\Debug\netcoreapp3.1\Server.csproj.AssemblyReference.cache
-C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\obj\Debug\netcoreapp3.1\Server.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\obj\Debug\netcoreapp3.1\Server.AssemblyInfoInputs.cache
-C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\obj\Debug\netcoreapp3.1\Server.AssemblyInfo.cs
-C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\obj\Debug\netcoreapp3.1\Server.csproj.CoreCompileInputs.cache
 C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\obj\Debug\netcoreapp3.1\Server.csproj.CopyComplete
 C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\obj\Debug\netcoreapp3.1\Server.dll
 C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Server\obj\Debug\netcoreapp3.1\Server.pdb

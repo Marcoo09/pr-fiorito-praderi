@@ -11,10 +11,8 @@ namespace Server.DataAccess.Implementations
     public class UserRepository : IUserRepository
     {
         private List<User> _users;
-        private Object _usersLocker;
         private int _nextId;
         private static UserRepository _instance;
-        //private static Object _instanceLocker = new Object();
         private readonly SemaphoreSlim _usersSemaphore;
         private static readonly SemaphoreSlim _instanceSemaphore = new SemaphoreSlim(1);
 
@@ -22,7 +20,7 @@ namespace Server.DataAccess.Implementations
         public UserRepository()
         {
             _users = new List<User>();
-            _usersLocker = new Object();
+            _usersSemaphore = new SemaphoreSlim(1);
             _nextId = 1;
         }
 

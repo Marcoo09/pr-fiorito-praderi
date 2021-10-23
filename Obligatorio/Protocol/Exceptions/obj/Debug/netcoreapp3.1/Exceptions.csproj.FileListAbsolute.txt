@@ -11,7 +11,6 @@
 C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\bin\Debug\netcoreapp3.1\Exceptions.deps.json
 C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\bin\Debug\netcoreapp3.1\Exceptions.dll
 C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\bin\Debug\netcoreapp3.1\Exceptions.pdb
-C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\obj\Debug\netcoreapp3.1\Exceptions.csproj.AssemblyReference.cache
 C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\obj\Debug\netcoreapp3.1\Exceptions.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\obj\Debug\netcoreapp3.1\Exceptions.AssemblyInfoInputs.cache
 C:\Users\Nico\Desktop\pr-fiorito-praderi\Obligatorio\Protocol\Exceptions\obj\Debug\netcoreapp3.1\Exceptions.AssemblyInfo.cs
