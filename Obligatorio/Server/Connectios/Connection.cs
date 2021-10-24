@@ -29,7 +29,7 @@ namespace Server.Connections
             _serviceRouter = new ServiceRouter();
             _connectionState = State.Down;
             _connectionStateSemaphore = new SemaphoreSlim(1);
-            _userRepository = UserRepository.GetInstanceAsync();
+            _userRepository = UserRepository.GetInstance();
         }
 
         protected Connection() { }

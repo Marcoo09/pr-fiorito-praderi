@@ -115,6 +115,7 @@ namespace Server.DataAccess.Implementations
                 gameToBeUpdated.Title = game.Title;
                 gameToBeUpdated.Synopsis = game.Synopsis;
                 gameToBeUpdated.Gender = game.Gender;
+                _gamesSemaphore.Release();
             }
             catch (InvalidResourceException e)
             {

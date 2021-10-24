@@ -9,8 +9,9 @@ namespace Client
         static async Task Main(string[] args)
         {
             ClientUI clientUI = new ClientUI();
-            Thread thread = new Thread(async () => await clientUI.InitAsync());
-            thread.Start();
+            //Thread thread = new Thread();
+            await clientUI.InitAsync();
+            //thread.Start();
         }
     }
 }

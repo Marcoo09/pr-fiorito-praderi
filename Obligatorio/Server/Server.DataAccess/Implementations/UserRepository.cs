@@ -20,12 +20,14 @@ namespace Server.DataAccess.Implementations
         public UserRepository()
         {
             _users = new List<User>();
-            _usersSemaphore = new SemaphoreSlim(1);
+            _usersSemaphore = new SemaphoreSlim(2);
             _nextId = 1;
         }
 
-        public static UserRepository GetInstanceAsync()
+        public static UserRepository GetInstance()
         {
+
+
             _instanceSemaphore.Wait();
             if (_instance == null)
                 _instance = new UserRepository();
@@ -54,14 +56,18 @@ namespace Server.DataAccess.Implementations
 
         public async Task<User> GetAsync(int id)
         {
-            await _usersSemaphore.WaitAsync();
 
+
+
+            await _usersSemaphore.WaitAsync();
             User user = _users.Find(u => u.Id == id);
+            _usersSemaphore.Release();
 
             if (user == null)
-                throw new ResourceNotFoundException("User does not exist");
+                throw new ResourceNotFoundException("User does not exist");             
+         
 
-            _usersSemaphore.Release();
+           
 
             return user;
         }
@@ -93,9 +99,13 @@ namespace Server.DataAccess.Implementations
         public async Task BuyGameAsync(Game game, int userId)
         {
             await _usersSemaphore.WaitAsync();
-            User userToAddGame = await GetAsync(userId);
-            userToAddGame.BuyGame(game);
-            _usersSemaphore.Release();
+                
+                User userToAddGame = await GetAsync(userId);
+                userToAddGame.BuyGame(game);
+         
+
+
+        _usersSemaphore.Release();
 
         }
     }

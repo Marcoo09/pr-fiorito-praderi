@@ -23,8 +23,8 @@ namespace Server.Implementations
 
         public UserService()
         {
-            _userRepository = UserRepository.GetInstanceAsync();
-            _gameRepository = GameRepository.GetInstance();
+            _userRepository =  UserRepository.GetInstance();
+            _gameRepository =  GameRepository.GetInstance();
             _serializer = new Serializer();
         }
 

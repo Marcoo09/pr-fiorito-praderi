@@ -15,8 +15,7 @@ namespace Client.Connections
         private ProtocolHandler _protocolHandler;
         private ClientState _clientState;
         private SemaphoreSlim _clientStateSemaphore;
-        private IPAddress _serverIpAddress;
-        private int _serverPort;
+       
 
         private Socket _socket;
 
@@ -28,19 +27,21 @@ namespace Client.Connections
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             _socket.Bind(new IPEndPoint(IPAddress.Parse(ConfigurationManager.AppSettings["ClientIP"]), 0));
             _protocolHandler = new ProtocolHandler(_socket);
-
+            _clientStateSemaphore = new SemaphoreSlim(1);
         }
 
         public async Task ConnectToServerAsync()
         {
             try
             {
+                
                 _socket.Connect(_serverEndpoint);
-                _clientState = ClientState.Up;
-                Console.WriteLine("Connected to server.");
+                _clientState = ClientState.Up;            
+                await _clientStateSemaphore.WaitAsync();
             }
             catch (SocketException)
             {
+                throw new Exception("Server is down! Please try again");
                 Console.WriteLine("Server is down! Please try again");
             }
 

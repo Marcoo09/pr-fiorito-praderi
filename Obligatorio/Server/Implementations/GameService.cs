@@ -37,7 +37,7 @@ namespace Server.Implementations
                 Game gameToSendReview = await _gameRepository.GetAsync(reviewDTO.GameId);
                 newReview.Game = gameToSendReview;
 
-                _gameRepository.AddReviewAsync(reviewDTO.GameId ,newReview);
+                 _gameRepository.AddReviewAsync(reviewDTO.GameId ,newReview);
 
                 MessageDTO messageDto = new MessageDTO() { Message = "Review added!" };
 
