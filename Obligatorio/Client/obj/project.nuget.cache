@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "VQ0jYTjzsP4OKP82R9kF+8qs3AqUCqflP9cM686dbCMTu0DiqrccX7pAhItp6zpytp+IFFtFIAFhielnoxoVyw==",
+  "dgSpecHash": "+AEIJMGsyF4k7kHXXU4DrpSSaB3Dth39y+4hSm9UkhpHMcjmnzAoYd3QETHLT9js5n+Ur9KX6U0D+kPn9awYzg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nico\\Desktop\\pr-fiorito-praderi\\Obligatorio\\Client\\Client.csproj",
+  "projectFilePath": "/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Client/Client.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
-    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
-    "C:\\Users\\Nico\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",
-    "C:\\Users\\Nico\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
-    "C:\\Users\\Nico\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
-    "C:\\Users\\Nico\\.nuget\\packages\\system.security.cryptography.protecteddata\\5.0.0\\system.security.cryptography.protecteddata.5.0.0.nupkg.sha512",
-    "C:\\Users\\Nico\\.nuget\\packages\\system.security.permissions\\5.0.0\\system.security.permissions.5.0.0.nupkg.sha512",
-    "C:\\Users\\Nico\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
-    "C:\\Users\\Nico\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+    "/Users/marcofiorito/.nuget/packages/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/microsoft.win32.systemevents/5.0.0/microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/system.configuration.configurationmanager/5.0.0/system.configuration.configurationmanager.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/system.drawing.common/5.0.0/system.drawing.common.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/system.security.accesscontrol/5.0.0/system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/system.security.cryptography.protecteddata/5.0.0/system.security.cryptography.protecteddata.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/system.security.permissions/5.0.0/system.security.permissions.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg.sha512",
+    "/Users/marcofiorito/.nuget/packages/system.windows.extensions/5.0.0/system.windows.extensions.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

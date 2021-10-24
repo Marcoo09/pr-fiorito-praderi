@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace Client
 {
@@ -9,9 +7,7 @@ namespace Client
         static async Task Main(string[] args)
         {
             ClientUI clientUI = new ClientUI();
-            //Thread thread = new Thread();
             await clientUI.InitAsync();
-            //thread.Start();
         }
     }
 }

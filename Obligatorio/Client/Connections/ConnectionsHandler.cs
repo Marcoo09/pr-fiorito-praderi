@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
@@ -16,7 +15,6 @@ namespace Client.Connections
         private ClientState _clientState;
         private SemaphoreSlim _clientStateSemaphore;
        
-
         private Socket _socket;
 
         public ConnectionsHandler()
@@ -38,10 +36,10 @@ namespace Client.Connections
                 _socket.Connect(_serverEndpoint);
                 _clientState = ClientState.Up;            
                 await _clientStateSemaphore.WaitAsync();
+                Console.WriteLine("Connected to server.");
             }
             catch (SocketException)
             {
-                throw new Exception("Server is down! Please try again");
                 Console.WriteLine("Server is down! Please try again");
             }
 

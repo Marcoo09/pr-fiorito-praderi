@@ -24,7 +24,6 @@ namespace Client
         public async Task InitAsync()
         {
             await _connectionsHandler.ConnectToServerAsync();
-            Console.WriteLine("Connected to server.");
 
             while (_connectionsHandler.IsClientStateUp())
             {
