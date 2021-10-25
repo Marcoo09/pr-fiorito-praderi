@@ -11,7 +11,7 @@ namespace Server
         {
             Console.WriteLine("Starting...");
 
-               await HandleConnections();
+             await HandleConnections();
         }
 
         static async Task HandleConnections()

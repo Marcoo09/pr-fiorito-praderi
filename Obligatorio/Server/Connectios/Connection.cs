@@ -58,7 +58,6 @@ namespace Server.Connections
             catch (ProtocolException)
             {
                 Console.WriteLine("Client has disconnected");
-                await ShutDownAsync();
             }
             catch (IOException e)
             {

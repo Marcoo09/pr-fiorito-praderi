@@ -3,10 +3,10 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Server/Connectios/ConnectionsHandler.cs">
     <Files>
       <File FileName="Client/ClientUI.cs" Line="30" Column="34" />
-      <File FileName="Client/Connections/ConnectionsHandler.cs" Line="1" Column="1" />
-      <File FileName="Server/ServerProgram.cs" Line="22" Column="41" />
-      <File FileName="Server/Connectios/ConnectionsHandler.cs" Line="99" Column="38" />
-      <File FileName="Server/Connectios/Connection.cs" Line="80" Column="49" />
+      <File FileName="Server/ServerProgram.cs" Line="24" Column="1" />
+      <File FileName="Server/Connectios/ConnectionsHandler.cs" Line="51" Column="52" />
+      <File FileName="Server/Connectios/Connection.cs" Line="53" Column="1" />
+      <File FileName="Protocol/ProtocolHandler.cs" Line="76" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -40,10 +40,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/Connection.cs" relfile="Server/Connectios/Connection.cs" line="39" column="1" />
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/Connection.cs" relfile="Server/Connectios/Connection.cs" line="56" column="1" />
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/ServerProgram.cs" relfile="Server/ServerProgram.cs" line="15" column="1" />
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/Connection.cs" relfile="Server/Connectios/Connection.cs" line="79" column="1" />
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/Connection.cs" relfile="Server/Connectios/Connection.cs" line="58" column="1" />
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/ConnectionsHandler.cs" relfile="Server/Connectios/ConnectionsHandler.cs" line="55" column="1" />
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/ConnectionsHandler.cs" relfile="Server/Connectios/ConnectionsHandler.cs" line="51" column="1" />
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/ConnectionsHandler.cs" relfile="Server/Connectios/ConnectionsHandler.cs" line="53" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
