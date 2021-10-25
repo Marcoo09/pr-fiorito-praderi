@@ -11,15 +11,15 @@ namespace Server
         {
             Console.WriteLine("Starting...");
 
-            await HandleConnections();
+               await HandleConnections();
         }
 
         static async Task HandleConnections()
         {
             ConnectionsHandler connectionsHandler = new ConnectionsHandler();
-            Console.WriteLine("Write any key to shutdown the server");
 
-            await connectionsHandler.StartListeningAsync();
+            var task = Task.Run(async () => await connectionsHandler.StartListeningAsync());
+            Console.WriteLine("Write any key to shutdown the server");
 
             Console.ReadLine();
             

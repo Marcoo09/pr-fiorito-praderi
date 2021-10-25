@@ -27,3 +27,4 @@ C:/Users/Nico/Desktop/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/ob
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/obj/Debug/netcoreapp3.1/Server.DataAccess.csproj.CopyComplete
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/obj/Debug/netcoreapp3.1/Server.DataAccess.dll
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/obj/Debug/netcoreapp3.1/Server.DataAccess.pdb
+/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.DataAccess/obj/Debug/netcoreapp3.1/Server.DataAccess.csproj.AssemblyReference.cache

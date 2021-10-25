@@ -41,22 +41,22 @@ namespace Server.Connections
             _socketServer.Listen(100);
             _serverState = State.Up;
 
-            while (IsServerUp())
+            while (await IsServerUp())
             {
                 try
                 {
                     Connection clientConnection = new Connection(_socketServer.Accept());
-                    Thread clientThread = new Thread(async () => await clientConnection.StartConnectionAsync());
+                    Task clientTask = new Task(async () => await clientConnection.StartConnectionAsync());
 
                     await AddConnectionAsync(clientConnection);
-                    clientThread.Start();
+                    clientTask.Start();
 
                     if (!_isShuttingDown)
                     {
                         Console.WriteLine("Client accepted");
                     }
                 }
-                catch (SocketException)
+                catch (Exception)
                 {
                     await ShutDownConnectionsAsync();
                 }
@@ -67,11 +67,12 @@ namespace Server.Connections
         public async Task StartShutDownAsync()
         {
             await _serverStateSemaphore.WaitAsync();
-                _serverState = State.ShuttingDown;
-                _socketServer.Close(0);
+             _serverState = State.ShuttingDown;
+             _socketServer.Close(0);
             _serverStateSemaphore.Release();
 
-           await ShutDownConnectionsAsync();
+            await ShutDownConnectionsAsync();
+
             _isShuttingDown = true;
 
             var fakeSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -99,9 +100,13 @@ namespace Server.Connections
 
         }
 
-        private bool IsServerUp()
+        private async Task<bool> IsServerUp()
         {
-                return _serverState == State.Up;
+            bool isServerUp;
+            await _serverStateSemaphore.WaitAsync();
+            isServerUp = _serverState == State.Up;
+            _serverStateSemaphore.Release();
+            return isServerUp;
         }
 
         private async Task AddConnectionAsync(Connection connection)
