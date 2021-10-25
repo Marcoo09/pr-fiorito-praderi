@@ -58,6 +58,7 @@ namespace Server.Connections
             catch (ProtocolException)
             {
                 Console.WriteLine("Client has disconnected");
+                await ShutDownAsync();
             }
             catch (IOException e)
             {
@@ -78,8 +79,12 @@ namespace Server.Connections
 
         public async Task ShutDownAsync()
         {
+            try
+            {
             _socket.Shutdown(SocketShutdown.Both);
             _socket.Close();
+            }
+            catch (ObjectDisposedException) { }
 
             await _connectionStateSemaphore.WaitAsync();
             _connectionState = State.Down;
