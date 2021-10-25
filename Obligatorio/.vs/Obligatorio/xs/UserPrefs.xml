@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{0A5D2987-B979-4345-9FC9-0D7D690E375D}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Client/Connections/ConnectionsHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Connectios/ConnectionsHandler.cs">
     <Files>
-      <File FileName="Server/ServerProgram.cs" Line="24" Column="40" />
-      <File FileName="Server/Connectios/ConnectionsHandler.cs" Line="53" Column="18" />
-      <File FileName="Server/Connectios/Connection.cs" Line="57" Column="14" />
-      <File FileName="Client/Connections/ConnectionsHandler.cs" Line="1" Column="1" />
+      <File FileName="Client/ClientUI.cs" Line="30" Column="34" />
+      <File FileName="Server/ServerProgram.cs" Line="24" Column="1" />
+      <File FileName="Server/Connectios/ConnectionsHandler.cs" Line="51" Column="52" />
+      <File FileName="Server/Connectios/Connection.cs" Line="53" Column="1" />
+      <File FileName="Protocol/ProtocolHandler.cs" Line="76" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,9 +14,8 @@
           <Node name="Obligatorio" expanded="True">
             <Node name="Client" expanded="True">
               <Node name="Client" expanded="True">
-                <Node name="Connections" expanded="True">
-                  <Node name="ConnectionsHandler.cs" selected="True" />
-                </Node>
+                <Node name="Dependencies" expanded="True" />
+                <Node name="Connections" expanded="True" />
               </Node>
             </Node>
             <Node name="Common" expanded="True">
@@ -23,7 +23,10 @@
             </Node>
             <Node name="Server" expanded="True">
               <Node name="Server" expanded="True">
-                <Node name="Connectios" expanded="True" />
+                <Node name="Dependencies" expanded="True" />
+                <Node name="Connectios" expanded="True">
+                  <Node name="ConnectionsHandler.cs" selected="True" />
+                </Node>
                 <Node name="Implementations" expanded="True" />
               </Node>
             </Node>
@@ -37,12 +40,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/Connection.cs" relfile="Server/Connectios/Connection.cs" line="39" column="1" />
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/ConnectionsHandler.cs" relfile="Server/Connectios/ConnectionsHandler.cs" line="54" column="1" />
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/Connection.cs" relfile="Server/Connectios/Connection.cs" line="56" column="1" />
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/ServerProgram.cs" relfile="Server/ServerProgram.cs" line="24" column="1" />
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/ServerProgram.cs" relfile="Server/ServerProgram.cs" line="23" column="1" />
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/Connection.cs" relfile="Server/Connectios/Connection.cs" line="76" column="1" />
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/Connection.cs" relfile="Server/Connectios/Connection.cs" line="58" column="1" />
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/ConnectionsHandler.cs" relfile="Server/Connectios/ConnectionsHandler.cs" line="55" column="1" />
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/ConnectionsHandler.cs" relfile="Server/Connectios/ConnectionsHandler.cs" line="51" column="1" />
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/ConnectionsHandler.cs" relfile="Server/Connectios/ConnectionsHandler.cs" line="53" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

@@ -1,3 +1,16 @@
+C:/Users/Nico/Desktop/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/bin/Debug/netcoreapp3.1/Server.Domain.deps.json
+C:/Users/Nico/Desktop/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/bin/Debug/netcoreapp3.1/Server.Domain.dll
+C:/Users/Nico/Desktop/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/bin/Debug/netcoreapp3.1/Server.Domain.pdb
+C:/Users/Nico/Desktop/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/bin/Debug/netcoreapp3.1/Exceptions.dll
+C:/Users/Nico/Desktop/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/bin/Debug/netcoreapp3.1/Exceptions.pdb
+C:/Users/Nico/Desktop/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.csproj.AssemblyReference.cache
+C:/Users/Nico/Desktop/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Nico/Desktop/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.AssemblyInfoInputs.cache
+C:/Users/Nico/Desktop/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.AssemblyInfo.cs
+C:/Users/Nico/Desktop/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.csproj.CoreCompileInputs.cache
+C:/Users/Nico/Desktop/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.csproj.CopyComplete
+C:/Users/Nico/Desktop/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.dll
+C:/Users/Nico/Desktop/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/obj/Debug/netcoreapp3.1/Server.Domain.pdb
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/bin/Debug/netcoreapp3.1/Server.Domain.deps.json
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/bin/Debug/netcoreapp3.1/Server.Domain.dll
 /Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Server.Domain/bin/Debug/netcoreapp3.1/Server.Domain.pdb

@@ -1,15 +1,13 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading.Tasks;
 
 namespace Client
 {
     class ClientProgram
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             ClientUI clientUI = new ClientUI();
-            Thread thread = new Thread(() => clientUI.Init());
-            thread.Start();
+            await clientUI.InitAsync();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using DTOs.Response;
 using Protocol;
 using Server.Domain;
@@ -19,47 +20,47 @@ namespace Server.Implementations
             _user = new User();
         }
 
-        public Frame GetResponse(Frame frameRequest)
+        public async Task<Frame> GetResponseAsync(Frame frameRequest)
         {
             Frame response = null;
 
             switch ((CommandConstants)frameRequest.ChosenCommand)
             {
                 case CommandConstants.BuyGame:
-                    response = _userService.BuyGame(frameRequest, _user.Id);
+                    response = await _userService.BuyGameAsync(frameRequest, _user.Id);
                     break;
                 case CommandConstants.IndexBoughtGames:
-                    response = _userService.IndexBoughtGames(_user.Id);
+                    response = await _userService.IndexBoughtGamesAsync(_user.Id);
                     break;
                 case CommandConstants.CreateGame:
-                    response = _gameService.CreateGame(frameRequest);
+                    response = await _gameService.CreateGameAsync(frameRequest);
                     break;
                 case CommandConstants.CreateGameReview:
-                    response = _gameService.AddReview(frameRequest);
+                    response = await _gameService.AddReviewAsync(frameRequest);
                     break;
                 case CommandConstants.DeleteGame:
-                    response = _gameService.DeleteGame(frameRequest);
+                    response = await _gameService.DeleteGameAsync(frameRequest);
                     break;
                 case CommandConstants.GetGameReviews:
-                    response = _gameService.GetAllReviews(frameRequest);
+                    response = await _gameService.GetAllReviewsAsync(frameRequest);
                     break;
                 case CommandConstants.GetGame:
-                    response = _gameService.ShowGame(frameRequest);
+                    response = await _gameService.ShowGameAsync(frameRequest);
                     break;
                 case CommandConstants.IndexGamesCatalog:
-                    response = _gameService.ShowGames();
+                    response = await _gameService.ShowGamesAsync();
                     break;
                 case CommandConstants.SearchGames:
-                    response = _gameService.SearchGameBy(frameRequest);
+                    response = await _gameService.SearchGameByAsync(frameRequest);
                     break;
                 case CommandConstants.UpdateGame:
-                    response = _gameService.UpdateGame(frameRequest);
+                    response = await _gameService.UpdateGameAsync(frameRequest);
                     break;
                 case CommandConstants.IndexUsers:
-                    response = _userService.IndexUsers();
+                    response = await _userService.IndexUsersAsync();
                     break;
                 case CommandConstants.Login:
-                    response = _userService.CreateUser(frameRequest);
+                    response = await _userService.CreateUserAsync(frameRequest);
                     UpdateCurrentUser(response);
                     break;
             }

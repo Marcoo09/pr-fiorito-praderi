@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Server.Connections
 {
@@ -16,14 +17,16 @@ namespace Server.Connections
         private int _serverPort;
         private List<Connection> _connections;
         private State _serverState;
-        private Object _serverStateLocker;
-        private Object _connectionsListLocker;
+        private SemaphoreSlim _connectionsListSemaphore;
+        private SemaphoreSlim _serverStateSemaphore;
         private bool _isShuttingDown = false;
+
 
         public ConnectionsHandler()
         {
-            _serverStateLocker = new Object();
-            _connectionsListLocker = new Object();
+
+            _serverStateSemaphore = new SemaphoreSlim(1);
+            _connectionsListSemaphore = new SemaphoreSlim(1);
             _connections = new List<Connection>();
             _serverIp = IPAddress.Parse(ConfigurationManager.AppSettings["ServerIP"]);
             _serverPort = Int32.Parse(ConfigurationManager.AppSettings["ServerPort"]);
@@ -32,83 +35,89 @@ namespace Server.Connections
             _serverState = State.Down;
         }
 
-        public void StartListening()
+        public async Task StartListeningAsync()
         {
 
             _socketServer.Listen(100);
+            await _serverStateSemaphore.WaitAsync();
             _serverState = State.Up;
+            _serverStateSemaphore.Release();
 
-            while (IsServerUp())
+            while (await IsServerUp())
             {
                 try
                 {
                     Connection clientConnection = new Connection(_socketServer.Accept());
-                    Thread clientThread = new Thread(() => clientConnection.StartConnection());
+                    Task clientTask = new Task(async () => await clientConnection.StartConnectionAsync());
 
-                    AddConnection(clientConnection);
-                    clientThread.Start();
+                    await AddConnectionAsync(clientConnection);
+                    clientTask.Start();
+
                     if (!_isShuttingDown)
                     {
                         Console.WriteLine("Client accepted");
                     }
                 }
-                catch (SocketException)
+                catch (Exception)
                 {
-                    ShutDownConnections();
+                    await ShutDownConnectionsAsync();
                 }
             }
             Console.WriteLine("Exiting....");
         }
 
-        public void StartShutDown()
+        public async Task StartShutDownAsync()
         {
-            lock (_serverStateLocker)
-            {
-                _serverState = State.ShuttingDown;
-                _socketServer.Close(0);
-            }
-            ShutDownConnections();
+            await _serverStateSemaphore.WaitAsync();
+             _serverState = State.ShuttingDown;
+             _socketServer.Close(0);
+            _serverStateSemaphore.Release();
+
+            await ShutDownConnectionsAsync();
+
             _isShuttingDown = true;
+
             var fakeSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             fakeSocket.Connect(_serverIp, _serverPort);
         }
 
-        private void ShutDownConnections()
+        private async Task ShutDownConnectionsAsync()
         {
-            lock (_serverStateLocker)
-            {
-                _serverState = State.Down;
+            await _serverStateSemaphore.WaitAsync();
+            _serverState = State.Down;
+            _serverStateSemaphore.Release();
 
-                lock (_connectionsListLocker)
+            await _connectionsListSemaphore.WaitAsync();
+            for (int i = _connections.Count - 1; i >= 0; i--)
+            {
+                try
                 {
-                    for (int i = _connections.Count - 1; i >= 0; i--)
-                    {
-                        try
-                        {
-                            Connection connection = _connections.ElementAt(i);
-                            connection.ShutDown();
-                            _connections.RemoveAt(i);
-                        }
-                        catch (ObjectDisposedException) { }
-                    }
+                    Connection connection = _connections.ElementAt(i);
+                    await connection.ShutDownAsync();
+                    _connections.RemoveAt(i);
                 }
+                catch (ObjectDisposedException) { }
             }
+            _connectionsListSemaphore.Release();
+
         }
 
-        private bool IsServerUp()
+        private async Task<bool> IsServerUp()
         {
-            lock (_serverStateLocker)
-            {
-                return _serverState == State.Up;
-            }
+            bool isServerUp;
+            await _serverStateSemaphore.WaitAsync();
+            isServerUp = _serverState == State.Up;
+            _serverStateSemaphore.Release();
+            return isServerUp;
         }
 
-        private void AddConnection(Connection connection)
+        private async Task AddConnectionAsync(Connection connection)
         {
-            lock (_connectionsListLocker)
-            {
-                _connections.Add(connection);
-            }
+
+            await _connectionsListSemaphore.WaitAsync();
+            _connections.Add(connection);
+            _connectionsListSemaphore.Release();
+
         }
     }
 }

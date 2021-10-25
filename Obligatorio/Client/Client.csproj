@@ -13,10 +13,10 @@
     <Folder Include="Connections\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Protocol\Protocol.csproj" />
     <ProjectReference Include="..\Protocol\DTOs\DTOs.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
   </ItemGroup>
 </Project>

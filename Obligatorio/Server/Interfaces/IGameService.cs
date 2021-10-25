@@ -1,16 +1,17 @@
 ﻿using Protocol;
+using System.Threading.Tasks;
 
 namespace Server.Interfaces
 {
     public interface IGameService
     {
-        Frame CreateGame(Frame requestFrame);
-        Frame ShowGame(Frame requestFrame);
-        Frame ShowGames();
-        Frame UpdateGame(Frame requestFrame);
-        Frame AddReview(Frame requestFrame);
-        Frame GetAllReviews(Frame requestFrame);
-        Frame SearchGameBy(Frame requestFrame);
-        Frame DeleteGame(Frame requestFrame);
+        Task<Frame> CreateGameAsync(Frame requestFrame);
+        Task<Frame> ShowGameAsync(Frame requestFrame);
+        Task<Frame> ShowGamesAsync();
+        Task<Frame> UpdateGameAsync(Frame requestFrame);
+        Task<Frame> AddReviewAsync(Frame requestFrame);
+        Task<Frame> GetAllReviewsAsync(Frame requestFrame);
+        Task<Frame> SearchGameByAsync(Frame requestFrame);
+        Task<Frame> DeleteGameAsync(Frame requestFrame);
     }
 }

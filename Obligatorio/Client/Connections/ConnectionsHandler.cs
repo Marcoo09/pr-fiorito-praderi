@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Configuration;
-using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading;
+using System.Threading.Tasks;
 using Protocol;
 
 namespace Client.Connections
@@ -12,7 +13,8 @@ namespace Client.Connections
         private IPEndPoint _serverEndpoint;
         private ProtocolHandler _protocolHandler;
         private ClientState _clientState;
-
+        private SemaphoreSlim _clientStateSemaphore;
+       
         private Socket _socket;
 
         public ConnectionsHandler()
@@ -23,15 +25,17 @@ namespace Client.Connections
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             _socket.Bind(new IPEndPoint(IPAddress.Parse(ConfigurationManager.AppSettings["ClientIP"]), 0));
             _protocolHandler = new ProtocolHandler(_socket);
-
+            _clientStateSemaphore = new SemaphoreSlim(1);
         }
 
-        public void ConnectToServer()
+        public async Task ConnectToServerAsync()
         {
             try
             {
+                
                 _socket.Connect(_serverEndpoint);
-                _clientState = ClientState.Up;
+                _clientState = ClientState.Up;            
+                await _clientStateSemaphore.WaitAsync();
                 Console.WriteLine("Connected to server.");
             }
             catch (SocketException)
@@ -41,12 +45,14 @@ namespace Client.Connections
 
         }
 
-        public void ShutDown()
+        public async Task ShutDownAsync()
         {
             _clientState = ClientState.ShuttingDown;
             _socket.Shutdown(SocketShutdown.Both);
             _socket.Close();
             _clientState = ClientState.Down;
+
+            _clientStateSemaphore.Release();
         }
 
         public bool IsClientStateUp()
@@ -54,18 +60,18 @@ namespace Client.Connections
             return _clientState == ClientState.Up;
         }
 
-        public Frame SendRequest(Frame requestFrame)
+        public async Task<Frame> SendRequestAsync(Frame requestFrame)
         {
             try
             {
-                _protocolHandler.Send(requestFrame);
-                Frame response = _protocolHandler.Receive();
+                await _protocolHandler.SendAsync(requestFrame);
+                Frame response = await _protocolHandler.ReceiveAsync();
                 return response;
             }
             catch (SocketException)
             {
                 Console.WriteLine("Server is down! Please try again");
-                ShutDown();
+                await ShutDownAsync();
                 return null;
             }
         }

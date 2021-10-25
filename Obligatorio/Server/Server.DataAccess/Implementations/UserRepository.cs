@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using Exceptions;
 using Server.DataAccess.Interfaces;
 using Server.Domain;
@@ -9,71 +11,76 @@ namespace Server.DataAccess.Implementations
     public class UserRepository : IUserRepository
     {
         private List<User> _users;
-        private Object _usersLocker;
         private int _nextId;
         private static UserRepository _instance;
-        private static Object _instanceLocker = new Object();
+        private readonly SemaphoreSlim _usersSemaphore;
+        private static readonly SemaphoreSlim _instanceSemaphore = new SemaphoreSlim(1);
+
 
         public UserRepository()
         {
             _users = new List<User>();
-            _usersLocker = new Object();
+            _usersSemaphore = new SemaphoreSlim(2);
             _nextId = 1;
         }
 
         public static UserRepository GetInstance()
         {
-            lock (_instanceLocker)
-            {
-                if (_instance == null)
-                    _instance = new UserRepository();
 
-                return _instance;
-            }
+
+            _instanceSemaphore.Wait();
+            if (_instance == null)
+                _instance = new UserRepository();
+            _instanceSemaphore.Release();
+            return _instance;
+
         }
 
-        public int Insert(User user)
+        public async Task<int> InsertAsync(User user)
         {
-            lock (_usersLocker)
-            {
-                User newUser = new User()
-                {
-                    Id = GetAvailableId(),
-                    Name = user.Name,
-                };
-                _users.Add(newUser);
+            await _usersSemaphore.WaitAsync();
 
-                return newUser.Id;
-            }
+            User newUser = new User()
+            {
+                Id = GetAvailableId(),
+                Name = user.Name,
+            };
+
+            _users.Add(newUser);
+
+            _usersSemaphore.Release();
+
+            return newUser.Id;
+
         }
 
-        public User Get(int id)
+        public async Task<User> GetAsync(int id)
         {
-            lock (_usersLocker)
-            {
-                User user = _users.Find(u => u.Id == id);
+            await _usersSemaphore.WaitAsync();
+            User user = _users.Find(u => u.Id == id);
+            _usersSemaphore.Release();
 
-                if (user == null)
-                    throw new ResourceNotFoundException("User does not exist");
-                return user;
-            }
+            if (user == null)
+                throw new ResourceNotFoundException("User does not exist");             
+
+            return user;
         }
 
-        public List<User> GetAll()
+        public async Task<List<User>> GetAllAsync()
         {
-            lock (_usersLocker)
-            {
-                return new List<User>(_users);
-            }
+            await _usersSemaphore.WaitAsync();
+            List <User> users = new List<User>(_users);
+            _usersSemaphore.Release();
+
+            return users;
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            lock (_usersLocker)
-            {
-                User userToRemove = Get(id);
-                _users.Remove(userToRemove);
-            }
+            await _usersSemaphore.WaitAsync();
+            User userToRemove = await GetAsync(id);
+            _users.Remove(userToRemove);
+            _usersSemaphore.Release();
         }
 
         private int GetAvailableId()
@@ -81,13 +88,14 @@ namespace Server.DataAccess.Implementations
             return _nextId++;
         }
 
-        public void BuyGame(Game game, int userId)
+        public async Task BuyGameAsync(Game game, int userId)
         {
-            lock (_usersLocker)
-            {
-                User userToAddGame = Get(userId);
-                userToAddGame.BuyGame(game);
-            }
+            await _usersSemaphore.WaitAsync();
+                
+            User userToAddGame = await GetAsync(userId);
+            userToAddGame.BuyGame(game);
+         
+            _usersSemaphore.Release();
         }
     }
 }

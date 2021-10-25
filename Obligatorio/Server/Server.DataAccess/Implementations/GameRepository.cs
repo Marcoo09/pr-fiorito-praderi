@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Exceptions;
 using Server.DataAccess.Interfaces;
 using Server.Domain;
@@ -11,60 +13,67 @@ namespace Server.DataAccess.Implementations
     {
         private static GameRepository _instance;
         private readonly List<Game> _games;
-        private object _gameLocker;
-        private static Object _instanceLocker = new Object();
+        private readonly SemaphoreSlim _gamesSemaphore;
+        private static readonly SemaphoreSlim _instanceSemaphore = new SemaphoreSlim(1);
         private int _nextId;
 
         public GameRepository()
         {
-            _gameLocker = new Object();
+            _gamesSemaphore = new SemaphoreSlim(1);
             _games = new List<Game>();
             _nextId = 1;
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            lock (_gameLocker)
-            {
-                Game gameToRemove = Get(id);
-                _games.Remove(gameToRemove);
-            }
+            
+                Game gameToRemove = await GetAsync(id);
+                await _gamesSemaphore.WaitAsync();
+
+                 _games.Remove(gameToRemove);
+
+                _gamesSemaphore.Release();
+
         }
 
-        public Game Get(int id)
+        public async Task<Game> GetAsync(int id)
         {
-            lock (_gameLocker)
-            {
-                Game game = _games.Find(g => g.Id == id);
+            await _gamesSemaphore.WaitAsync();
+            Game game = _games.Find(g => g.Id == id);
+            _gamesSemaphore.Release();
 
-                if (game == null)
+            if (game == null)
                     throw new ResourceNotFoundException("Game not exist");
                 return game;
-            }
+            
         }
 
-        public List<Game> GetAll()
+        public async Task<List<Game>> GetAllAsync()
         {
-            lock (_gameLocker)
-            {
-                List<Game> copy = new List<Game>(_games);
-                return copy;
-            }
+
+            await _gamesSemaphore.WaitAsync();
+            List<Game> copy = new List<Game>(_games);
+            _gamesSemaphore.Release();
+            return copy;
+            
         }
 
-        public List<Game> GetBy(Func<Game, bool> predicate)
+        public async Task<List<Game>> GetByAsync(Func<Game, bool> predicate)
         {
-            lock (_gameLocker)
-            {
-                return _games.Where(predicate).ToList();
-            }
-        }
+            await _gamesSemaphore.WaitAsync();
 
-        public int Insert(Game game)
+            List <Game> games =  _games.Where(predicate).ToList();
+
+            _gamesSemaphore.Release();
+
+            return games;
+        }       
+
+        public async Task<int> InsertAsync(Game game)
         {
-            lock (_gameLocker)
-            {
-                if (_games.Any(g => g.Title == game.Title))
+            await _gamesSemaphore.WaitAsync();
+
+            if (_games.Any(g => g.Title == game.Title))
                     throw new InvalidResourceException("Game name need to be unique");
                 game.ValidOrFail();
 
@@ -80,38 +89,52 @@ namespace Server.DataAccess.Implementations
                 };
                 _games.Add(newGame);
 
-                UpdateNextAvailableId();
+                    UpdateNextAvailableId();
 
-                return newGame.Id;
-            }
+                _gamesSemaphore.Release();
+
+            return newGame.Id;
+            
         }
 
-        public void Update(int id, Game game)
+        public async Task UpdateAsync(int id, Game game)
         {
-            Game gameToBeUpdated = Get(id);
+            Game gameToBeUpdated = await GetAsync(id);
 
-            lock (_gameLocker)
-            {
-                if (_games.Any(g => g.Title == game.Title && g.Id != game.Id))
-                    throw new InvalidResourceException("Game name need to be unique");
+            await _gamesSemaphore.WaitAsync();
+
+            if (_games.Any(g => g.Title == game.Title && g.Id != game.Id)) {
+                _gamesSemaphore.Release();
+                throw new InvalidResourceException("Game name need to be unique");
+               }
+
+            try { 
                 game.Path = gameToBeUpdated.Path;
                 game.ValidOrFail();
 
                 gameToBeUpdated.Title = game.Title;
                 gameToBeUpdated.Synopsis = game.Synopsis;
                 gameToBeUpdated.Gender = game.Gender;
+                _gamesSemaphore.Release();
             }
+            catch (InvalidResourceException e)
+            {
+                _gamesSemaphore.Release();
+                throw new InvalidResourceException(e.Message);
+            }
+
         }
 
         public static GameRepository GetInstance()
         {
-            lock (_instanceLocker)
-            {
-                if (_instance == null)
+            _instanceSemaphore.Wait();
+            if (_instance == null)
                     _instance = new GameRepository();
+            
+            _instanceSemaphore.Release();
+            return _instance;
+            
 
-                return _instance;
-            }
         }
 
         private int GetAvailableId()
@@ -124,20 +147,23 @@ namespace Server.DataAccess.Implementations
             _nextId++;
         }
 
-        public void AddReview(int id, Review review)
+        public async Task AddReviewAsync(int id, Review review)
         {
-            Game gameToBeUpdated = Get(id);
+            Game gameToBeUpdated = await GetAsync(id);
 
-            lock (_gameLocker)
-            {
-                review.ValidOrFail();
+            await _gamesSemaphore.WaitAsync();
+
+            review.ValidOrFail();
                 gameToBeUpdated.AddReview(review);
-            }
+
+            _gamesSemaphore.Release();
         }
 
-        public List<Review> GetAllReviews(int id)
+        public async Task<List<Review>> GetAllReviewsAsync(int id)
         {
-            Game gameToSeeReviews = Get(id);
+            await _gamesSemaphore.WaitAsync();
+            Game gameToSeeReviews =  await GetAsync (id);
+            _gamesSemaphore.Release();
 
             return gameToSeeReviews.Reviews;
         }

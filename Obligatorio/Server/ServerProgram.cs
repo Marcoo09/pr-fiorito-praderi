@@ -1,27 +1,29 @@
 ﻿using System;
 using System.Threading;
+using System.Threading.Tasks;
 using Server.Connections;
 
 namespace Server
 {
     class ServerProgram
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.WriteLine("Starting...");
-            Thread connectionsThread = new Thread(() => HandleConnections());
-            connectionsThread.Start();
+
+             await HandleConnections();
         }
 
-        static void HandleConnections()
+        static async Task HandleConnections()
         {
             ConnectionsHandler connectionsHandler = new ConnectionsHandler();
-            Thread listiningThread = new Thread(() => connectionsHandler.StartListening());
-            listiningThread.Start();
 
+            var task = Task.Run(async () => await connectionsHandler.StartListeningAsync());
             Console.WriteLine("Write any key to shutdown the server");
+
             Console.ReadLine();
-            connectionsHandler.StartShutDown();
+            
+            await connectionsHandler.StartShutDownAsync();
         }
     }
 }
