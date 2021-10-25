@@ -39,7 +39,9 @@ namespace Server.Connections
         {
 
             _socketServer.Listen(100);
+            await _serverStateSemaphore.WaitAsync();
             _serverState = State.Up;
+            _serverStateSemaphore.Release();
 
             while (await IsServerUp())
             {

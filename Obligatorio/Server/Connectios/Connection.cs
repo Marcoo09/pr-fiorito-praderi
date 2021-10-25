@@ -36,9 +36,11 @@ namespace Server.Connections
 
         public async Task StartConnectionAsync()
         {
+            await _connectionStateSemaphore.WaitAsync();
             _connectionState = State.Up;
+            _connectionStateSemaphore.Release();
 
-            while (ConnectionIsUp())
+            while (await ConnectionIsUp())
             {
                 await HandleRequestsAsync();
             }
@@ -66,11 +68,13 @@ namespace Server.Connections
             catch (ObjectDisposedException) { }
         }
 
-        public bool ConnectionIsUp()
+        public async Task<bool> ConnectionIsUp()
         {
-            
-             return _connectionState == State.Up;
-            
+            bool isConnectionUp;
+            await _connectionStateSemaphore.WaitAsync();
+            isConnectionUp = _connectionState == State.Up;
+            _connectionStateSemaphore.Release();
+            return isConnectionUp;
         }
 
         public async Task ShutDownAsync()
