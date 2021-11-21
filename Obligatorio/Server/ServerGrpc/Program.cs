@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using ServerGrpc.Connections;
@@ -51,7 +52,12 @@ namespace ServerGrpc
             return Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
             {
+                webBuilder.ConfigureKestrel(options =>
+                {
+                    options.ListenLocalhost(Int32.Parse(serverConfiguration.GrpcApiHttpsPort), o => o.Protocols = HttpProtocols.Http2);
+                });
                 webBuilder.UseStartup<Startup>();
+                webBuilder.UseUrls(httpUrl, httpsUrl);
             });
         }
 
