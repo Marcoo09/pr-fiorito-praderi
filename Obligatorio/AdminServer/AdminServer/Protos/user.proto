@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option csharp_namespace = "AdminServer";
+
+package user;
+import "base.proto";
+
+service UserAdminService {
+  rpc BuyGame (BasicGameRequest) returns (base.Message);
+}
+
+message BasicGameRequest{
+  int32 gameId = 1;
+}

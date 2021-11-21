@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Grpc.Net.Client;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -41,6 +42,10 @@ namespace AdminServer
             return Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.ConfigureKestrel(options =>
+                    {
+                        options.ListenLocalhost(Int32.Parse(configuration.GrpcServerApiHttpsPort), o => o.Protocols = HttpProtocols.Http2);
+                    });
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseUrls(httpUrl, httpsUrl);
                 });
