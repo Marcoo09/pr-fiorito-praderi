@@ -1,25 +1,20 @@
 ﻿<Properties StartupConfiguration="{DE1A3F3A-C3C5-44CF-8DB5-BA92FE77C982}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Client/App.config">
+  <MonoDevelop.Ide.ItemProperties.AdminServer.AdminServer FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="AdminServer/AdminServer/Program.cs">
     <Files>
-      <File FileName="Server/ServerGrpc/Connectios/ConnectionsHandler.cs" Line="81" Column="30" />
-      <File FileName="Server/ServerGrpc/Program.cs" Line="42" Column="56" />
-      <File FileName="Client/App.config" Line="5" Column="40" />
+      <File FileName="AdminServer/AdminServer/Startup.cs" Line="23" Column="36" NotebookId="1" />
+      <File FileName="AdminServer/AdminServer/AdminServerConfiguration.cs" Line="13" Column="2" NotebookId="1" />
+      <File FileName="AdminServer/AdminServer/appsettings.json" Line="25" Column="4" NotebookId="1" />
+      <File FileName="AdminServer/AdminServer/Program.cs" Line="48" Column="2" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
-            <Node name="Client" expanded="True">
-              <Node name="Client" expanded="True" selected="True" />
-            </Node>
-            <Node name="Common" expanded="True" />
-            <Node name="Server" expanded="True">
-              <Node name="Server.DataAccess" expanded="True">
-                <Node name="Dependencies" expanded="True" />
-              </Node>
-              <Node name="ServerGrpc" expanded="True">
-                <Node name="Connectios" expanded="True" />
+            <Node name="AdminServer" expanded="True">
+              <Node name="AdminServer" expanded="True">
+                <Node name="Program.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -33,6 +28,8 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/Connection.cs" relfile="Server/Connectios/Connection.cs" line="58" column="1" />
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/ServerGrpc/Connectios/ConnectionsHandler.cs" relfile="Server/ServerGrpc/Connectios/ConnectionsHandler.cs" line="63" column="1" />
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/ServerGrpc/ServerGrpc.csproj" relfile="Server/ServerGrpc/ServerGrpc.csproj" line="8" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

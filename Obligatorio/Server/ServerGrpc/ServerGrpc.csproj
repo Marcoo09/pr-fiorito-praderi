@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\user.proto" GrpcServices="ServerGrpc" ProtoRoot="Protos\" />
+    <Protobuf Include="Protos\game.proto" GrpcServices="ServerGrpc" ProtoRoot="Protos\" />
+    <Protobuf Include="Protos\base.proto" GrpcServices="None" ProtoRoot="Protos\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -14,9 +16,12 @@
 
   <ItemGroup>
     <None Remove="Connectios\" />
+    <None Remove="Protos\greet %28copy%29.proto" />
+    <None Remove="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Connectios\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Protocol\DTOs\DTOs.csproj">

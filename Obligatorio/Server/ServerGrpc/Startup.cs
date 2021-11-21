@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ServerGrpc.Implementations;
+using ServerGrpc.Services;
 
 namespace ServerGrpc
 {
@@ -33,8 +35,7 @@ namespace ServerGrpc
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<GreeterService>();
-                //Add Services
+                endpoints.MapGrpcService<UserManager>();
 
                 endpoints.MapGet("/", async context =>
                 {
