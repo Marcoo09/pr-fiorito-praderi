@@ -11,9 +11,9 @@ using Protocol.SerializationInterfaces;
 using Server.DataAccess.Implementations;
 using Server.DataAccess.Interfaces;
 using Server.Domain;
-using Server.Interfaces;
+using ServerGrpc.Interfaces;
 
-namespace Server.Implementations
+namespace ServerGrpc.Implementations
 {
     public class UserService : IUserService
     {

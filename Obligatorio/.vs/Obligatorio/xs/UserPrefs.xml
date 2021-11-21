@@ -1,15 +1,21 @@
-﻿<Properties StartupConfiguration="{0A5D2987-B979-4345-9FC9-0D7D690E375D}|Default">
+﻿<Properties StartupConfiguration="{DB6B07A5-8BC2-4917-9633-A5A04124B665}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/ServerGrpc/Connectios/ConnectionsHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/ServerGrpc/appsettings.Development.json">
     <Files>
-      <File FileName="Server/ServerGrpc/Connectios/Connection.cs" Line="22" Column="25" />
-      <File FileName="Server/ServerGrpc/Implementations/GameService.cs" Line="1" Column="1" />
-      <File FileName="Server/ServerGrpc/Implementations/ServiceRouter.cs" Line="1" Column="1" />
-      <File FileName="Server/ServerGrpc/Implementations/UserService.cs" Line="1" Column="1" />
-      <File FileName="Server/ServerGrpc/Connectios/State.cs" Line="1" Column="1" />
-      <File FileName="Server/ServerGrpc/Connectios/ConnectionsHandler.cs" Line="32" Column="46" />
       <File FileName="Server/ServerGrpc/ServerConfiguration.cs" Line="1" Column="1" />
-      <File FileName="Server/ServerGrpc/Startup.cs" Line="9" Column="1" />
+      <File FileName="Server/ServerGrpc/Startup.cs" Line="29" Column="28" />
+      <File FileName="Server/ServerGrpc/Program.cs" Line="51" Column="45" />
+      <File FileName="Server/ServerGrpc/Interfaces/IGameService.cs" Line="9" Column="18" />
+      <File FileName="Server/ServerGrpc/Implementations/GameService.cs" Line="21" Column="36" />
+      <File FileName="Server/ServerGrpc/Connectios/Connection.cs" Line="21" Column="28" />
+      <File FileName="Server/ServerGrpc/Connectios/ConnectionsHandler.cs" Line="14" Column="1" />
+      <File FileName="Server/ServerGrpc/Connectios/State.cs" Line="7" Column="13" />
+      <File FileName="Server/ServerGrpc/Interfaces/IServiceRouter.cs" Line="5" Column="1" />
+      <File FileName="Server/ServerGrpc/Implementations/UserService.cs" Line="19" Column="6" />
+      <File FileName="Server/ServerGrpc/Implementations/ServiceRouter.cs" Line="21" Column="10" />
+      <File FileName="Server/ServerGrpc/Interfaces/IUserService.cs" Line="3" Column="1" />
+      <File FileName="Server/ServerGrpc/appsettings.json" Line="1" Column="1" />
+      <File FileName="Server/ServerGrpc/appsettings.Development.json" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,12 +24,16 @@
             <Node name="Client" expanded="True" />
             <Node name="Common" expanded="True" />
             <Node name="Server" expanded="True">
-              <Node name="Server" expanded="True" />
+              <Node name="Server.DataAccess" expanded="True">
+                <Node name="Dependencies" expanded="True" />
+              </Node>
+              <Node name="Server.Domain" expanded="True">
+                <Node name="Dependencies" expanded="True" />
+              </Node>
               <Node name="ServerGrpc" expanded="True">
-                <Node name="Connectios" expanded="True">
-                  <Node name="ConnectionsHandler.cs" selected="True" />
+                <Node name="appsettings.json" expanded="True">
+                  <Node name="appsettings.Development.json" selected="True" />
                 </Node>
-                <Node name="Implementations" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -32,7 +42,6 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Server.Server PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.Server.ServerGrpc FirstBuild="True" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

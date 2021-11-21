@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using ServerGrpc.Connections;
 
 namespace ServerGrpc
 {
@@ -23,14 +24,14 @@ namespace ServerGrpc
                 GrpcApiHttpsPort = config.GetSection("ServerConfiguration").GetSection("GrpcApiHttpsPort").Value
             };
 
-            await HandleConnections();
+            await HandleConnections(serverConfiguration);
 
             CreateHostBuilder(args, serverConfiguration).Build().Run();
         }
 
-        static async Task HandleConnections()
+        static async Task HandleConnections(ServerConfiguration serverConfiguration)
         {
-            ConnectionsHandler connectionsHandler = new ConnectionsHandler();
+            ConnectionsHandler connectionsHandler = new ConnectionsHandler(serverConfiguration);
 
             var task = Task.Run(async () => await connectionsHandler.StartListeningAsync());
             Console.WriteLine("Write any key to shutdown the server");

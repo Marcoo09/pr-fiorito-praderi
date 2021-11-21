@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 using DTOs.Response;
 using Protocol;
 using Server.Domain;
-using Server.Interfaces;
+using ServerGrpc.Interfaces;
 
-namespace Server.Implementations
+namespace ServerGrpc.Implementations
 {
     public class ServiceRouter : IServiceRouter
     {
