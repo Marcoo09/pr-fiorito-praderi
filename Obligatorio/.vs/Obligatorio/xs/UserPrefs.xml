@@ -1,19 +1,18 @@
 ﻿<Properties StartupConfiguration="{DE1A3F3A-C3C5-44CF-8DB5-BA92FE77C982}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/ServerGrpc/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Client/App.config">
     <Files>
-      <File FileName="Server/ServerGrpc/ServerConfiguration.cs" Line="1" Column="1" />
-      <File FileName="Server/ServerGrpc/Startup.cs" />
-      <File FileName="Server/ServerGrpc/Program.cs" Line="57" Column="20" />
-      <File FileName="Server/ServerGrpc/appsettings.json" />
-      <File FileName="Server/ServerGrpc/Connectios/ConnectionsHandler.cs" />
-      <File FileName="Server/ServerGrpc/Connectios/Connection.cs" />
+      <File FileName="Server/ServerGrpc/Connectios/ConnectionsHandler.cs" Line="81" Column="30" />
+      <File FileName="Server/ServerGrpc/Program.cs" Line="42" Column="56" />
+      <File FileName="Client/App.config" Line="5" Column="40" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
-            <Node name="Client" expanded="True" />
+            <Node name="Client" expanded="True">
+              <Node name="Client" expanded="True" selected="True" />
+            </Node>
             <Node name="Common" expanded="True" />
             <Node name="Server" expanded="True">
               <Node name="Server.DataAccess" expanded="True">
@@ -21,7 +20,6 @@
               </Node>
               <Node name="ServerGrpc" expanded="True">
                 <Node name="Connectios" expanded="True" />
-                <Node name="Program.cs" selected="True" />
               </Node>
             </Node>
           </Node>

@@ -58,8 +58,10 @@ namespace ServerGrpc.Connections
                         Console.WriteLine("Client accepted");
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
+                    Console.WriteLine(e);
+
                     await ShutDownConnectionsAsync();
                 }
             }
@@ -78,7 +80,8 @@ namespace ServerGrpc.Connections
             _isShuttingDown = true;
 
             var fakeSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            fakeSocket.Connect(_serverIp, _serverPort);
+            // TODO: Check if works the disconnect
+            //fakeSocket.Connect(_serverIp, _serverPort);
         }
 
         private async Task ShutDownConnectionsAsync()

@@ -37,9 +37,7 @@ namespace ServerGrpc
             var task = Task.Run(async () => await connectionsHandler.StartListeningAsync());
             Console.WriteLine("Write any key to shutdown the server");
 
-            Console.ReadLine();
-
-            await connectionsHandler.StartShutDownAsync();
+            //await connectionsHandler.StartShutDownAsync();
         }
 
         // Additional configuration is required to successfully run gRPC on macOS.
