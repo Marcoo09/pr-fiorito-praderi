@@ -169,6 +169,7 @@
     <ProjectReference Include="..\Protocol\DTOs\DTOs.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="RabbitMQ.Client" Version="6.2.2" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
   </ItemGroup>
 </Project>

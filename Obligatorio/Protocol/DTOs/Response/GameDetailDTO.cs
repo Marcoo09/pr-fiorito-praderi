@@ -13,6 +13,8 @@ namespace DTOs.Response
         public string Gender { get; set; }
         public string Path { get; set; }
 
+        //public ReviewDetailDTO Theme { get; set; } consultar si se agrega para filtar en los logs
+
         public GameDetailDTO()
         {
         }
