@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "ServerGrpc.Services";
+
+package base;
+
+message Error {
+  string message = 1;
+}
+
+message Message {
+  string value = 1;
+}
