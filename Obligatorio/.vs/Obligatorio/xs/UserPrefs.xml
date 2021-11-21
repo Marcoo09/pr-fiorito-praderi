@@ -1,29 +1,25 @@
 ﻿<Properties StartupConfiguration="{0A5D2987-B979-4345-9FC9-0D7D690E375D}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Connectios/ConnectionsHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/ServerGrpc/Connectios/ConnectionsHandler.cs">
     <Files>
-      <File FileName="Client/ClientUI.cs" Line="30" Column="34" />
-      <File FileName="Server/ServerProgram.cs" Line="24" Column="1" />
-      <File FileName="Server/Connectios/ConnectionsHandler.cs" Line="51" Column="52" />
-      <File FileName="Server/Connectios/Connection.cs" Line="53" Column="1" />
-      <File FileName="Protocol/ProtocolHandler.cs" Line="76" Column="39" />
+      <File FileName="Server/ServerGrpc/Connectios/Connection.cs" Line="22" Column="25" />
+      <File FileName="Server/ServerGrpc/Implementations/GameService.cs" Line="1" Column="1" />
+      <File FileName="Server/ServerGrpc/Implementations/ServiceRouter.cs" Line="1" Column="1" />
+      <File FileName="Server/ServerGrpc/Implementations/UserService.cs" Line="1" Column="1" />
+      <File FileName="Server/ServerGrpc/Connectios/State.cs" Line="1" Column="1" />
+      <File FileName="Server/ServerGrpc/Connectios/ConnectionsHandler.cs" Line="32" Column="46" />
+      <File FileName="Server/ServerGrpc/ServerConfiguration.cs" Line="1" Column="1" />
+      <File FileName="Server/ServerGrpc/Startup.cs" Line="9" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
-            <Node name="Client" expanded="True">
-              <Node name="Client" expanded="True">
-                <Node name="Dependencies" expanded="True" />
-                <Node name="Connections" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="Common" expanded="True">
-              <Node name="Protocol" expanded="True" />
-            </Node>
+            <Node name="Client" expanded="True" />
+            <Node name="Common" expanded="True" />
             <Node name="Server" expanded="True">
-              <Node name="Server" expanded="True">
-                <Node name="Dependencies" expanded="True" />
+              <Node name="Server" expanded="True" />
+              <Node name="ServerGrpc" expanded="True">
                 <Node name="Connectios" expanded="True">
                   <Node name="ConnectionsHandler.cs" selected="True" />
                 </Node>
@@ -37,13 +33,11 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Server.Server PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Server.ServerGrpc FirstBuild="True" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/Connection.cs" relfile="Server/Connectios/Connection.cs" line="58" column="1" />
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/ConnectionsHandler.cs" relfile="Server/Connectios/ConnectionsHandler.cs" line="55" column="1" />
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/ConnectionsHandler.cs" relfile="Server/Connectios/ConnectionsHandler.cs" line="51" column="1" />
-      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/ConnectionsHandler.cs" relfile="Server/Connectios/ConnectionsHandler.cs" line="53" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

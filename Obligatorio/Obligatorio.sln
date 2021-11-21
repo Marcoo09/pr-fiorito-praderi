@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOs", "Protocol\DTOs\DTOs.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Protocol\Exceptions\Exceptions.csproj", "{BCC89C8A-B750-4804-8D0C-6F7E2828BE8F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerGrpc", "Server\ServerGrpc\ServerGrpc.csproj", "{DE1A3F3A-C3C5-44CF-8DB5-BA92FE77C982}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{BCC89C8A-B750-4804-8D0C-6F7E2828BE8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCC89C8A-B750-4804-8D0C-6F7E2828BE8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCC89C8A-B750-4804-8D0C-6F7E2828BE8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE1A3F3A-C3C5-44CF-8DB5-BA92FE77C982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE1A3F3A-C3C5-44CF-8DB5-BA92FE77C982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE1A3F3A-C3C5-44CF-8DB5-BA92FE77C982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE1A3F3A-C3C5-44CF-8DB5-BA92FE77C982}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,5 +78,6 @@ Global
 		{4BFD23E3-FF69-4462-9041-8EDFD8029F69} = {30A8525D-622F-41DD-9A4B-A98FDEE15AC8}
 		{A4FDB59F-86AA-4DB8-8824-3CA794934AD3} = {38D77AC1-BE52-464A-B080-7D648DF9F798}
 		{BCC89C8A-B750-4804-8D0C-6F7E2828BE8F} = {38D77AC1-BE52-464A-B080-7D648DF9F798}
+		{DE1A3F3A-C3C5-44CF-8DB5-BA92FE77C982} = {30A8525D-622F-41DD-9A4B-A98FDEE15AC8}
 	EndGlobalSection
 EndGlobal
