@@ -35,11 +35,14 @@ namespace Logger
 
         public static IHostBuilder CreateHostBuilder(string[] args, LoggerConfiguration configuration)
         {
+            string httpUrl = $"http://localhost:{configuration.WebApiHttpPort}/";
+            string httpsUrl = $"https://localhost:{configuration.WebApiHttpsPort}/";
 
             return Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls(httpUrl, httpsUrl);
                 });
         }
 

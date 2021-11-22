@@ -6,8 +6,8 @@ namespace Logger.Models.Response
 {
     public class GameLogResponseModel : LogResponseModel
     {
-        public GameDetailDTO Game { get; set; }
-        public List<GameDetailDTO> Games { get; set; }
+        public object Game { get; set; }
+        public List<object> Games { get; set; }
 
         public GameLogResponseModel(Log log)
         {
@@ -16,13 +16,11 @@ namespace Logger.Models.Response
 
             if (log.IsEntityAList())
             {
-                List<GameDetailDTO> logGames = log.Entity as List<GameDetailDTO>;
-                Games = logGames;
+                Games = log.Entity as List<object>;
             }
             else
             {
-                GameDetailDTO logGame = log.Entity as GameDetailDTO;
-                Game = logGame;
+                Game = log.Entity;
             }
         }
     }

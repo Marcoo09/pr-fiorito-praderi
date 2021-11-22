@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Logger.BusinessLogic.Interfaces;
 using Logger.DataAccess.Interfaces;
 using Logger.Domain;
+using LogsServer.Domain.SearchCriteria;
 
 namespace Logger.BusinessLogic.Implementations
 {
@@ -15,7 +16,7 @@ namespace Logger.BusinessLogic.Implementations
             _logRepository = logRepository;
         }
 
-        public async Task<List<Log>> GetUsersLogsAsync(dynamic criteria)
+        public async Task<List<Log>> GetUsersLogsAsync(UserSearchCriteria criteria)
         {
             return await _logRepository.GetLogsByAsync(criteria.MatchesCriteria);
         }

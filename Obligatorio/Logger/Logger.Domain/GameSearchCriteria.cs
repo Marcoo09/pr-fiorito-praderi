@@ -16,7 +16,8 @@ namespace LogsServer.Domain.SearchCriteria
         {
             bool matchesCriteria = false;
 
-            if (logGame.EntityType == typeof(GameDetailDTO) || logGame.EntityType == typeof(List<GameBasicInfoDTO>))
+            if (logGame.EntityType == typeof(GameDetailDTO) || logGame.EntityType == typeof(List<GameBasicInfoDTO>)
+                    || logGame.EntityType == typeof(GameBasicInfoDTO) || logGame.EntityType == typeof(List<GameDetailDTO>))
             {
                 matchesCriteria = MatchesId(logGame) && MatchesTitle(logGame) &&
                        MatchesLogTag(logGame);

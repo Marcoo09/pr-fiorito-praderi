@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Logger.Domain;
+using LogsServer.Domain.SearchCriteria;
 
 namespace Logger.BusinessLogic.Interfaces
 {
     public interface IGameService
-    {
-        //TODO: Improve that type
-        public Task<List<Log>> GetGamesLogsAsync(dynamic criteria);
+    {        
+        public Task<List<Log>> GetGamesLogsAsync(GameSearchCriteria criteria);
     }
 }

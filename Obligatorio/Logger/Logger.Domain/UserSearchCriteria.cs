@@ -16,7 +16,7 @@ namespace LogsServer.Domain.SearchCriteria
         {
             bool matchesCriteria = false;
 
-            if (logUser.EntityType == typeof(UserDetailDTO))
+            if (logUser.EntityType == typeof(UserDetailDTO) || logUser.EntityType == typeof(List<UserDetailDTO>))
             {
                 matchesCriteria = MatchesId(logUser) && MatchesName(logUser) &&
                        MatchesLogTag(logUser);
