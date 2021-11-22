@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using DTOs.Response;
 using Protocol;
@@ -12,12 +13,24 @@ namespace ServerGrpc.Implementations
         private IGameService _gameService;
         private IUserService _userService;
         private User _user;
+        private static ServiceRouter _instance;
+        private static readonly SemaphoreSlim _instanceSemaphore = new SemaphoreSlim(1);
 
         public ServiceRouter()
         {
             _gameService = new GameService();
             _userService = new UserService();
             _user = new User();
+        }
+
+        public static ServiceRouter GetInstance()
+        {
+            _instanceSemaphore.Wait();
+            if (_instance == null)
+                _instance = new ServiceRouter();
+
+            _instanceSemaphore.Release();
+            return _instance;
         }
 
         public async Task<Frame> GetResponseAsync(Frame frameRequest)

@@ -20,9 +20,9 @@ namespace ServerGrpc.Services
         private ServiceRouter _serviceRouter;
         private readonly IDeserializer _deserializer;
 
-        public GameManager()
+        public GameManager(ServiceRouter serviceRouter)
         {
-            _serviceRouter = new ServiceRouter();
+            _serviceRouter = serviceRouter;
             _deserializer = new Deserializer();
         }
 

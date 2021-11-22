@@ -11,6 +11,7 @@ using Protocol;
 using Protocol.Serialization;
 using Protocol.SerializationInterfaces;
 using ServerGrpc.Implementations;
+using ServerGrpc.Interfaces;
 
 namespace ServerGrpc.Services
 {
@@ -20,9 +21,9 @@ namespace ServerGrpc.Services
         private readonly IDeserializer _deserializer;
 
 
-        public UserManager()
+        public UserManager(ServiceRouter serviceRouter)
         {
-            _serviceRouter = new ServiceRouter();
+            _serviceRouter = serviceRouter;
             _deserializer = new Deserializer();
         }
 
