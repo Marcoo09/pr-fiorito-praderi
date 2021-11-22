@@ -39,5 +39,27 @@ namespace ServerGrpc.Services
                 Value = messageDto.Message
             };
         }
+
+        public override async Task<UserDetail> CreateUser(Login request, ServerCallContext context)
+        {
+            Frame requestFrame = new Frame()
+            {
+                ChosenCommand = (short)CommandConstants.Login,
+                Data = new LoginDTO()
+                {
+                    UserName = request.UserName
+                }.Serialize()
+
+            };
+            Frame response = await _serviceRouter.GetResponseAsync(requestFrame);
+
+            UserDetailDTO userDetailDTO = new UserDetailDTO();
+            userDetailDTO.Deserialize(response.Data);
+
+            return new UserDetail() {
+                Id = userDetailDTO.Id,
+                Name = userDetailDTO.Name,
+            };
+        }
     }
 }
