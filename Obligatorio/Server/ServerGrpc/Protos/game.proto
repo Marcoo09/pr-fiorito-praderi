@@ -12,9 +12,9 @@ service GameAdminService {
   rpc DeleteGame (BasicGameRequest) returns (base.Message);
   rpc GetAllReviews (BasicGameRequest) returns (IndexReviewResponse);
   rpc SearchGameBy (SearchMetric) returns (SearchGameResponse);
-  rpc ShowGame (BasicGameRequest) returns (EnrichGameDetail);
+  rpc ShowGame (BasicGameRequest) returns (ShowGameResponse);
   rpc ShowGames (google.protobuf.Empty) returns (IndexGameResponse);
-  rpc UpdateGame (UpdateGameRequest) returns (GameBasicInfoResponse);
+  rpc UpdateGame (UpdateGameRequest) returns (UpdateGameResponse);
 }
 
 message BasicGameRequest{
@@ -95,4 +95,16 @@ message UpdateGameRequest {
     string title = 2;
     string synopsis = 3;
     string gender = 4;
+}
+
+message ShowGameResponse {
+  bool ok = 1;
+  EnrichGameDetail game = 2;
+  base.Error error = 3;
+}
+
+message UpdateGameResponse {
+  bool ok = 1;
+  GameBasicInfoResponse game = 2;
+  base.Error error = 3;
 }

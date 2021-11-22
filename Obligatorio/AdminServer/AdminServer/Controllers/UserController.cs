@@ -36,7 +36,6 @@ namespace AdminServer.Controllers
                 UserName = createUserRequestModel.UserName
             };
             UserDetail response = await _userClient.CreateUserAsync(request);
-            Console.WriteLine("A");
             return Created($"api/user/{response.Id}",response);
         }
 
@@ -67,7 +66,7 @@ namespace AdminServer.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> IndexUsers(int id)
+        public async Task<IActionResult> IndexUsers()
         {
             IndexUsersResponse response = await _userClient.IndexUsersAsync(new Empty());
             if (response.Ok)

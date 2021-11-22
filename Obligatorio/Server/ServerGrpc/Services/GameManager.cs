@@ -191,7 +191,7 @@ namespace ServerGrpc.Services
             }
         }
 
-        public override async Task<EnrichGameDetail> ShowGame(BasicGameRequest request, ServerCallContext context)
+        public override async Task<ShowGameResponse> ShowGame(BasicGameRequest request, ServerCallContext context)
         {
             Frame requestFrame = new Frame()
             {
@@ -204,21 +204,46 @@ namespace ServerGrpc.Services
             };
             Frame response = await _serviceRouter.GetResponseAsync(requestFrame);
 
-            EnrichedGameDetailDTO enrichedGameDetailDTO = new EnrichedGameDetailDTO();
-            enrichedGameDetailDTO.Deserialize(response.Data);
-
-            return new EnrichGameDetail()
+            if (response.IsSuccessful())
             {
-                Id = enrichedGameDetailDTO.Id,
-                Title = enrichedGameDetailDTO.Title,
-                Gender = enrichedGameDetailDTO.Gender,
-                Path = enrichedGameDetailDTO.Path,
-                Synopsis = enrichedGameDetailDTO.Synopsis,
-                FileSize = enrichedGameDetailDTO.FileSize,
-                RatingAverage = enrichedGameDetailDTO.RatingAverage,
-                CoverName = enrichedGameDetailDTO.CoverName,
-                Data = ByteString.CopyFrom(enrichedGameDetailDTO.Data)
-            };
+                EnrichedGameDetailDTO enrichedGameDetailDTO = new EnrichedGameDetailDTO();
+                enrichedGameDetailDTO.Deserialize(response.Data);
+
+                return new ShowGameResponse()
+                {
+                    Ok = true,
+                    Game = new EnrichGameDetail()
+                    {
+                        Id = enrichedGameDetailDTO.Id,
+                        Title = enrichedGameDetailDTO.Title,
+                        Gender = enrichedGameDetailDTO.Gender,
+                        Path = enrichedGameDetailDTO.Path,
+                        Synopsis = enrichedGameDetailDTO.Synopsis,
+                        FileSize = enrichedGameDetailDTO.FileSize,
+                        RatingAverage = enrichedGameDetailDTO.RatingAverage,
+                        CoverName = enrichedGameDetailDTO.CoverName,
+                        Data = ByteString.CopyFrom(enrichedGameDetailDTO.Data)
+                    }
+
+                };
+            }
+            else
+            {
+
+                MessageDTO messageDto = new MessageDTO();
+                messageDto.Deserialize(response.Data);
+
+                return new ShowGameResponse()
+                {
+                    Ok = false,
+                    Error = new Error()
+                    {
+                        Message = messageDto.Message
+                    }
+                };
+            }
+
+
         }
 
         public override async Task<IndexGameResponse> ShowGames(Empty request, ServerCallContext context)
@@ -263,7 +288,7 @@ namespace ServerGrpc.Services
             }
         }
 
-        public override async Task<GameBasicInfoResponse> UpdateGame(UpdateGameRequest request, ServerCallContext context)
+        public override async Task<UpdateGameResponse> UpdateGame(UpdateGameRequest request, ServerCallContext context)
         {
             Frame requestFrame = new Frame()
             {
@@ -279,14 +304,36 @@ namespace ServerGrpc.Services
             };
             Frame response = await _serviceRouter.GetResponseAsync(requestFrame);
 
-            GameBasicInfoDTO gameBasicInfoDTO = new GameBasicInfoDTO();
-            gameBasicInfoDTO.Deserialize(response.Data);
-
-            return new GameBasicInfoResponse()
+            if (response.IsSuccessful())
             {
-                Id = gameBasicInfoDTO.Id,
-                Title = gameBasicInfoDTO.Title
-            };
+                GameBasicInfoDTO gameBasicInfoDTO = new GameBasicInfoDTO();
+                gameBasicInfoDTO.Deserialize(response.Data);
+
+                return new UpdateGameResponse()
+                {
+                    Ok = true,
+                    Game = new GameBasicInfoResponse()
+                    {
+                        Id = gameBasicInfoDTO.Id,
+                        Title = gameBasicInfoDTO.Title
+                    }
+                };
+            }
+            else
+            {
+
+                MessageDTO messageDto = new MessageDTO();
+                messageDto.Deserialize(response.Data);
+
+                return new UpdateGameResponse()
+                {
+                    Ok = false,
+                    Error = new Error()
+                    {
+                        Message = messageDto.Message
+                    }
+                };
+            }
         }
     }
 }
