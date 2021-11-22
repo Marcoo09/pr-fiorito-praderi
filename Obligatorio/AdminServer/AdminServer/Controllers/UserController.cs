@@ -25,42 +25,19 @@ namespace AdminServer.Controllers
             BasicGameRequest request = new BasicGameRequest() { GameId = id };
             Message response = await _userClient.BuyGameAsync(request);
             return Ok(response);
-
-            //To Improve
-            //if (response.Ok)
-            //{
-            //    PostDetailInfo retrievedPost = response.Post;
-            //    return Ok(retrievedPost);
-            //}
-            //else
-            //{
-            //    Error error = response.Error;
-            //    return NotFound(error);
-            //}
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> CreatePost([FromBody] CreatePostRequestModel createPostRequest)
-        //{
-        //    CreatePostRequest request = new CreatePostRequest()
-        //    {
-        //        Name = createPostRequest.Name,
-        //        ThemeId = createPostRequest.ThemeId,
-        //        PostedAt = DateTime.Now.Ticks,
-        //        ClientIp = Request.HttpContext.Connection.RemoteIpAddress.ToString()
-        //    };
-        //    CreatePostResponse response = await _postClient.CreatePostAsync(request);
-        //    if (response.Ok)
-        //    {
-        //        PostBasicInfo createdPost = response.CreatedPost;
-        //        return Created($"api/posts/{createdPost.Id}", createdPost);
-        //    }
-        //    else
-        //    {
-        //        Error error = response.Error;
-        //        return BadRequest(error);
-        //    }
-        //}
+        [HttpPost]
+        public async Task<IActionResult> CreateUser([FromBody] CreateUserRequestModel createUserRequestModel)
+        {
+            Login request = new Login()
+            {
+                UserName = createUserRequestModel.UserName
+            };
+            UserDetail response = await _userClient.CreateUserAsync(request);
+
+            return Created($"api/user/{response.Id}",response);
+        }
 
         //[HttpPut("{id:int}")]
         //public async Task<IActionResult> UpdatePost(int id, [FromBody] UpdatePostRequestModel updatePostModel)
