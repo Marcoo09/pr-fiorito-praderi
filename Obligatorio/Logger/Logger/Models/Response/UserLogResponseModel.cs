@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using DTOs.Response;
 using Logger.Domain;
 
@@ -16,7 +17,14 @@ namespace Logger.Models.Response
 
             if (log.IsEntityAList())
             {
-                Users = log.Entity as List<object>;
+                List<object> list = new List<object>();
+
+                IList collection = (IList)log.Entity;
+                foreach(object item in collection)
+                {
+                    list.Add(item);
+                }
+                Users = list;
             }
             else
             {

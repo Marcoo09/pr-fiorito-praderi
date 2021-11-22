@@ -1,6 +1,7 @@
 ﻿using Logger.Domain;
 using DTOs.Response;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace Logger.Models.Response
 {
@@ -16,7 +17,14 @@ namespace Logger.Models.Response
 
             if (log.IsEntityAList())
             {
-                Games = log.Entity as List<object>;
+                List<object> list = new List<object>();
+
+                IList collection = (IList)log.Entity;
+                foreach (object item in collection)
+                {
+                    list.Add(item);
+                }
+                Games = list;
             }
             else
             {
