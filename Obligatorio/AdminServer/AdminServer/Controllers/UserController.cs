@@ -39,6 +39,32 @@ namespace AdminServer.Controllers
             return Created($"api/user/{response.Id}",response);
         }
 
+        [HttpGet("buy/{id:int}")]
+        public async Task<IActionResult> IndexBoughtGames(int id)
+        {
+            BasicUserRequest basicUserRequest = new BasicUserRequest()
+            {
+                Id = id
+            };
+
+
+            IndexGameResponse response = await _userClient.IndextBoughtGamesAsync(basicUserRequest);
+            if (response.Ok)
+            {
+                List<GameDetail> games = response.Games.ToList();
+
+                return Ok(new IndextBoughtGamesResponseModel()
+                {
+                    Games = games
+                });
+            }
+            else
+            {
+                Error error = response.Error;
+                return BadRequest(error);
+            }
+        }
+
         //[HttpPut("{id:int}")]
         //public async Task<IActionResult> UpdatePost(int id, [FromBody] UpdatePostRequestModel updatePostModel)
         //{

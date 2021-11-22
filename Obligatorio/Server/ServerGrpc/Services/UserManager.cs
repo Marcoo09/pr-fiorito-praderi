@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using DTOs.Request;
 using DTOs.Response;
@@ -5,6 +8,8 @@ using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
 using Protocol;
+using Protocol.Serialization;
+using Protocol.SerializationInterfaces;
 using ServerGrpc.Implementations;
 
 namespace ServerGrpc.Services
@@ -12,10 +17,13 @@ namespace ServerGrpc.Services
     public class UserManager: UserAdminService.UserAdminServiceBase
     {
         private ServiceRouter _serviceRouter;
+        private readonly IDeserializer _deserializer;
+
 
         public UserManager()
         {
             _serviceRouter = new ServiceRouter();
+            _deserializer = new Deserializer();
         }
 
         public override async Task<Message> BuyGame(BasicGameRequest request, ServerCallContext context)
@@ -61,5 +69,49 @@ namespace ServerGrpc.Services
                 Name = userDetailDTO.Name,
             };
         }
+
+        public override async Task<IndexGameResponse> IndextBoughtGames(BasicUserRequest request, ServerCallContext context)
+        {
+            Frame requestFrame = new Frame()
+            {
+                ChosenCommand = (short)CommandConstants.IndexBoughtGames,
+                Data = BitConverter.GetBytes(request.Id)
+
+            };
+            Frame response = await _serviceRouter.GetResponseAsync(requestFrame);
+            if (response.IsSuccessful())
+            {
+                List<IDeserializable> entities = _deserializer.DeserializeArrayOfEntities(response.Data, typeof(GameDetailDTO));
+                List<GameDetailDTO> games = entities.Cast<GameDetailDTO>().ToList();
+
+                IndexGameResponse mappedResponse = new IndexGameResponse() { Ok = true };
+                games.ForEach(g => mappedResponse.Games.Add(new GameDetail()
+                {
+                    Id = g.Id,
+                    Synopsis = g.Synopsis,
+                    Gender = g.Gender,
+                    Title = g.Title,
+                    Path = g.Path,
+                }));
+
+                return mappedResponse;
+            }
+            else
+            {
+
+                MessageDTO messageDto = new MessageDTO();
+                messageDto.Deserialize(response.Data);
+
+                return new IndexGameResponse()
+                {
+                    Ok = false,
+                    Error = new Error()
+                    {
+                        Message = messageDto.Message
+                    }
+                };
+            }
+        }
+
     }
 }
