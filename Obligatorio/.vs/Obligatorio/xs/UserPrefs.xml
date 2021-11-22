@@ -1,17 +1,21 @@
 ﻿<Properties StartupConfiguration="{DE1A3F3A-C3C5-44CF-8DB5-BA92FE77C982}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Logger/Logger/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Logger/Logger.Domain/UserSearchCriteria.cs">
     <Files>
-      <File FileName="Logger/Logger/Startup.cs" Line="57" Column="1" />
-      <File FileName="Logger/Logger/Program.cs" Line="31" Column="1" />
+      <File FileName="Logger/Logger.DataAccess/Implementations/LogRepository.cs" Line="1" Column="1" />
+      <File FileName="Logger/Logger.Domain/Log.cs" Line="1" Column="1" />
+      <File FileName="Logger/Logger.Domain/Interfaces/ISearchCriteria.cs" Line="7" Column="2" />
+      <File FileName="Logger/Logger.Domain/GameSearchCriteria.cs" Line="55" Column="18" />
+      <File FileName="Logger/Logger.Domain/UserSearchCriteria.cs" Line="10" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
             <Node name="Logger" expanded="True">
-              <Node name="Logger" expanded="True">
-                <Node name="Program.cs" selected="True" />
+              <Node name="Logger.Domain" expanded="True">
+                <Node name="Dependencies" expanded="True" />
+                <Node name="UserSearchCriteria.cs" selected="True" />
               </Node>
             </Node>
           </Node>
