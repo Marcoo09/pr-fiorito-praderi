@@ -1,13 +1,17 @@
 ﻿<Properties StartupConfiguration="{DE1A3F3A-C3C5-44CF-8DB5-BA92FE77C982}|Default">
   <MonoDevelop.Ide.ItemProperties.Logger.Logger FirstBuild="True" />
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Logger/Logger.DataAccess/Implementations/LogRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Logger/Logger.BusinessLogic/Implementations/GameService.cs">
     <Files>
       <File FileName="Logger/Logger.Domain/Log.cs" Line="34" Column="14" />
       <File FileName="Logger/Logger.Domain/Tag.cs" Line="18" Column="6" />
       <File FileName="Protocol/CommandConstants.cs" Line="5" Column="9" />
       <File FileName="Logger/Logger.DataAccess/Interfaces/ILogRepository.cs" Line="14" Column="2" />
-      <File FileName="Logger/Logger.DataAccess/Implementations/LogRepository.cs" Line="1" Column="1" />
+      <File FileName="Logger/Logger.DataAccess/Implementations/LogRepository.cs" Line="25" Column="10" />
+      <File FileName="Logger/Logger.BusinessLogic/Interfaces/IGameService.cs" Line="13" Column="1" />
+      <File FileName="Logger/Logger.BusinessLogic/Interfaces/IUserService.cs" Line="13" Column="1" />
+      <File FileName="Logger/Logger.BusinessLogic/Implementations/GameService.cs" Line="8" Column="29" />
+      <File FileName="Logger/Logger.BusinessLogic/Implementations/UserService.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,14 +20,13 @@
             <Node name="Common" expanded="True" />
             <Node name="Logger" expanded="True">
               <Node name="Logger" expanded="True" />
-              <Node name="Logger.BusinessLogic" expanded="True" />
-              <Node name="Logger.DataAccess" expanded="True">
-                <Node name="Dependencies" expanded="True" />
+              <Node name="Logger.BusinessLogic" expanded="True">
                 <Node name="Implementations" expanded="True">
-                  <Node name="LogRepository.cs" selected="True" />
+                  <Node name="GameService.cs" selected="True" />
                 </Node>
                 <Node name="Interfaces" expanded="True" />
               </Node>
+              <Node name="Logger.DataAccess" expanded="True" />
               <Node name="Logger.Domain" expanded="True" />
             </Node>
             <Node name="Server" expanded="True" />
