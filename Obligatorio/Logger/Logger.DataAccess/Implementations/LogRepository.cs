@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Logger.DataAccess.Interfaces;
 using Logger.Domain;
 
-namespace LogsServer.DataAccess.InMemoryImplementations
+namespace Logger.DataAccess.Implementations
 {
     public class LogRepository : ILogRepository
     {
