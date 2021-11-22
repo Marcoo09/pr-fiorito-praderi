@@ -58,7 +58,7 @@ message CreateGameRequest {
 
 message GameBasicInfoResponse {
     int32 id = 1;
-    string description = 2;
+    string title = 2;
 }
 
 message IndexReviewResponse {

@@ -36,6 +36,7 @@ namespace ServerGrpc
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<UserManager>();
+                endpoints.MapGrpcService<GameManager>();
 
                 endpoints.MapGet("/", async context =>
                 {
