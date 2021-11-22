@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using DTOs.Request;
 using DTOs.Response;
 using Exceptions;
+using Logger.Domain;
+using Newtonsoft.Json;
 using Protocol;
 using Protocol.Serialization;
 using Protocol.SerializationInterfaces;
@@ -12,6 +14,7 @@ using Server.DataAccess.Implementations;
 using Server.DataAccess.Interfaces;
 using Server.Domain;
 using ServerGrpc.Interfaces;
+using ServerGrpc.Logs;
 
 namespace ServerGrpc.Implementations
 {
@@ -20,12 +23,14 @@ namespace ServerGrpc.Implementations
         private IUserRepository _userRepository;
         private IGameRepository _gameRepository;
         private Serializer _serializer;
+        private LogEmitter _logEmitter;
 
-        public UserService()
+        public UserService(LogEmitter logEmitter)
         {
             _userRepository =  UserRepository.GetInstance();
             _gameRepository =  GameRepository.GetInstance();
             _serializer = new Serializer();
+            _logEmitter = logEmitter;
         }
 
         public async Task<Frame> BuyGameAsync(Frame requestFrame, int userId)
@@ -40,6 +45,8 @@ namespace ServerGrpc.Implementations
                 await _userRepository.BuyGameAsync(retrievedGame, userId);
 
                 MessageDTO messageDto = new MessageDTO() { Message = "Game bought!" };
+
+                _logEmitter.EmitLog(JsonConvert.SerializeObject(messageDto), Tag.BuyGame);
 
                 return CreateSuccessResponse(CommandConstants.BuyGame, messageDto.Serialize());
             }
@@ -74,6 +81,8 @@ namespace ServerGrpc.Implementations
 
             UserDetailDTO userDetailDTO = new UserDetailDTO(currentUser);
 
+            _logEmitter.EmitLog(JsonConvert.SerializeObject(userDetailDTO), Tag.Login);
+
             return CreateSuccessResponse(CommandConstants.Login, userDetailDTO.Serialize());
         }
 
@@ -86,6 +95,8 @@ namespace ServerGrpc.Implementations
                 List<GameDetailDTO> retrievedGames = retrievedUser.BoughtGames.Select(g => new GameDetailDTO(g)).ToList();
 
                 byte[] serializedList = _serializer.SerializeEntityList(retrievedGames.Cast<ISerializable>().ToList());
+
+                _logEmitter.EmitLog(JsonConvert.SerializeObject(retrievedGames), Tag.IndexBoughtGames);
 
                 return new Frame()
                 {
@@ -111,6 +122,8 @@ namespace ServerGrpc.Implementations
         {
             List<UserDetailDTO> retrievedUsers = (await _userRepository.GetAllAsync()).Select(u => new UserDetailDTO(u)).ToList();
             byte[] serializedList = _serializer.SerializeEntityList(retrievedUsers.Cast<ISerializable>().ToList());
+
+            _logEmitter.EmitLog(JsonConvert.SerializeObject(retrievedUsers), Tag.IndexUsers);
 
             return new Frame()
             {
