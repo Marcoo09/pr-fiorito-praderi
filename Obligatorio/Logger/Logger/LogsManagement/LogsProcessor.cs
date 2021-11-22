@@ -30,7 +30,7 @@ namespace Logger.LogsManagement
             switch (tag)
             {
                 case Tag.BuyGame:
-                    expectedType = typeof(MessageDTO);
+                    expectedType = typeof(GameBasicInfoDTO);
                     break;
                 case Tag.IndexBoughtGames:
                     expectedType = typeof(List<GameDetailDTO>);
@@ -39,13 +39,13 @@ namespace Logger.LogsManagement
                     expectedType = typeof(GameBasicInfoDTO);
                     break;
                 case Tag.CreateGameReview:
-                    expectedType = typeof(MessageDTO);
+                    expectedType = typeof(GameBasicInfoDTO);
                     break;
                 case Tag.DeleteGame:
-                    expectedType = typeof(MessageDTO);
+                    expectedType = typeof(GameBasicInfoDTO);
                     break;
                 case Tag.GetGameReviews:
-                    expectedType = typeof(List<ReviewDetailDTO>);
+                    expectedType = typeof(GameBasicInfoDTO);
                     break;
                 case Tag.GetGame:
                     expectedType = typeof(EnrichedGameDetailDTO);
@@ -57,7 +57,7 @@ namespace Logger.LogsManagement
                     expectedType = typeof(List<GameDetailDTO>);
                     break;
                 case Tag.UpdateGame:
-                    expectedType = typeof(List<GameBasicInfoDTO>);
+                    expectedType = typeof(GameBasicInfoDTO);
                     break;
                 case Tag.IndexUsers:
                     expectedType = typeof(List<UserDetailDTO>);

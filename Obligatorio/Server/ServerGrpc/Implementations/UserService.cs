@@ -46,7 +46,7 @@ namespace ServerGrpc.Implementations
 
                 MessageDTO messageDto = new MessageDTO() { Message = "Game bought!" };
 
-                _logEmitter.EmitLog(JsonConvert.SerializeObject(messageDto), Tag.BuyGame);
+                _logEmitter.EmitLog(JsonConvert.SerializeObject(new GameBasicInfoDTO(retrievedGame)), Tag.BuyGame);
 
                 return CreateSuccessResponse(CommandConstants.BuyGame, messageDto.Serialize());
             }

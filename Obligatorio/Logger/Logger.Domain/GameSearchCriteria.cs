@@ -73,7 +73,8 @@ namespace LogsServer.Domain.SearchCriteria
             return logGame.Tag == Tag.CreateGame || logGame.Tag == Tag.IndexBoughtGames ||
                    logGame.Tag == Tag.GetGame || logGame.Tag == Tag.IndexGamesCatalog ||
                    logGame.Tag == Tag.SearchGames || logGame.Tag == Tag.BuyGame ||
-                   logGame.Tag == Tag.CreateGameReview || logGame.Tag == Tag.DeleteGame;
+                   logGame.Tag == Tag.CreateGameReview || logGame.Tag == Tag.DeleteGame ||
+                   logGame.Tag == Tag.UpdateGame || logGame.Tag == Tag.GetGameReviews;
         }
     }
 }

@@ -46,7 +46,7 @@ namespace ServerGrpc.Implementations
 
                 MessageDTO messageDto = new MessageDTO() { Message = "Review added!" };
 
-                _logEmitter.EmitLog(JsonConvert.SerializeObject(messageDto), Tag.CreateGameReview);
+                _logEmitter.EmitLog(JsonConvert.SerializeObject(new GameBasicInfoDTO(gameToSendReview)), Tag.CreateGameReview);
 
                 return CreateSuccessResponse(CommandConstants.CreateGameReview, messageDto.Serialize());
             }
@@ -100,7 +100,7 @@ namespace ServerGrpc.Implementations
                 await _gameRepository.DeleteAsync(basicGameRequestDTO.GameId);
 
                 MessageDTO messageDto = new MessageDTO() { Message = "Game deleted!" };
-                _logEmitter.EmitLog(JsonConvert.SerializeObject(messageDto), Tag.DeleteGame);
+                _logEmitter.EmitLog(JsonConvert.SerializeObject(new GameBasicInfoDTO(gameToBeDeleted)), Tag.DeleteGame);
 
                 return CreateSuccessResponse(CommandConstants.DeleteGame, messageDto.Serialize());
             }
@@ -124,7 +124,7 @@ namespace ServerGrpc.Implementations
 
                 byte[] serializedList = _serializer.SerializeEntityList(retrievedReviews.Cast<ISerializable>().ToList());
 
-                _logEmitter.EmitLog(JsonConvert.SerializeObject(retrievedReviews), Tag.GetGameReviews);
+                _logEmitter.EmitLog(JsonConvert.SerializeObject(new GameBasicInfoDTO(retrievedGame)), Tag.GetGameReviews);
 
                 return new Frame()
                 {
@@ -189,7 +189,7 @@ namespace ServerGrpc.Implementations
                 EnrichedGameDetailDTO response = new EnrichedGameDetailDTO(game);
                 //response.ReadFile(game.Path);
 
-                _logEmitter.EmitLog(JsonConvert.SerializeObject(response), Tag.GetGame);
+                _logEmitter.EmitLog(JsonConvert.SerializeObject(new GameBasicInfoDTO(game)), Tag.GetGame);
 
                 return CreateSuccessResponse(CommandConstants.GetGame, response.Serialize());
             }
