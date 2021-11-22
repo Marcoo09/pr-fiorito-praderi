@@ -15,6 +15,8 @@ namespace AdminServer
     {
         public static void Main(string[] args)
         {
+            AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
+
             Console.WriteLine("Admin server starting...");
 
             IConfigurationRoot config = new ConfigurationBuilder()
@@ -36,18 +38,10 @@ namespace AdminServer
 
         public static IHostBuilder CreateHostBuilder(string[] args, AdminServerConfiguration configuration)
         {
-            string httpUrl = $"http://{configuration.AdminServerIP}:{configuration.AdminServerHttpPort}/";
-            string httpsUrl = $"https://{configuration.AdminServerIP}:{configuration.AdminServerHttpsPort}/";
-
             return Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.ConfigureKestrel(options =>
-                    {
-                        options.ListenLocalhost(Int32.Parse(configuration.GrpcServerApiHttpsPort), o => o.Protocols = HttpProtocols.Http2);
-                    });
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls(httpUrl, httpsUrl);
                 });
         }
     }
