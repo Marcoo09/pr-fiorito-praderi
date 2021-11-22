@@ -113,5 +113,45 @@ namespace ServerGrpc.Services
             }
         }
 
+        public override async Task<IndexUsersResponse> IndexUsers(Empty request, ServerCallContext context)
+        {
+            Frame requestFrame = new Frame()
+            {
+                ChosenCommand = (short)CommandConstants.IndexUsers,
+
+            };
+
+            Frame response = await _serviceRouter.GetResponseAsync(requestFrame);
+
+
+            if (response.IsSuccessful())
+            {
+                List<IDeserializable> entities = _deserializer.DeserializeArrayOfEntities(response.Data, typeof(UserDetailDTO));
+                List<UserDetailDTO> users = entities.Cast<UserDetailDTO>().ToList();
+
+                IndexUsersResponse mappedResponse = new IndexUsersResponse() { Ok = true };
+                users.ForEach(u => mappedResponse.Users.Add(new UserDetail()
+                {
+                    Id = u.Id,
+                    Name = u.Name,
+                }));
+
+                return mappedResponse;
+            }
+            else
+            {
+                MessageDTO messageDto = new MessageDTO();
+                messageDto.Deserialize(response.Data);
+
+                return new IndexUsersResponse()
+                {
+                    Ok = false,
+                    Error = new Error()
+                    {
+                        Message = messageDto.Message
+                    }
+                };
+            }
+        }
     }
 }
