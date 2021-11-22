@@ -1,18 +1,24 @@
 ﻿<Properties StartupConfiguration="{DE1A3F3A-C3C5-44CF-8DB5-BA92FE77C982}|Default">
   <MonoDevelop.Ide.ItemProperties.Logger.Logger FirstBuild="True" />
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Logger/Logger.BusinessLogic/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Protocol/CommandConstants.cs">
     <Files>
-      <File FileName="Logger/Logger.BusinessLogic/Program.cs" Line="1" Column="1" />
+      <File FileName="Logger/Logger.Domain/Log.cs" Line="38" Column="14" />
+      <File FileName="Logger/Logger.Domain/Tag.cs" Line="1" Column="1" />
+      <File FileName="Protocol/CommandConstants.cs" Line="10" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
+            <Node name="Common" expanded="True">
+              <Node name="Protocol" expanded="True">
+                <Node name="CommandConstants.cs" selected="True" />
+              </Node>
+            </Node>
             <Node name="Logger" expanded="True">
               <Node name="Logger" expanded="True" />
-              <Node name="Logger.BusinessLogic" expanded="True" selected="True" />
-              <Node name="Logger.DataAccess" expanded="True" />
+              <Node name="Logger.BusinessLogic" expanded="True" />
               <Node name="Logger.Domain" expanded="True" />
             </Node>
           </Node>
