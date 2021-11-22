@@ -1,25 +1,11 @@
 ﻿<Properties StartupConfiguration="{DE1A3F3A-C3C5-44CF-8DB5-BA92FE77C982}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Logger/Logger/LogsManagement/LogsProcessor.cs">
-    <Files>
-      <File FileName="Logger/Logger.Domain/GameSearchCriteria.cs" Line="67" Column="1" />
-      <File FileName="Logger/Logger.Domain/UserSearchCriteria.cs" Line="1" Column="1" />
-      <File FileName="Server/ServerGrpc/Implementations/GameService.cs" Line="60" Column="23" />
-      <File FileName="Server/ServerGrpc/Implementations/UserService.cs" Line="1" Column="1" />
-      <File FileName="Logger/Logger/LogsManagement/LogsProcessor.cs" Line="45" Column="59" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
             <Node name="AdminServer" expanded="True" />
-            <Node name="Logger" expanded="True">
-              <Node name="Logger" expanded="True">
-                <Node name="LogsManagement" expanded="True">
-                  <Node name="LogsProcessor.cs" selected="True" />
-                </Node>
-              </Node>
-            </Node>
             <Node name="Server" expanded="True">
               <Node name="ServerGrpc" expanded="True">
                 <Node name="Implementations" expanded="True" />
