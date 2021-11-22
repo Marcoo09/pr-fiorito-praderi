@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using ServerGrpc.Connections;
+using ServerGrpc.Logs;
 
 namespace ServerGrpc
 {
@@ -24,6 +25,8 @@ namespace ServerGrpc
                 GrpcApiHttpPort = config.GetSection("ServerConfiguration").GetSection("GrpcApiHttpPort").Value,
                 GrpcApiHttpsPort = config.GetSection("ServerConfiguration").GetSection("GrpcApiHttpsPort").Value
             };
+
+            LogEmitter logEmitter = new LogEmitter(serverConfiguration);
 
             await HandleConnections(serverConfiguration);
 

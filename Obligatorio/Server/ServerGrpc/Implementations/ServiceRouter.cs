@@ -2,9 +2,11 @@
 using System.Threading;
 using System.Threading.Tasks;
 using DTOs.Response;
+using Microsoft.Extensions.Configuration;
 using Protocol;
 using Server.Domain;
 using ServerGrpc.Interfaces;
+using ServerGrpc.Logs;
 
 namespace ServerGrpc.Implementations
 {
@@ -15,11 +17,26 @@ namespace ServerGrpc.Implementations
         private User _user;
         private static ServiceRouter _instance;
         private static readonly SemaphoreSlim _instanceSemaphore = new SemaphoreSlim(1);
+        private LogEmitter _logEmitter;
 
         public ServiceRouter()
         {
-            _gameService = new GameService();
-            _userService = new UserService();
+            IConfigurationRoot config = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false).Build();
+            ServerConfiguration serverConfiguration = new ServerConfiguration()
+            {
+                RabbitMQServerIP = config.GetSection("ServerConfiguration").GetSection("RabbitMQServerIP").Value,
+                LogsQueueName = config.GetSection("ServerConfiguration").GetSection("LogsQueueName").Value,
+                ServerPort = config.GetSection("ServerConfiguration").GetSection("ServerPort").Value,
+                ServerIP = config.GetSection("ServerConfiguration").GetSection("ServerIP").Value,
+                RabbitMQServerPort = config.GetSection("ServerConfiguration").GetSection("RabbitMQServerPort").Value,
+                GrpcApiHttpPort = config.GetSection("ServerConfiguration").GetSection("GrpcApiHttpPort").Value,
+                GrpcApiHttpsPort = config.GetSection("ServerConfiguration").GetSection("GrpcApiHttpsPort").Value
+            };
+
+            _logEmitter = new LogEmitter(serverConfiguration);
+
+            _gameService = new GameService(_logEmitter);
+            _userService = new UserService(_logEmitter);
             _user = new User();
         }
 

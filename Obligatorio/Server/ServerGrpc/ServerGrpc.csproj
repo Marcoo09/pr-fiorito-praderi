@@ -12,16 +12,22 @@
 
   <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.2.2" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Connectios\" />
     <None Remove="Protos\greet %28copy%29.proto" />
     <None Remove="Services\" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="RabbitMQ.Client" />
+    <None Remove="Logs\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Connectios\" />
     <Folder Include="Services\" />
+    <Folder Include="Logs\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Protocol\DTOs\DTOs.csproj">
@@ -31,6 +37,9 @@
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
     <ProjectReference Include="..\Server.DataAccess\Server.DataAccess.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Logger\Logger.Domain\Logger.Domain.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>

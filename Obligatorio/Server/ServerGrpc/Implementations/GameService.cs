@@ -12,6 +12,9 @@ using ServerGrpc.Interfaces;
 using System.Linq;
 using Protocol.SerializationInterfaces;
 using System.Threading.Tasks;
+using ServerGrpc.Logs;
+using Newtonsoft.Json;
+using Logger.Domain;
 
 namespace ServerGrpc.Implementations
 {
@@ -19,11 +22,13 @@ namespace ServerGrpc.Implementations
     {
         private IGameRepository _gameRepository;
         private Serializer _serializer;
+        private LogEmitter _logEmitter;
 
-        public GameService()
+        public GameService(LogEmitter logEmitter)
         {
             _gameRepository = GameRepository.GetInstance();
             _serializer = new Serializer();
+            _logEmitter = logEmitter;
         }
 
         public async Task<Frame> AddReviewAsync(Frame requestFrame)
@@ -40,6 +45,8 @@ namespace ServerGrpc.Implementations
                  await _gameRepository.AddReviewAsync(reviewDTO.GameId ,newReview);
 
                 MessageDTO messageDto = new MessageDTO() { Message = "Review added!" };
+
+                _logEmitter.EmitLog(JsonConvert.SerializeObject(new GameBasicInfoDTO(gameToSendReview)), Tag.CreateGameReview);
 
                 return CreateSuccessResponse(CommandConstants.CreateGameReview, messageDto.Serialize());
             }
@@ -66,6 +73,7 @@ namespace ServerGrpc.Implementations
                 int newGameId = await _gameRepository.InsertAsync(newGame);
                 Game createdGame = await _gameRepository.GetAsync(newGameId);
                 //createGameDTO.WriteFile();
+                _logEmitter.EmitLog(JsonConvert.SerializeObject(new GameBasicInfoDTO(createdGame)), Tag.CreateGame);
 
                 return CreateSuccessResponse(CommandConstants.CreateGame, new GameBasicInfoDTO(createdGame).Serialize());
             }
@@ -92,6 +100,8 @@ namespace ServerGrpc.Implementations
                 await _gameRepository.DeleteAsync(basicGameRequestDTO.GameId);
 
                 MessageDTO messageDto = new MessageDTO() { Message = "Game deleted!" };
+                _logEmitter.EmitLog(JsonConvert.SerializeObject(new GameBasicInfoDTO(gameToBeDeleted)), Tag.DeleteGame);
+
                 return CreateSuccessResponse(CommandConstants.DeleteGame, messageDto.Serialize());
             }
             catch (ResourceNotFoundException e)
@@ -113,6 +123,8 @@ namespace ServerGrpc.Implementations
                 List<ReviewDetailDTO> retrievedReviews = retrievedGame.Reviews.Select(r => new ReviewDetailDTO(r)).ToList();
 
                 byte[] serializedList = _serializer.SerializeEntityList(retrievedReviews.Cast<ISerializable>().ToList());
+
+                _logEmitter.EmitLog(JsonConvert.SerializeObject(new GameBasicInfoDTO(retrievedGame)), Tag.GetGameReviews);
 
                 return new Frame()
                 {
@@ -160,6 +172,8 @@ namespace ServerGrpc.Implementations
             List<GameDetailDTO> response = gamesFiltered.Select(g => new GameDetailDTO(g)).ToList();
             byte[] serializedList = _serializer.SerializeEntityList(response.Cast<ISerializable>().ToList());
 
+            _logEmitter.EmitLog(JsonConvert.SerializeObject(response), Tag.SearchGames);
+
             return CreateSuccessResponse(CommandConstants.SearchGames, serializedList);
 
         }
@@ -175,6 +189,8 @@ namespace ServerGrpc.Implementations
                 EnrichedGameDetailDTO response = new EnrichedGameDetailDTO(game);
                 //response.ReadFile(game.Path);
 
+                _logEmitter.EmitLog(JsonConvert.SerializeObject(new GameBasicInfoDTO(game)), Tag.GetGame);
+
                 return CreateSuccessResponse(CommandConstants.GetGame, response.Serialize());
             }
             catch (ResourceNotFoundException e)
@@ -188,6 +204,8 @@ namespace ServerGrpc.Implementations
         {
             List<GameDetailDTO> retrievedGames = (await _gameRepository.GetAllAsync()).Select(g => new GameDetailDTO(g)).ToList();
             byte[] serializedList = _serializer.SerializeEntityList(retrievedGames.Cast<ISerializable>().ToList());
+
+            _logEmitter.EmitLog(JsonConvert.SerializeObject(retrievedGames), Tag.IndexGamesCatalog);
 
             return new Frame()
             {
@@ -211,6 +229,8 @@ namespace ServerGrpc.Implementations
                 await _gameRepository.UpdateAsync(updateGameDTO.Id, updatedGame);
 
                 Game storedGame = await _gameRepository.GetAsync(updatedGame.Id);
+
+                _logEmitter.EmitLog(JsonConvert.SerializeObject(new GameBasicInfoDTO(storedGame)), Tag.UpdateGame);
 
                 return CreateSuccessResponse(CommandConstants.UpdateGame, new GameBasicInfoDTO(storedGame).Serialize());
             }

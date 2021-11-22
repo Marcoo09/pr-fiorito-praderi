@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
+using ServerGrpc.Logs;
 
 namespace ServerGrpc.Connections
 {
@@ -20,7 +21,6 @@ namespace ServerGrpc.Connections
         private SemaphoreSlim _connectionsListSemaphore;
         private SemaphoreSlim _serverStateSemaphore;
         private bool _isShuttingDown = false;
-
 
         public ConnectionsHandler(ServerConfiguration configuration)
         {
