@@ -35,7 +35,7 @@ namespace AdminServer.Controllers
                 UserName = createUserRequestModel.UserName
             };
             UserDetail response = await _userClient.CreateUserAsync(request);
-
+            Console.WriteLine("A");
             return Created($"api/user/{response.Id}",response);
         }
 

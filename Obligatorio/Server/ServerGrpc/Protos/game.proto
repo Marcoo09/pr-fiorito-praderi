@@ -4,3 +4,11 @@ option csharp_namespace = "ServerGrpc.Services";
 
 package game;
 import "base.proto";
+
+message GameDetail {
+    int32 id = 1;
+    string title = 2;
+    string synopsis = 3;
+    string gender = 4;
+    string path = 5;
+}

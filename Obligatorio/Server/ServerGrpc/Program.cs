@@ -52,7 +52,7 @@ namespace ServerGrpc
             {
                 webBuilder.ConfigureKestrel(options =>
                 {
-                    options.ListenLocalhost(Int32.Parse(serverConfiguration.GrpcApiHttpsPort), o => o.Protocols = HttpProtocols.Http2);
+                    options.ListenLocalhost(Int32.Parse(serverConfiguration.GrpcApiHttpPort), o => o.Protocols = HttpProtocols.Http2);
                 });
                 webBuilder.UseStartup<Startup>();
                 webBuilder.UseUrls(httpUrl, httpsUrl);
