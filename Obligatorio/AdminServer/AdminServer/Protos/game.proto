@@ -11,7 +11,9 @@ service GameAdminService {
   rpc CreateGame (CreateGameRequest) returns (GameBasicInfoResponse);
   rpc DeleteGame (BasicGameRequest) returns (base.Message);
   rpc GetAllReviews (BasicGameRequest) returns (IndexReviewResponse);
-  rpc SearchGameBy (SearchMetric) returns (SearchGameResponse);
+  rpc SearchGameByTitle (SearchTitleMetric) returns (SearchGameResponse);
+  rpc SearchGameByRating (SearchRatingMetric) returns (SearchGameResponse);
+  rpc SearchGameByGender (SearchGenderMetric) returns (SearchGameResponse);
   rpc ShowGame (BasicGameRequest) returns (ShowGameResponse);
   rpc ShowGames (google.protobuf.Empty) returns (IndexGameResponse);
   rpc UpdateGame (UpdateGameRequest) returns (UpdateGameResponse);
@@ -78,10 +80,16 @@ message SearchGameResponse {
   base.Error error = 3;
 }
 
-message SearchMetric {
+message SearchRatingMetric {
     int32 rating = 1;
-    string title = 2;
-    string gender = 3;
+}
+
+message SearchTitleMetric {
+    string title = 1;
+}
+
+message SearchGenderMetric {
+    string gender = 1;
 }
 
 message IndexGameResponse {

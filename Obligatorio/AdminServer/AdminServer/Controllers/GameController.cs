@@ -89,18 +89,68 @@ namespace AdminServer.Controllers
             }
         }
 
-        [HttpGet("search")]
-        public async Task<IActionResult> SearchGamesBy([FromBody] SearchMetricRequestModel searchMetricRequestModel)
+        [HttpGet("search/title")]
+        public async Task<IActionResult> SearchGamesByTitle([FromBody] SearchMetricRequestModel searchMetricRequestModel)
         {
-            SearchMetric searchMetric = new SearchMetric()
+            SearchTitleMetric searchMetric = new SearchTitleMetric()
             {
-                Gender = searchMetricRequestModel.Gender,
-                Rating = searchMetricRequestModel.Rating,
                 Title = searchMetricRequestModel.Title
             };
 
 
-            SearchGameResponse response = await _gameClient.SearchGameByAsync(searchMetric);
+            SearchGameResponse response = await _gameClient.SearchGameByTitleAsync(searchMetric);
+            if (response.Ok)
+            {
+                List<GameDetail> games = response.Games.ToList();
+
+                return Ok(new SearchGameResponseModel()
+                {
+                    Games = games
+                });
+            }
+            else
+            {
+                Error error = response.Error;
+                return BadRequest(error);
+            }
+        }
+
+        [HttpGet("search/gender")]
+        public async Task<IActionResult> SearchGamesByGender([FromBody] SearchMetricRequestModel searchMetricRequestModel)
+        {
+            SearchGenderMetric searchMetric = new SearchGenderMetric()
+            {
+                Gender = searchMetricRequestModel.Gender
+            };
+
+
+            SearchGameResponse response = await _gameClient.SearchGameByGenderAsync(searchMetric);
+            if (response.Ok)
+            {
+                List<GameDetail> games = response.Games.ToList();
+
+                return Ok(new SearchGameResponseModel()
+                {
+                    Games = games
+                });
+            }
+            else
+            {
+                Error error = response.Error;
+                return BadRequest(error);
+            }
+        }
+
+        [HttpGet("search/rating")]
+        public async Task<IActionResult> SearchGamesByRating([FromBody] SearchMetricRequestModel searchMetricRequestModel)
+        {
+            SearchRatingMetric searchMetric = new SearchRatingMetric()
+            {
+                Rating = searchMetricRequestModel.Rating
+            };
+
+
+            SearchGameResponse response = await _gameClient.SearchGameByRatingAsync(searchMetric);
             if (response.Ok)
             {
                 List<GameDetail> games = response.Games.ToList();
