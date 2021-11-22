@@ -8,7 +8,7 @@ import "google/protobuf/empty.proto";
 
 service GameAdminService {
   rpc AddReview (Review) returns (base.Message);
-  rpc CreateGame (CreateGameRequest) returns (GameBasicInfoResponse);
+  rpc CreateGame (CreateGameRequest) returns (CreateGameResponse);
   rpc DeleteGame (BasicGameRequest) returns (base.Message);
   rpc GetAllReviews (BasicGameRequest) returns (IndexReviewResponse);
   rpc SearchGameByTitle (SearchTitleMetric) returns (SearchGameResponse);
@@ -56,6 +56,12 @@ message CreateGameRequest {
     string coverName = 4;
     bytes data = 5;
     int64 fileSize = 6;
+}
+
+message CreateGameResponse {
+  bool ok = 1;
+  GameBasicInfoResponse game = 2;
+  base.Error error = 3;
 }
 
 message GameBasicInfoResponse {

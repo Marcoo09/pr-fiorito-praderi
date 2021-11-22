@@ -50,7 +50,7 @@ namespace ServerGrpc.Services
             };
         }
 
-        public override async Task<GameBasicInfoResponse> CreateGame(CreateGameRequest request, ServerCallContext context)
+        public override async Task<CreateGameResponse> CreateGame(CreateGameRequest request, ServerCallContext context)
         {
             Frame requestFrame = new Frame()
             {
@@ -68,14 +68,36 @@ namespace ServerGrpc.Services
             };
             Frame response = await _serviceRouter.GetResponseAsync(requestFrame);
 
-            GameBasicInfoDTO gameBasicInfoDTO = new GameBasicInfoDTO();
-            gameBasicInfoDTO.Deserialize(response.Data);
-
-            return new GameBasicInfoResponse()
+            if (response.IsSuccessful())
             {
-                Id = gameBasicInfoDTO.Id,
-                Title = gameBasicInfoDTO.Title
-            };
+                GameBasicInfoDTO gameBasicInfoDTO = new GameBasicInfoDTO();
+                gameBasicInfoDTO.Deserialize(response.Data);
+
+                 ;
+                return new CreateGameResponse()
+                {
+                    Game = new GameBasicInfoResponse()
+                    {
+                        Id = gameBasicInfoDTO.Id,
+                        Title = gameBasicInfoDTO.Title
+                    },
+                    Ok = true
+                };
+            }
+            else
+            {
+                MessageDTO messageDto = new MessageDTO();
+                messageDto.Deserialize(response.Data);
+
+                return new CreateGameResponse()
+                {
+                    Ok = false,
+                    Error = new Error()
+                    {
+                        Message = messageDto.Message
+                    }
+                };
+             }
         }
 
         public override async Task<Message> DeleteGame(BasicGameRequest request, ServerCallContext context)

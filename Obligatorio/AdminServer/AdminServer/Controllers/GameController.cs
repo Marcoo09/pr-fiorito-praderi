@@ -47,8 +47,16 @@ namespace AdminServer.Controllers
                 Title = createGameRequestModel.Title,
                 //Data = ByteString.CopyFrom(createGameRequestModel.Data),
             };
-            GameBasicInfoResponse response = await _gameClient.CreateGameAsync(request);
-            return Created($"api/game/{response.Id}", response);
+            CreateGameResponse response = await _gameClient.CreateGameAsync(request);
+            if (response.Ok)
+            {
+                return Created($"api/game/{response.Game.Id}", response.Game);
+            }
+            else
+            {
+                Error error = response.Error;
+                return BadRequest(error);
+            }
         }
 
         [HttpDelete("{id:int}")]

@@ -1,29 +1,31 @@
 ﻿<Properties StartupConfiguration="{DE1A3F3A-C3C5-44CF-8DB5-BA92FE77C982}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Logger/Logger/Models/Response/UserLogResponseModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AdminServer/AdminServer/Controllers/GameController.cs">
     <Files>
-      <File FileName="Logger/Logger/Controllers/LogsController.cs" Line="29" Column="51" />
-      <File FileName="Logger/Logger.BusinessLogic/Implementations/GameService.cs" Line="23" Column="10" />
-      <File FileName="Logger/Logger.DataAccess/Implementations/LogRepository.cs" Line="44" Column="53" />
-      <File FileName="Logger/Logger.Domain/GameSearchCriteria.cs" Line="23" Column="47" />
-      <File FileName="Server/ServerGrpc/Implementations/GameService.cs" Line="78" Column="95" />
-      <File FileName="Logger/Logger.Domain/UserSearchCriteria.cs" Line="31" Column="1" />
-      <File FileName="Logger/Logger/Models/Response/GameLogResponseModel.cs" Line="11" Column="1" />
-      <File FileName="Logger/Logger/Models/Response/UserLogResponseModel.cs" Line="13" Column="10" />
+      <File FileName="Server/ServerGrpc/Services/UserManager.cs" Line="133" Column="29" />
+      <File FileName="Server/ServerGrpc/Services/GameManager.cs" />
+      <File FileName="Server/ServerGrpc/Protos/game.proto" />
+      <File FileName="AdminServer/AdminServer/Protos/game.proto" />
+      <File FileName="AdminServer/AdminServer/Controllers/GameController.cs" Line="50" Column="34" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Obligatorio" expanded="True">
-            <Node name="AdminServer" expanded="True" />
+            <Node name="AdminServer" expanded="True">
+              <Node name="AdminServer" expanded="True">
+                <Node name="Controllers" expanded="True">
+                  <Node name="GameController.cs" selected="True" />
+                </Node>
+                <Node name="Protos" expanded="True" />
+              </Node>
+            </Node>
             <Node name="Common" expanded="True" />
             <Node name="Logger" expanded="True">
               <Node name="Logger" expanded="True">
                 <Node name="Controllers" expanded="True" />
                 <Node name="Models" expanded="True">
-                  <Node name="Response" expanded="True">
-                    <Node name="GameLogResponseModel.cs" selected="True" />
-                  </Node>
+                  <Node name="Response" expanded="True" />
                 </Node>
               </Node>
               <Node name="Logger.BusinessLogic" expanded="True">
@@ -36,6 +38,7 @@
             <Node name="Server" expanded="True">
               <Node name="ServerGrpc" expanded="True">
                 <Node name="Implementations" expanded="True" />
+                <Node name="Protos" expanded="True" />
                 <Node name="Services" expanded="True" />
               </Node>
             </Node>
@@ -53,6 +56,8 @@
       <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/ServerGrpc/Connectios/ConnectionsHandler.cs" relfile="Server/ServerGrpc/Connectios/ConnectionsHandler.cs" line="63" column="1" />
       <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/ServerGrpc/ServerGrpc.csproj" relfile="Server/ServerGrpc/ServerGrpc.csproj" line="8" column="1" />
       <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/AdminServer/AdminServer/Controllers/UserController.cs" relfile="AdminServer/AdminServer/Controllers/UserController.cs" line="47" column="1" />
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Logger/Logger/Models/Response/UserLogResponseModel.cs" relfile="Logger/Logger/Models/Response/UserLogResponseModel.cs" line="22" column="1" />
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Logger/Logger/Models/Response/UserLogResponseModel.cs" relfile="Logger/Logger/Models/Response/UserLogResponseModel.cs" line="25" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
