@@ -65,7 +65,7 @@ namespace ServerGrpc.Implementations
 
                 int newGameId = await _gameRepository.InsertAsync(newGame);
                 Game createdGame = await _gameRepository.GetAsync(newGameId);
-                createGameDTO.WriteFile();
+                //createGameDTO.WriteFile();
 
                 return CreateSuccessResponse(CommandConstants.CreateGame, new GameBasicInfoDTO(createdGame).Serialize());
             }
@@ -173,7 +173,7 @@ namespace ServerGrpc.Implementations
             {
                 Game game = await _gameRepository.GetAsync(basicGameRequestDTO.GameId);
                 EnrichedGameDetailDTO response = new EnrichedGameDetailDTO(game);
-                response.ReadFile(game.Path);
+                //response.ReadFile(game.Path);
 
                 return CreateSuccessResponse(CommandConstants.GetGame, response.Serialize());
             }

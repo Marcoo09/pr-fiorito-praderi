@@ -35,8 +35,8 @@ namespace DTOs.Request
         public byte[] Serialize()
         {
             List<byte> serializedGame = new List<byte>();
-            serializedGame.AddRange(BitConverter.GetBytes(FileSize));
-            serializedGame.AddRange(Data);
+            //serializedGame.AddRange(BitConverter.GetBytes(FileSize));
+            //serializedGame.AddRange(Data);
             serializedGame.AddRange(Encoding.UTF8.GetBytes($"{Title}#{Gender}#{Synopsis}#{CoverName}"));
 
             return serializedGame.ToArray();
@@ -45,13 +45,14 @@ namespace DTOs.Request
         public void Deserialize(byte[] serializedEntity)
         {
     
-            int offset = 0;
-            FileSize = BitConverter.ToInt64(serializedEntity.Take(8).ToArray());
-            offset += 8;
-            Data = serializedEntity.Skip(offset).Take((int)FileSize).ToArray();
-            offset += (int)FileSize;
+            //int offset = 0;
+            //FileSize = BitConverter.ToInt64(serializedEntity.Take(8).ToArray());
+            //offset += 8;
+            //Data = serializedEntity.Skip(offset).Take((int)FileSize).ToArray();
+            //offset += (int)FileSize;
 
-            string[] attributes = Encoding.UTF8.GetString(serializedEntity.Skip(offset).ToArray()).Split("#");
+            //string[] attributes = Encoding.UTF8.GetString(serializedEntity.Skip(offset).ToArray()).Split("#");
+            string[] attributes = Encoding.UTF8.GetString(serializedEntity.ToArray()).Split("#");
 
             Title = attributes[0];
             Gender = attributes[1];

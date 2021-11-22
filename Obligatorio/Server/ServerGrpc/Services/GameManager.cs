@@ -20,9 +20,9 @@ namespace ServerGrpc.Services
         private ServiceRouter _serviceRouter;
         private readonly IDeserializer _deserializer;
 
-        public GameManager()
+        public GameManager(ServiceRouter serviceRouter)
         {
-            _serviceRouter = new ServiceRouter();
+            _serviceRouter = serviceRouter;
             _deserializer = new Deserializer();
         }
 
@@ -61,8 +61,8 @@ namespace ServerGrpc.Services
                     Gender = request.Gender,
                     Synopsis = request.Synopsis,
                     CoverName = request.CoverName,
-                    Data = request.Data.ToByteArray(),
-                    FileSize = request.FileSize,
+                    //Data = request.Data.ToByteArray(),
+                    //FileSize = request.FileSize,
                 }.Serialize()
 
             };
@@ -143,15 +143,59 @@ namespace ServerGrpc.Services
             }
         }
 
-        public override async Task<SearchGameResponse> SearchGameBy(SearchMetric request, ServerCallContext context)
+        public override async Task<SearchGameResponse> SearchGameByTitle(SearchTitleMetric request, ServerCallContext context)
         {
             Frame requestFrame = new Frame()
             {
                 ChosenCommand = (short)CommandConstants.SearchGames,
                 Data = new SearchMetricDTO()
                 {
-                    Gender = request.Gender,
                     Title = request.Title,
+                }.Serialize()
+
+            };
+            Frame response = await _serviceRouter.GetResponseAsync(requestFrame);
+            if (response.IsSuccessful())
+            {
+                List<IDeserializable> entities = _deserializer.DeserializeArrayOfEntities(response.Data, typeof(GameDetailDTO));
+                List<GameDetailDTO> games = entities.Cast<GameDetailDTO>().ToList();
+
+                SearchGameResponse mappedResponse = new SearchGameResponse() { Ok = true };
+                games.ForEach(g => mappedResponse.Games.Add(new GameDetail()
+                {
+                    Id = g.Id,
+                    Title = g.Title,
+                    Gender = g.Gender,
+                    Path = g.Path,
+                    Synopsis = g.Synopsis,
+                }));
+
+                return mappedResponse;
+            }
+            else
+            {
+
+                MessageDTO messageDto = new MessageDTO();
+                messageDto.Deserialize(response.Data);
+
+                return new SearchGameResponse()
+                {
+                    Ok = false,
+                    Error = new Error()
+                    {
+                        Message = messageDto.Message
+                    }
+                };
+            }
+        }
+
+        public override async Task<SearchGameResponse> SearchGameByRating(SearchRatingMetric request, ServerCallContext context)
+        {
+            Frame requestFrame = new Frame()
+            {
+                ChosenCommand = (short)CommandConstants.SearchGames,
+                Data = new SearchMetricDTO()
+                {
                     Rating = request.Rating,
                 }.Serialize()
 
@@ -191,6 +235,53 @@ namespace ServerGrpc.Services
             }
         }
 
+        public override async Task<SearchGameResponse> SearchGameByGender(SearchGenderMetric request, ServerCallContext context)
+        {
+            Frame requestFrame = new Frame()
+            {
+                ChosenCommand = (short)CommandConstants.SearchGames,
+                Data = new SearchMetricDTO()
+                {
+                    Gender = request.Gender,
+                }.Serialize()
+
+            };
+            Frame response = await _serviceRouter.GetResponseAsync(requestFrame);
+            if (response.IsSuccessful())
+            {
+                List<IDeserializable> entities = _deserializer.DeserializeArrayOfEntities(response.Data, typeof(GameDetailDTO));
+                List<GameDetailDTO> games = entities.Cast<GameDetailDTO>().ToList();
+
+                SearchGameResponse mappedResponse = new SearchGameResponse() { Ok = true };
+                games.ForEach(g => mappedResponse.Games.Add(new GameDetail()
+                {
+                    Id = g.Id,
+                    Title = g.Title,
+                    Gender = g.Gender,
+                    Path = g.Path,
+                    Synopsis = g.Synopsis,
+                }));
+
+                return mappedResponse;
+            }
+            else
+            {
+
+                MessageDTO messageDto = new MessageDTO();
+                messageDto.Deserialize(response.Data);
+
+                return new SearchGameResponse()
+                {
+                    Ok = false,
+                    Error = new Error()
+                    {
+                        Message = messageDto.Message
+                    }
+                };
+            }
+        }
+
+
         public override async Task<ShowGameResponse> ShowGame(BasicGameRequest request, ServerCallContext context)
         {
             Frame requestFrame = new Frame()
@@ -217,12 +308,12 @@ namespace ServerGrpc.Services
                         Id = enrichedGameDetailDTO.Id,
                         Title = enrichedGameDetailDTO.Title,
                         Gender = enrichedGameDetailDTO.Gender,
-                        Path = enrichedGameDetailDTO.Path,
+                        //Path = enrichedGameDetailDTO.Path,
                         Synopsis = enrichedGameDetailDTO.Synopsis,
-                        FileSize = enrichedGameDetailDTO.FileSize,
+                        //FileSize = enrichedGameDetailDTO.FileSize,
                         RatingAverage = enrichedGameDetailDTO.RatingAverage,
                         CoverName = enrichedGameDetailDTO.CoverName,
-                        Data = ByteString.CopyFrom(enrichedGameDetailDTO.Data)
+                        //Data = ByteString.CopyFrom(enrichedGameDetailDTO.Data)
                     }
 
                 };

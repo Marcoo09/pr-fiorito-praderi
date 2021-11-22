@@ -38,7 +38,9 @@ namespace AdminServer
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllers();
+            });
         }
 
         private void AddServices(IServiceCollection services)
@@ -55,7 +57,7 @@ namespace AdminServer
                 GrpcServerApiHttpsPort = config.GetSection("AdminServerConfiguration").GetSection("GrpcServerApiHttpsPort").Value,
                 GrpcServerIP = config.GetSection("AdminServerConfiguration").GetSection("GrpcServerIP").Value
             };
-            var channel = GrpcChannel.ForAddress($"https://{configuration.GrpcServerIP}:{configuration.GrpcServerApiHttpsPort}");
+            var channel = GrpcChannel.ForAddress($"http://{configuration.GrpcServerIP}:{configuration.GrpcServerApiHttpPort}");
 
             services.AddScoped<UserAdminService.UserAdminServiceClient>(t => new UserAdminService.UserAdminServiceClient(channel));
             services.AddScoped<GameAdminService.GameAdminServiceClient>(t => new GameAdminService.GameAdminServiceClient(channel));
