@@ -2,7 +2,9 @@
   "profiles": {
     "ServerGrpc": {
       "commandName": "Project",
-      "applicationUrl": "https://localhost:50028",
+      "dotnetRunMessages": "true",
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5000;https://localhost:5001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

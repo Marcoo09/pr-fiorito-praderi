@@ -1,39 +1,27 @@
 ﻿<Properties StartupConfiguration="{DE1A3F3A-C3C5-44CF-8DB5-BA92FE77C982}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="AdminServer/AdminServer/Models/Response/IndexUsersResponseModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AdminServer/AdminServer/Protos/user.proto">
     <Files>
-      <File FileName="Server/ServerGrpc/Services/UserManager.cs" Line="145" Column="1" />
-      <File FileName="Server/ServerGrpc/Protos/user.proto" Line="1" Column="1" />
-      <File FileName="AdminServer/AdminServer/Models/Request/CreateUserRequestModel.cs" Line="1" Column="1" />
-      <File FileName="AdminServer/AdminServer/Models/Request/BuyGameRequestModel.cs" Line="1" Column="1" />
-      <File FileName="AdminServer/AdminServer/Controllers/UserController.cs" Line="77" Column="54" />
-      <File FileName="AdminServer/AdminServer/Models/Response/IndexUsersResponseModel.cs" Line="10" Column="1" />
+      <File FileName="Server/ServerGrpc/Protos/game.proto" Line="98" Column="2" />
+      <File FileName="Server/ServerGrpc/Protos/user.proto" Line="34" Column="2" />
+      <File FileName="AdminServer/AdminServer/Protos/game.proto" Line="86" Column="1" />
+      <File FileName="AdminServer/AdminServer/Protos/user.proto" Line="21" Column="16" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Obligatorio" expanded="True">
+          <Node name="Obligatorio" expanded="True" selected="True">
             <Node name="AdminServer" expanded="True">
               <Node name="AdminServer" expanded="True">
                 <Node name="Controllers" expanded="True" />
-                <Node name="Models" expanded="True">
-                  <Node name="Request" expanded="True" />
-                  <Node name="Response" expanded="True">
-                    <Node name="IndexUsersResponseModel.cs" selected="True" />
-                  </Node>
-                </Node>
+                <Node name="Properties" expanded="True" />
                 <Node name="Protos" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="Common" expanded="True">
-              <Node name="Protocol" expanded="True">
-                <Node name="Serialization" expanded="True" />
               </Node>
             </Node>
             <Node name="Server" expanded="True">
               <Node name="ServerGrpc" expanded="True">
+                <Node name="Properties" expanded="True" />
                 <Node name="Protos" expanded="True" />
-                <Node name="Services" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -49,6 +37,7 @@
       <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/Connectios/Connection.cs" relfile="Server/Connectios/Connection.cs" line="58" column="1" />
       <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/ServerGrpc/Connectios/ConnectionsHandler.cs" relfile="Server/ServerGrpc/Connectios/ConnectionsHandler.cs" line="63" column="1" />
       <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/Server/ServerGrpc/ServerGrpc.csproj" relfile="Server/ServerGrpc/ServerGrpc.csproj" line="8" column="1" />
+      <Breakpoint file="/Users/marcofiorito/DeveloperProjects/pr-fiorito-praderi/Obligatorio/AdminServer/AdminServer/Controllers/UserController.cs" relfile="AdminServer/AdminServer/Controllers/UserController.cs" line="20" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

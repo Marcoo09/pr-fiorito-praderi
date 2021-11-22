@@ -61,7 +61,6 @@ namespace ServerGrpc
             };
 
             services.AddScoped<ServerConfiguration>(s => serverConfiguration);
-            //Add Mappers, Deserializers, Managers and repositories
         }
     }
 }
