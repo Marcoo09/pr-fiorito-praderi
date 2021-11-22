@@ -1,22 +1,25 @@
 ﻿<Properties StartupConfiguration="{DE1A3F3A-C3C5-44CF-8DB5-BA92FE77C982}|Default">
   <MonoDevelop.Ide.ItemProperties.Client.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="AdminServer/AdminServer/Protos/game.proto">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AdminServer/AdminServer/Program.cs">
     <Files>
-      <File FileName="Server/ServerGrpc/Services/GameManager.cs" Line="78" Column="10" />
+      <File FileName="Server/ServerGrpc/Services/GameManager.cs" Line="279" Column="15" />
       <File FileName="Server/ServerGrpc/Program.cs" Line="1" Column="1" />
       <File FileName="Server/ServerGrpc/Startup.cs" Line="40" Column="1" />
       <File FileName="Server/ServerGrpc/Protos/game.proto" Line="62" Column="1" />
       <File FileName="AdminServer/AdminServer/Protos/game.proto" Line="62" Column="1" />
+      <File FileName="AdminServer/AdminServer/Controllers/GameController.cs" Line="22" Column="10" />
+      <File FileName="AdminServer/AdminServer/Startup.cs" Line="39" Column="36" />
+      <File FileName="AdminServer/AdminServer/Program.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Obligatorio" expanded="True" selected="True">
+          <Node name="Obligatorio" expanded="True">
             <Node name="AdminServer" expanded="True">
               <Node name="AdminServer" expanded="True">
                 <Node name="Controllers" expanded="True" />
-                <Node name="Properties" expanded="True" />
                 <Node name="Protos" expanded="True" />
+                <Node name="Program.cs" selected="True" />
               </Node>
             </Node>
             <Node name="Server" expanded="True">

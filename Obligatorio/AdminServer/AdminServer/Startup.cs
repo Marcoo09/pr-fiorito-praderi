@@ -58,6 +58,7 @@ namespace AdminServer
             var channel = GrpcChannel.ForAddress($"https://{configuration.GrpcServerIP}:{configuration.GrpcServerApiHttpsPort}");
 
             services.AddScoped<UserAdminService.UserAdminServiceClient>(t => new UserAdminService.UserAdminServiceClient(channel));
+            services.AddScoped<GameAdminService.GameAdminServiceClient>(t => new GameAdminService.GameAdminServiceClient(channel));
 
         }
     }
