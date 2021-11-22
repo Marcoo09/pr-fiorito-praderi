@@ -4,6 +4,34 @@ option csharp_namespace = "ServerGrpc.Services";
 
 package game;
 import "base.proto";
+import "google/protobuf/empty.proto";
+
+service GameAdminService {
+  rpc AddReview (Review) returns (base.Message);
+  rpc CreateGame (CreateGameRequest) returns (GameBasicInfoResponse);
+  rpc DeleteGame (BasicGameRequest) returns (base.Message);
+  rpc GetAllReviews (BasicGameRequest) returns (IndexReviewResponse);
+  rpc SearchGameBy (SearchMetric) returns (SearchGameResponse);
+  rpc ShowGame (BasicGameRequest) returns (ShowGameResponse);
+  rpc ShowGames (google.protobuf.Empty) returns (IndexGameResponse);
+  rpc UpdateGame (UpdateGameRequest) returns (UpdateGameResponse);
+}
+
+message BasicGameRequest{
+  int32 gameId = 1;
+}
+
+message EnrichGameDetail {
+    int32 id = 1;
+    string title = 2;
+    string synopsis = 3;
+    string gender = 4;
+    string path = 5;
+    double ratingAverage = 6;
+    string coverName = 7;
+    bytes data = 8;
+    int64 fileSize = 9;
+}
 
 message GameDetail {
     int32 id = 1;
@@ -11,4 +39,72 @@ message GameDetail {
     string synopsis = 3;
     string gender = 4;
     string path = 5;
+}
+
+message Review {
+    int32 gameId = 1;
+    int32 rating = 2;
+    string description = 3;
+}
+
+message CreateGameRequest {
+    string title = 1;
+    string gender = 2;
+    string synopsis = 3;
+    string coverName = 4;
+    bytes data = 5;
+    int64 fileSize = 6;
+}
+
+message GameBasicInfoResponse {
+    int32 id = 1;
+    string title = 2;
+}
+
+message IndexReviewResponse {
+  bool ok = 1;
+  repeated ReviewDetail reviews = 2;
+  base.Error error = 3;
+}
+
+message ReviewDetail {
+    int32 rating = 1;
+    string description = 2;
+}
+
+message SearchGameResponse {
+  bool ok = 1;
+  repeated GameDetail games = 2;
+  base.Error error = 3;
+}
+
+message SearchMetric {
+    int32 rating = 1;
+    string title = 2;
+    string gender = 3;
+}
+
+message IndexGameResponse {
+  bool ok = 1;
+  repeated game.GameDetail games = 2;
+  base.Error error = 3;
+}
+
+message UpdateGameRequest {
+    int32 id = 1;
+    string title = 2;
+    string synopsis = 3;
+    string gender = 4;
+}
+
+message ShowGameResponse {
+  bool ok = 1;
+  EnrichGameDetail game = 2;
+  base.Error error = 3;
+}
+
+message UpdateGameResponse {
+  bool ok = 1;
+  GameBasicInfoResponse game = 2;
+  base.Error error = 3;
 }
