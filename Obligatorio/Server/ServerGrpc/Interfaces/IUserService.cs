@@ -1,7 +1,7 @@
 ﻿using Protocol;
 using System.Threading.Tasks;
 
-namespace Server.Interfaces
+namespace ServerGrpc.Interfaces
 {
     public interface IUserService
     {

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Protocol;
 using Server.Domain;
 
-namespace Server.Interfaces
+namespace ServerGrpc.Interfaces
 {
     public interface IServiceRouter
     {

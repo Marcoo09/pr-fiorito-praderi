@@ -8,12 +8,12 @@ using Protocol.Serialization;
 using Server.DataAccess.Implementations;
 using Server.DataAccess.Interfaces;
 using Server.Domain;
-using Server.Interfaces;
+using ServerGrpc.Interfaces;
 using System.Linq;
 using Protocol.SerializationInterfaces;
 using System.Threading.Tasks;
 
-namespace Server.Implementations
+namespace ServerGrpc.Implementations
 {
     public class GameService : IGameService
     {

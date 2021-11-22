@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option csharp_namespace = "AdminServer";
+
+package user;
+import "base.proto";
+import "game.proto";
+import "google/protobuf/empty.proto";
+
+service UserAdminService {
+  rpc BuyGame (BasicGameRequest) returns (base.Message);
+  rpc CreateUser (Login) returns (UserDetail);
+  rpc IndextBoughtGames (BasicUserRequest) returns (IndexGameResponse);
+  rpc IndexUsers (google.protobuf.Empty) returns (IndexUsersResponse);
+}
+
+message BasicUserRequest{
+    int32 id = 1;
+}
+
+message BasicGameRequest{
+  int32 gameId = 1;
+}
+
+message Login {
+ string userName = 1;
+}
+
+message UserDetail {
+  int32 id = 1;
+  string name = 2;
+}
+
+message IndexGameResponse {
+  bool ok = 1;
+  repeated game.GameDetail games = 2;
+  base.Error error = 3;
+}
+
+message IndexUsersResponse {
+    bool ok = 1;
+    repeated UserDetail users = 2;
+    base.Error error = 3;
+}

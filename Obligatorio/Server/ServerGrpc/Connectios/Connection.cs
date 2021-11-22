@@ -7,10 +7,10 @@ using Exceptions;
 using Protocol;
 using Server.DataAccess.Implementations;
 using Server.DataAccess.Interfaces;
-using Server.Implementations;
-using Server.Interfaces;
+using ServerGrpc.Implementations;
+using ServerGrpc.Interfaces;
 
-namespace Server.Connections
+namespace ServerGrpc.Connections
 {
     public class Connection
     {

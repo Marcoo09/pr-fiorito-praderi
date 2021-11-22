@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
+using Microsoft.Extensions.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Server.Connections
+namespace ServerGrpc.Connections
 {
     public class ConnectionsHandler
     {
@@ -22,14 +22,14 @@ namespace Server.Connections
         private bool _isShuttingDown = false;
 
 
-        public ConnectionsHandler()
+        public ConnectionsHandler(ServerConfiguration configuration)
         {
 
             _serverStateSemaphore = new SemaphoreSlim(1);
             _connectionsListSemaphore = new SemaphoreSlim(1);
             _connections = new List<Connection>();
-            _serverIp = IPAddress.Parse(ConfigurationManager.AppSettings["ServerIP"]);
-            _serverPort = Int32.Parse(ConfigurationManager.AppSettings["ServerPort"]);
+            _serverIp = IPAddress.Parse(configuration.ServerIP);
+            _serverPort = Int32.Parse(configuration.ServerPort);
             _socketServer = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             _socketServer.Bind(new IPEndPoint(_serverIp, _serverPort));
             _serverState = State.Down;
@@ -58,8 +58,10 @@ namespace Server.Connections
                         Console.WriteLine("Client accepted");
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
+                    Console.WriteLine(e);
+
                     await ShutDownConnectionsAsync();
                 }
             }
@@ -78,7 +80,8 @@ namespace Server.Connections
             _isShuttingDown = true;
 
             var fakeSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            fakeSocket.Connect(_serverIp, _serverPort);
+            // TODO: Check if works the disconnect
+            //fakeSocket.Connect(_serverIp, _serverPort);
         }
 
         private async Task ShutDownConnectionsAsync()

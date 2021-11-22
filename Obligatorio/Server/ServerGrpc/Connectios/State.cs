@@ -1,4 +1,4 @@
-﻿namespace Server.Connections
+﻿namespace ServerGrpc.Connections
 {
     public enum State
     {
