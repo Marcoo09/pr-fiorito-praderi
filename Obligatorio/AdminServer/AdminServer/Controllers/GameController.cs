@@ -43,9 +43,9 @@ namespace AdminServer.Controllers
                 CoverName = createGameRequestModel.CoverName,
                 Gender = createGameRequestModel.Gender,
                 Synopsis = createGameRequestModel.Synopsis,
-                FileSize = createGameRequestModel.FileSize,
+                //FileSize = createGameRequestModel.FileSize,
                 Title = createGameRequestModel.Title,
-                Data = ByteString.CopyFrom(createGameRequestModel.Data),
+                //Data = ByteString.CopyFrom(createGameRequestModel.Data),
             };
             GameBasicInfoResponse response = await _gameClient.CreateGameAsync(request);
             return Created($"api/game/{response.Id}", response);

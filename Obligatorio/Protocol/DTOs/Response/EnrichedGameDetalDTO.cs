@@ -38,13 +38,14 @@ namespace DTOs.Response
 
         public void Deserialize(byte[] entity)
         {
-            int offset = 0;
-            FileSize = BitConverter.ToInt64(entity.Take(8).ToArray());
-            offset += 8;
-            Data = entity.Skip(offset).Take((int)FileSize).ToArray();
-            offset += (int)FileSize;
+            //int offset = 0;
+            //FileSize = BitConverter.ToInt64(entity.Take(8).ToArray());
+            //offset += 8;
+            //Data = entity.Skip(offset).Take((int)FileSize).ToArray();
+            //offset += (int)FileSize;
 
-            string[] attributes = Encoding.UTF8.GetString(entity.Skip(offset).ToArray()).Split("#");
+            //string[] attributes = Encoding.UTF8.GetString(entity.Skip(offset).ToArray()).Split("#");
+            string[] attributes = Encoding.UTF8.GetString(entity.ToArray()).Split("#");
 
             Id = Int32.Parse(attributes[0]);
             Title = attributes[1];
@@ -58,8 +59,8 @@ namespace DTOs.Response
         public byte[] Serialize()
         {
             List<byte> serializedGame = new List<byte>();
-            serializedGame.AddRange(BitConverter.GetBytes(FileSize));
-            serializedGame.AddRange(Data);
+            //serializedGame.AddRange(BitConverter.GetBytes(FileSize));
+            //serializedGame.AddRange(Data);
             serializedGame.AddRange(Encoding.UTF8.GetBytes($"{Id}#{Title}#{Synopsis}#{Gender}#{RatingAverage}#{CoverName}"));
 
             return serializedGame.ToArray();

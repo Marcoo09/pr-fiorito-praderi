@@ -61,8 +61,8 @@ namespace ServerGrpc.Services
                     Gender = request.Gender,
                     Synopsis = request.Synopsis,
                     CoverName = request.CoverName,
-                    Data = request.Data.ToByteArray(),
-                    FileSize = request.FileSize,
+                    //Data = request.Data.ToByteArray(),
+                    //FileSize = request.FileSize,
                 }.Serialize()
 
             };
@@ -217,12 +217,12 @@ namespace ServerGrpc.Services
                         Id = enrichedGameDetailDTO.Id,
                         Title = enrichedGameDetailDTO.Title,
                         Gender = enrichedGameDetailDTO.Gender,
-                        Path = enrichedGameDetailDTO.Path,
+                        //Path = enrichedGameDetailDTO.Path,
                         Synopsis = enrichedGameDetailDTO.Synopsis,
-                        FileSize = enrichedGameDetailDTO.FileSize,
+                        //FileSize = enrichedGameDetailDTO.FileSize,
                         RatingAverage = enrichedGameDetailDTO.RatingAverage,
                         CoverName = enrichedGameDetailDTO.CoverName,
-                        Data = ByteString.CopyFrom(enrichedGameDetailDTO.Data)
+                        //Data = ByteString.CopyFrom(enrichedGameDetailDTO.Data)
                     }
 
                 };

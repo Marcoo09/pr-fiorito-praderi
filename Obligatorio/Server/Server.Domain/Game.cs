@@ -30,8 +30,8 @@ namespace Server.Domain
                 throw new InvalidResourceException("Game must have a Synopsis");
             if(String.IsNullOrEmpty(Gender))
                 throw new InvalidResourceException("Game must have a gender");
-            if (String.IsNullOrEmpty(Path))
-                throw new InvalidResourceException("Game must have a cover");
+            //if (String.IsNullOrEmpty(Path))
+            //    throw new InvalidResourceException("Game must have a cover");
         }
 
         public void Update(Game newGame)
